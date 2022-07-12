@@ -62,18 +62,28 @@
 \newline
 \\
 Sang Woo Park\textsuperscript{1}
-Irini Daskalaki\textsuperscript{?}
-Robin M. Izzo\textsuperscript{?}
+Irini Daskalaki\textsuperscript{2}
+Robin M. Izzo\textsuperscript{3}
+Irina Aranovich\textsuperscript{4}
+Aartjan J.W. te Velthuis\textsuperscript{4}
+Daniel A. Notterman\textsuperscript{4}
 C. Jessica E. Metcalf\textsuperscript{1}
-Daniel A. Notterman\textsuperscript{?}
-Bryan T.\ Grenfell\textsuperscript{1}
+Bryan T.\ Grenfell\textsuperscript{1,5}
 \\
 \bigskip
 \textbf{1} Department of Ecology and Evolutionary Biology, Princeton University, Princeton, NJ, USA
 \\
+\textbf{2} Princeton University Health Services, Princeton University, Princeton, NJ, USA
+\\
+\textbf{3} Environmental Health and Safety, Princeton University, Princeton, NJ, USA
+\\
+\textbf{4} Department of Molecular Biology, Princeton University, Princeton, NJ, USA
+\\
+\textbf{5} Princeton School of Public and International Affairs, Princeton University, Princeton, NJ, USA
+\\
 \bigskip
 
-Corresponding author: ???
+Corresponding author: swp2@princeton.edu
 \bigskip
 \end{flushleft}
 
@@ -84,15 +94,15 @@ University campuses present a particularly well-documented case for institutiona
 Here, we present descriptive and modeling analyses of SARS-CoV-2 transmission on the Princeton University campus---this model was used throughout the pandemic to inform policy decisions and operational guidelines for the university campus.
 We demonstrate strong spatiotemporal correlations in epidemic patterns between the university campus and surrounding communities.
 These findings are corroborated by our model predictions, which indicate that the amount of on-campus transmission was likely limited during much of the wider pandemic until the end of 2021.
-Finally, we find that a super-spreading event likely played a major role in driving the recent outbreak on the Princeton University campus during the spring semester of a 2021--2022 academic year.
-Despite large numbers of cases on campus, case levels in surrounding communities remained low, suggesting that there was little spillover transmission from campus to the local community.
+Finally, we find that a super-spreading event likely played a major role in driving the recent Omicron variant outbreak on the Princeton University campus during the spring semester of the 2021--2022 academic year.
+Despite large numbers of cases on campus in this period, case levels in surrounding communities remained low, suggesting that there was little spillover transmission from campus to the local community.
 
 \pagebreak
 
 Predicting and controlling the spread of SARS-CoV-2 has remained a critical public health and scientific question throughout the ongoing SARS-CoV-2 pandemic \citep{baker2021limits}.
 Rapid, asymptomatic transmission of SARS-CoV-2 has hindered intervention efforts, such as contact tracing \citep{hellewell2020feasibility}.
 Social distancing measures have played major roles in preventing transmission, but can be difficult to maintain for a prolonged period \citep{galanti2021social}.
-The development of vaccines has provided a safe means of reopening society, but uncertainty remains in their long-term effectiveness in preventing infection and transmission, especially in the face of new viral variants.
+The development of vaccines has provided a safe means of reopening society, but uncertainty remains on their long-term effectiveness in preventing infection and transmission, especially in the face of new viral variants.
 
 Mathematical models have played a significant role in guiding these pandemic responses and devising control strategies \citep{cobey2020modeling,holmdahl2020wrong,metcalf2020mathematical,koelle2022changing}.
 Models can help monitor key parameters that govern epidemic dynamics \citep{kraemer2021monitoring} and retrospectively estimate the impact of intervention measures in reducing transmission \citep{flaxman2020estimating}.
@@ -112,10 +122,9 @@ A large fraction of asymptomatic infections (due to the young age of university 
 These kinds of contacts are inherently difficult to keep track of, making contact tracing less effective.
 The impact of intervention measures is expected to vary across different university campuses, reflecting heterogeneity in campus settings such as compliance, resources, community prevalence, as well as effects of other interventions present on campuses.
 For example, Duke and Harvard Universities experienced moderate outbreaks at the beginning of the fall semester in 2021 when in-person classes were allowed, despite high vaccination rates and weekly asymptomatic testing protocols \citep{dukeoutbreak,harvardoutbreak}, whereas the number of cases remained low in Princeton University (PU) during the same time period with similar levels of testing and vaccination.
-Here, we focused on the dynamics of SARS-CoV-2 on the PU campus alone to eliminate heterogeneities inherent to such comparisons.
+Here, we focused on the dynamics of SARS-CoV-2 on the PU campus alone to eliminate heterogeneities inherent to such comparisons; we return to comparisons with other campuses later in the discussion.
 
-We analyzed the spread of SARS-CoV-2 on campus (\fref{princeton}).
-We begin with a descriptive analysis of the outbreak and then present modeling analyses of the various outbreaks during 2020--2022.
+We begin with a descriptive analysis of the PU outbreak (\fref{princeton}), and present modeling analyses of the individual epidemics during 2020--2022.
 PU is located in Mercer County, New Jersey, USA;
 the population comprises of 5267 undergraduate students, 2946 graduate students, and around 7000 faculty and staff members.
 For simplicity, we divided the epidemic into four time periods representing four semesters across two academic years: Fall 2020--2021 (August 24, 2020--January 1, 2021; \fref{princeton}A), Spring 2020--2021 (January 16, 2021--May 14, 2021; \fref{princeton}B), Fall 2021--2022 (August 14, 2021--December 31, 2021; \fref{princeton}C), and Spring 2021--2022 (January 1, 2022--March 18, 2022; \fref{princeton}D).
@@ -144,21 +153,21 @@ The shaded orange area covers the region between 1:100 and 1:25 ratios.
 }
 \end{figure}
 
-During the fall semester of the 2020--2021 academic year, roughly 1000 grad students and 2000 faculty and staff members were present on campus and participated in asymptomatic testing. 
+During the \textbf{fall semester of the 2020--2021 academic year}, roughly 1000 grad students and 2000 faculty and staff members were present on campus and participated in asymptomatic testing. 
 All classes were held virtually, and so only a few undergraduate students remained on campus ($<300$).  
 Both undergraduate and graduate students were required to get tested twice a week, whereas faculty and staff members were required to get tested once a week.
 The number of cases remained relatively low throughout the semester with a peak occurring in early December, coinciding with the epidemic trajectory in Mercer County (\fref{princeton}A).  
 A sudden decrease in the number of cases around Thanksgiving partly reflects the reduced number of tests (3852 and 2972 asymptomatic tests performed on the week ending November 20th and 27th, respectively).
 The highest number of cases was reported among faculty and staff members ($=169$), followed by graduate students ($=41$), and undergraduate students ($=4$).
 
-In the beginning of the spring semester of the 2020--2021 academic year, the number of cases suddenly increased before classes started (\fref{princeton}B), reflecting $\approx 3000$ undergraduate students returning to campus.
+In the beginning of the \textbf{spring semester of the 2020--2021 academic year}, the number of cases suddenly increased before classes started (\fref{princeton}B), reflecting $\approx 3000$ undergraduate students returning to campus.
 Returning students were required to be tested and quarantine for 7 days regardless of their returning location.
 Most classes remained virtual, and the testing protocol did not change (twice a week for undergraduate and graduate students, and once a week for faculty and staff members).
 Some smaller classes were held in-person, but required social distancing (thereby limiting the size of the class) and mask-wearing at all times.
 The number of cases persisted at similar levels to the fall semester and eventually decreased as classes ended and students went home---the decrease in the number of cases in PU also coincided with the decrease in the number of cases in Mercer County.
 The highest number of cases was reported among faculty and staff members ($=111$), followed by undergraduate students ($=101$), and graduate students ($=29$).
 
-For the fall semester of the 2021--2022 academic year, all students and faculty and staff members were required to be vaccinated, with very few medical and religious exemptions.
+For the \textbf{fall semester of the 2021--2022 academic year}, all students and faculty and staff members were required to be vaccinated, with very few medical and religious exemptions.
 By the beginning of the semesters, 97\% of undergraduate students, 96\% of graduate students, and 94\% of faculty and staff members were vaccinated.
 Vaccinees were required to be tested once a week, while unvaccinated individuals were required to be tested twice a week.
 In-person classes and social events fully resumed on campus, though all individuals were required to wear masks indoors with a few exceptions (e.g., when eating or drinking, or when teaching a small class).
@@ -166,7 +175,7 @@ The number of cases remained similar to previous semesters until November when c
 In order to prevent transmission, testing frequency was increased to twice a week for undergraduate students on November 27th, 2021; the size of non-academic gatherings were also limited to 20 people.
 The number of cases decreased slightly as classes ended but soon increased again as the Omicron (BA.1) variant began to spread on campus and in Mercer county.
 
-For the spring semester of the 2021--2022 academic year, all eligible students and faculty and staff members were required to be boosted.
+For the \textbf{spring semester of the 2021--2022 academic year}, all eligible students and faculty and staff members were required to be boosted.
 By the beginning of the semesters, 65\% of undergraduate students, 71\% of graduate students, and 82\% of faculty and staff members were boosted.
 Undergraduate students were still required to be tested twice a week to prevent the additional spread of the Omicron variant.
 The number of cases remained high before classes began but decreased over time, following epidemic patterns in Mercer County (\fref{princeton}D).
@@ -176,7 +185,7 @@ Following the policy change, a large outbreak occurred on campus with high case 
 The timing of this outbreak also coincided with a rapid turnover of the Omicron subvariant BA.2---the proportion of BA.2 subvariant reached 93.5\% (372/398) compared to 26.9\% (14/52) from the previous week.
 On March 7, 2022, mask mandates were lifted and testing frequency was reduced to once a month.
 
-\subsection{Comparison with community transmission}
+\subsection*{Comparisons of campus and community transmission}
 
 Across the first three semesters, we find strong and significant correlations between the weekly logged numbers of cases from PU and those from Mercer county:
 fall 2020--2021 ($\rho = 0.81$ (95\% CI: 0.55--0.92; $p < 0.001$), \fref{princeton}E); spring 2020--2021 ($\rho = 0.80$ (95\% CI: 0.51--0.92; $p < 0.001$), \fref{princeton}F); and fall 2021--2022 ($\rho = 0.86$ (95\% CI: 0.67--0.94; $p < 0.001$), \fref{princeton}G). 
@@ -257,7 +266,7 @@ In this study, we use this model to retrospectively analyze past outbreaks.
 First, we try to match our model to epidemic patterns seen on campus for the first three semesters, during which there was limited campus transmission, by varying the contact reproduction number $\Rc$ and the amount of community transmission $\theta$ and holding all other parameters constant.
 For each parameter combination, we simulate 100 epidemic trajectories and calculate the sum of squared differences between the weekly numbers of the observed and predicted positive cases.
 The population size and testing frequencies (with twice weekly testing modeled as testing every 3 days) are set to reflect realistic campus settings.
-Although we account for heterogeneity in the number of individuals in each population group on campus (i.e., undergraduate students, graduate students, and faculty and staff members) and their respective testing patterns (e.g., twice a week for undergraduate and graduate students and once a week for faculty and staff members during fall and spring, 2020), we assume that all other parameters are equal across different groups for simplicity. 
+Although we account for heterogeneity in the number of individuals in each population group on campus (i.e., undergraduate students, graduate students, and faculty and staff members) and their respective testing patterns (e.g., twice a week for undergraduate and graduate students and once a week for faculty and staff members during fall and spring, 2020), we assume, for simplicity, that all other parameters are equal across different groups 
 We further assume that the population mixes homogeneously.
 While these assumptions are most parsimonious, epidemiological parameters and mixing patterns likely differ across groups (e.g., undergraduate students are more likely to infect undergraduate students and also remain asymptomatic).
 Therefore, our model parameters describe average dynamics across different groups and must be interpreted with care.
@@ -325,7 +334,7 @@ Projecting the model beyond November 26th implies that we would have seen a simi
 In other words, the Delta strain would have continued to spread on campus at a similar rate if the semester were to (hypothetically) continue until January without additional interventions due to immune waning and growing cases in the community (\fref{matching}H).
 In reality, the situation was more complex: testing frequencies increased and social gatherings were limited in response to an increase in the number of cases.
 These interventions---as well as students returning back home as classes ended---likely would have reduced contact rates (and therefore transmission of the Delta variant).
-This reduction in transmission was likely counterbalanced by the introduction of the Omicron variant and its immune evasion, leading to similar and persistent growth in the number of cases.
+This reduction in transmission was likely counterbalanced by the introduction of the Omicron variant and its high transmissibility and immune evasion, leading to similar and persistent growth in the number of cases.
 
 \section*{The spread of the Omicron variant on campus}
 
@@ -411,8 +420,9 @@ Decreasing patterns in epidemic correlations with distance further highlight the
 Our mathematical model relies on simplifying assumptions.
 For example, we assume conservatively that the entire university populations mix homogeneously and have identical campus and community contact rates (captured by $\Rc$ and $\theta$, respectively).
 In reality, increases in cases were often associated with specific transmission clusters, suggesting heterogeneity in transmission patterns.
-Contact levels also likely differ between different groups;
-for example, faculty and staff members are more likely to interact with community members than undergraduate students and are therefore at a higher risk for community infections \citep{frazier2022modeling}.
+Contact levels also likely differ between different groups:
+for example, faculty and staff members are more likely to interact with community members than undergraduate students and would be at a higher risk for community infections \citep{frazier2022modeling};
+therefore, our homogeneous mixing assumption is conservatively pessimistic.
 We also do not account for changes in behavior; 
 instead, we assume constant values for $\theta$ and $\Rc$ throughout a semester.
 % We note that the invasion of the Omicron variant was modeled separately for the spring semester of a 2021--2022 academic year by explicitly considering the immune evasion.
