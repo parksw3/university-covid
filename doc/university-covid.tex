@@ -73,7 +73,7 @@ Bryan T.\ Grenfell\textsuperscript{1,5}
 \bigskip
 \textbf{1} Department of Ecology and Evolutionary Biology, Princeton University, Princeton, NJ, USA
 \\
-\textbf{2} Princeton University Health Services, Princeton University, Princeton, NJ, USA
+\textbf{2} University Health Services, Princeton University, Princeton, NJ, USA
 \\
 \textbf{3} Environmental Health and Safety, Princeton University, Princeton, NJ, USA
 \\
@@ -98,6 +98,8 @@ Finally, we find that a super-spreading event likely played a major role in driv
 Despite large numbers of cases on campus in this period, case levels in surrounding communities remained low, suggesting that there was little spillover transmission from campus to the local community.
 
 \pagebreak
+
+\section*{Introduction}
 
 Predicting and controlling the spread of SARS-CoV-2 has remained a critical public health and scientific question throughout the ongoing SARS-CoV-2 pandemic \citep{baker2021limits}.
 Rapid, asymptomatic transmission of SARS-CoV-2 has hindered intervention efforts, such as contact tracing \citep{hellewell2020feasibility}.
@@ -152,6 +154,8 @@ The shaded orange area covers the region between 1:100 and 1:25 ratios.
 \label{fig:princeton}
 }
 \end{figure}
+
+\section*{Descriptive analysis}
 
 During the \textbf{fall semester of the 2020--2021 academic year}, roughly 1000 grad students and 2000 faculty and staff members were present on campus and participated in asymptomatic testing. 
 All classes were held virtually, and so only a few undergraduate students remained on campus ($<300$).  
@@ -329,6 +333,7 @@ Extremely high vaccination rates and frequent testing likely limited transmissio
 These simulations suggest that an increase in the number of cases in November can be explained by a combination of waning immunity alone without requiring additional changes in transmission dynamics (note we do not allow $\theta$ or $\Rc$ to vary over time).
 When we exclude immune waning from the model, predicted epidemic dynamics exhibit slower growth and require even higher values of campus and community contact rates ($\Rc$ and $\theta$) to qualitatively match the observed dynamics (Supplementary Figure S10)---even so, the logged sum of squared differences are generally higher (with median logged sum of squared differences ranging from 6.9 to 41.3 for the same parameter regime).
 Thus, combining some amount of immune waning and high campus and community contact rates likely best explains the epidemic growth near the end of the semester.
+We note that other factors, such as changes in behavior, could have also contributed to the increase in the numbers of cases.
 
 Projecting the model beyond November 26th implies that we would have seen a similar growth in the number of cases if conditions remained constant even without the introduction of the Omicron variant.
 In other words, the Delta strain would have continued to spread on campus at a similar rate if the semester were to (hypothetically) continue until January without additional interventions due to immune waning and growing cases in the community (\fref{matching}H).
@@ -405,8 +410,15 @@ Although previous outbreak reports from other universities primarily focused on 
 For example, extensive modeling efforts from Cornell University demonstrated an increase in the amount of transmission from outside the university campus during fall 2021 and found that community transmissions are the biggest risk for faculty and staff members \citep{frazier2022modeling}.
 Our study further extends these findings in demonstrating a strong spatiotemporal correlation in the spread of SARS-CoV-2 between university campuses and surrounding communities;
 however, when campus transmission is sustained, community coupling becomes less important.
-Our analysis suggest that comparing the ratios between the cases on university campuses and neighboring communities can also provide a useful measure for how well a university campus is controlling the epidemic; 
-however, we note that this ratio needs to be interpreted with caution as it is sensitive to changes in testing patterns as well as the numbers of students on campus.
+The degree to which community coupling affects campus transmission also depends on the campus. 
+Although Princeton University is located in a small town (Mercer County) with a population of ~390,000 (\url{www.census.gov}), it is located near large cities, such as New York City and Philadelphia, which can drive infections in smaller cities nearby \citep{grenfell1997meta}.
+For example, contact tracing efforts from Boston University, which is located in a large metropolitan area, found that more than 50\% of infections among Boston University affiliates with known exposures could be attributed to sources outside of the university campus \citep{hamer2021assessment}.
+In contrast, other university campuses that are far from urban areas may experience weaker community coupling.
+The degree of coupling will also depend on intervention measures in surrounding communities and on campus.
+Understanding these heterogeneities is critical for preventing future campus outbreaks.
+
+Our analysis also suggests that comparing the ratios between the cases on university campuses and neighboring communities can also provide a useful measure for how well a university campus is controlling the epidemic; 
+however, that this ratio needs to be interpreted with caution as it is sensitive to changes in testing patterns as well as the numbers of students on campus.
 For example, the ratios of cases can suddenly change during holidays when students are away from campus.
 Future studies could combine viral phylogenetic data to better understand spatial patterns of SARS-CoV-2 on campus.
 
@@ -425,6 +437,7 @@ for example, faculty and staff members are more likely to interact with communit
 therefore, our homogeneous mixing assumption is conservatively pessimistic.
 We also do not account for changes in behavior; 
 instead, we assume constant values for $\theta$ and $\Rc$ throughout a semester.
+While we cannot rule out the possibility that changes in behavior (and therefore transmission rates) could have contributed to various epidemics (e.g., the Omicron wave beginning in the fall semester of the 2021--2022 academic year), we were able to capture the majority of epidemic patterns without modeling them. 
 % We note that the invasion of the Omicron variant was modeled separately for the spring semester of a 2021--2022 academic year by explicitly considering the immune evasion.
 We also do not explore parameter uncertainty, which can lead to underestimation of overall uncertainty \citep{elderd2006uncertainty}. 
 We also note that intervention measures that were introduced to PU may not necessarily be applicable in other institutions.
@@ -432,7 +445,9 @@ We also note that intervention measures that were introduced to PU may not neces
 Despite the simplicity of the analysis, our study provides important lessons for controlling SARS-CoV-2 outbreaks on university campuses in general.
 First, our analysis highlights the power of mass asymptomatic testing for epidemic measurement and planning.
 Combining other interventions measures, such as social distancing, mask wearing, and vaccination, can help provide a safe means of reopening university campuses---but the extent to which these interventions are implemented will necessarily depend on resource availability.
-Second, the safe reopening of a university campus must consider the spread of SARS-CoV-2 within the surrounding community as they can both potentially drive transmission in each other---however, the degree to which infections spread from campus to community remains uncertain.
+Second, we expect immune waning and superspreading to continue to play important roles in driving campus transmission---keeping vaccine statuses up-to-date within the campus community will be critical moving forward.
+In addition, preventing large gatherings can help prevent large superspreading events in the midst of a rising epidemic.
+Third, the safe reopening of a university campus must consider the spread of SARS-CoV-2 within the surrounding community as they can both potentially drive transmission in each other---however, the degree to which infections spread from campus to community remains uncertain.
 Finally, intervention measures placed on campuses must continue to adapt and change to reflect changes in epidemiological conditions.
 
 The emergence of new variants---in particular, their ability to evade prior immunity and transmit better---continues to add uncertainty to the future controllability of the ongoing SARS-CoV-2 pandemic.
