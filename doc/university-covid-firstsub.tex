@@ -104,7 +104,7 @@ Despite large numbers of cases on campus in this period, case levels in surround
 
 \section*{Significance}
 
-University campuses present challenges to preventing SARS-CoV-2 transmission, due to a high proportion of asymptomatic infections and high contact rates. SARS-CoV-2 outbreaks on the Princeton University campus offer an unusually well-documented perspective, rooted in mass asymptomatic testing, further informed by mathematical modeling aimed at guiding policy decisions. Here, we show that this model can parsimoniously capture observed outbreak patterns on campus during different eras of control. Our analysis reveals that strong coupling between epidemic dynamics on campus and in local communities drives the early epidemic. Subsequently, especially in the Omicron era, superspreading events came to dominate transmission on campus, thereby weakening the dynamical coupling of campus and community outbreaks.
+University campuses present challenges to preventing SARS-CoV-2 transmission, due to a high proportion of asymptomatic infections and high contact rates. SARS-CoV-2 outbreaks on the Princeton University campus offer an unusually well-documented perspective, rooted in mass asymptomatic testing, further informed by mathematical modeling aimed at guiding policy decisions. Here, we show that this model can parsimoniously capture observed outbreak patterns on campus during different eras of control. Our analysis reveals that strong coupling between epidemic dynamics on campus and in local communities drives the early epidemic. Subsequently, especially in the omicron era, superspreading events came to dominate transmission on campus, thereby weakening the dynamical coupling of campus and community outbreaks.
 
 \pagebreak
 
@@ -149,19 +149,17 @@ Changes in testing frequency and other intervention measures throughout the stud
 All data used in this analysis are publicly available on the PU COVID-19 Dashboard website: \url{https://covid.princeton.edu/dashboard}.
 
 \begin{figure}[!th]
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_new_per_1000.pdf}
+\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_new.pdf}
 \caption{
 \textbf{Dynamics of SARS-CoV-2 outbreaks in Princeton University (PU).}
 (A--D) Epidemic trajectories across four semesters: Fall 2020--2021 (A), Spring 2020--2021 (B), Fall 2021--2022 (C), and Spring 2021--2022 (D).
-Colored bar plots represent the weekly number of cases per 1000 from both asymptomatic and symptomatic testing in PU.
-Red lines represent the weekly number of cases per 1000 in Mercer County.
+Colored bar plots represent the weekly number of cases from both asymptomatic and symptomatic testing in PU.
+Red lines represent the weekly number of cases in Mercer County.
 Number of cases in Mercer County is obtained from \url{https://github.com/nytimes/covid-19-data}.
-The weekly number of cases per 1000 in Princeton is normalized by the approximate total size of the PU population present on campus for each semester: 3000 for Fall 2020--2021, 8000 for Spring 2020--2021, and 13000 for Fall and Spring 2021--2022.
-The weekly number of cases per 1000 in Princeton in Mercer County is calculated based on the total population size as of 2020: 387340 (\url{www.census.gov}).
-(E--H) Correlations between the weekly number of cases per 1000 in PU and in Mercer County.
+(E--H) Correlations between the weekly number of cases in PU and in Mercer County.
 Solid lines and shaded areas represent the estimated linear regression lines and the associated 95\% CIs.
-(I--L) Ratios between weekly number of cases per 1000 rin PU and Mercer County.
-The dashed lines represent the 1:1 ratio.
+(I--L) Ratios between weekly numbers of cases reported from PU and Mercer County.
+The shaded orange area covers the region between 1:100 and 1:25 ratios.
 \label{fig:princeton}
 }
 \end{figure}
@@ -172,7 +170,7 @@ During the \textbf{fall semester of the 2020--2021 academic year}, roughly 1000 
 All classes were held virtually, and so only a few undergraduate students remained on campus ($<300$).  
 Both undergraduate and graduate students were required to get tested twice a week, whereas faculty and staff members were required to get tested once a week.
 The number of cases remained relatively low throughout the semester with a peak occurring in early December, coinciding with the epidemic trajectory in Mercer County (\fref{princeton}A).  
-A sudden decrease in the number of cases around Thanksgiving---a national holiday in the US during which many students---partly reflects the reduced number of tests (3852 and 2972 asymptomatic tests performed on the week ending November 20th and 27th, respectively).
+A sudden decrease in the number of cases around Thanksgiving partly reflects the reduced number of tests (3852 and 2972 asymptomatic tests performed on the week ending November 20th and 27th, respectively).
 The highest number of cases was reported among faculty and staff members ($=169$), followed by graduate students ($=41$), and undergraduate students ($=4$).
 
 In the beginning of the \textbf{spring semester of the 2020--2021 academic year}, the number of cases suddenly increased before classes started (\fref{princeton}B), reflecting $\approx 3000$ undergraduate students returning to campus.
@@ -209,7 +207,7 @@ However, the case patterns in PU were decoupled from those in Mercer county for 
 Stratifying cases by subpopulation shows that case patterns in graduate students and faculty and staff members were still strongly correlated with case patterns in Mercer county, meaning that the campus transmission was limited to undergraduate students (Supplementary Figure S1). 
 We also find strong correlations between the weekly logged numbers of cases from PU and those from other counties in New Jersey (Supplementary Figure S2)---these correlations significantly decreased with distance from Mercer county in both spring 2020--2021 ($\rho=-0.48$ (95\% CI: $-0.75$--$-0.06$; $p = 0.03$) for all cases and $\rho=-0.51$ (95\% CI: $-0.77$--$-0.10$; $p = 0.02$) for faculty and staff cases) and fall 2021--2022 ($\rho=-0.68$ (95\% CI: $-0.86$--$-0.35$, $p < 0.001$) for all cases and $\rho=-0.74$ (95\% CI: $-0.89$--$-0.46$, $p < 0.001$) for faculty and staff cases).
 Across the first three semesters, both the total cases and faculty and staff cases showed similar levels of correlations with local cases. 
-For the spring semester of the 2021--2022 academic year, we still find high correlations between faculty and staff cases and local cases throughout other counties ($\rho > 0.8$ across all counties in New Jersey); however, the total cases exhibit considerably weaker correlations due to student-to-student transmission on campus (Supplementary Figure S2).    
+For the spring semester of the 2021--2022 academic year, we still find high correlations between faculty and staff cases and local cases throughout other countries ($\rho > 0.8$ across all counties in New Jersey); however, the total cases exhibit considerably weaker correlations due to student-to-student transmission on campus (Supplementary Figure S2).    
 
 These correlations likely reflect commuting and contact patterns, and therefore we expect SARS-CoV-2 dynamics on campus to be correlated with those from nearby large cities as well. 
 We find similarly strong correlations with New York City for the first three semesters: fall 2020--2021 ($\rho = 0.74$ (95\% CI: 0.44--0.90; $p < 0.001$), Supplementary Figure S3A); spring 2020--2021 ($\rho = 0.84$ (95\% CI: 0.61--0.94; $p < 0.001$), Supplementary Figure S3B); fall 2021--2022 ($\rho = 0.78$ (95\% CI: 0.51--0.91; $p < 0.001$), Supplementary Figure S3C); and spring 2021--2022 ($\rho = 0.33$ (95\% CI: $-0.34$--0.78; $p=0.3$), Supplementary Figure S3D).
