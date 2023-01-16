@@ -218,12 +218,12 @@ philly_spring2021 <- philly %>%
   )
 
 g1 <- ggplot(fall2020) +
-  geom_bar(aes(date, value, fill=key), stat="identity") +
-  geom_line(data=philly_fall2020, aes(date, cases/400, group=1), col="red") +
-  geom_point(data=philly_fall2020, aes(date, cases/400), col="red") +
- scale_x_discrete("Date") +
-  scale_y_continuous("Princeton cases", expand=c(0, 0), limits=c(0, 50),
-                     sec.axis = sec_axis(trans=~.*400, "New York City cases")) +
+  geom_bar(aes(date, value/3, fill=key), stat="identity") +
+  geom_line(data=philly_fall2020, aes(date, cases/1.6e6*1000, group=1), col="red") +
+  geom_point(data=philly_fall2020, aes(date, cases/1.6e6*1000), col="red") +
+  scale_x_discrete("Date") +
+  scale_y_continuous("Princeton cases per 1000", expand=c(0, 0), limits=c(0, 20),
+                     sec.axis = sec_axis(trans=~., "Philadelphia cases per 1000")) +
   scale_fill_viridis_d() +
   ggtitle("A. Fall 2020-2021") +
   theme(
@@ -241,12 +241,12 @@ g1 <- ggplot(fall2020) +
   )
 
 g2 <- ggplot(spring2020) +
-  geom_bar(aes(as.factor(date), value, fill=key), stat="identity") +
-  geom_line(data=philly_spring2020, aes(date, cases/400, group=1), col="red") +
-  geom_point(data=philly_spring2020, aes(date, cases/400), col="red") +
+  geom_bar(aes(date, value/8, fill=key), stat="identity") +
+  geom_line(data=philly_spring2020, aes(date, cases/1.6e6*1000, group=1), col="red") +
+  geom_point(data=philly_spring2020, aes(date, cases/1.6e6*1000), col="red") +
   scale_x_discrete("Date") +
-  scale_y_continuous("Princeton cases", expand=c(0, 0), limits=c(0, 60),
-                     sec.axis = sec_axis(trans=~.*400, "New York City cases")) +
+  scale_y_continuous("Princeton cases per 1000", expand=c(0, 0), limits=c(0, 10),
+                     sec.axis = sec_axis(trans=~., "Philadelphia cases per 1000")) +
   scale_fill_viridis_d() +
   ggtitle("B. Spring 2020-2021") +
   theme(
@@ -264,12 +264,12 @@ g2 <- ggplot(spring2020) +
   )
 
 g3 <- ggplot(fall2021) +
-  geom_bar(aes(as.factor(date), value, fill=key), stat="identity") +
-  geom_line(data=philly_fall2021, aes(date, cases/400, group=1), col="red") +
-  geom_point(data=philly_fall2021, aes(date, cases/400), col="red") +
+  geom_bar(aes(as.factor(date), value/13, fill=key), stat="identity") +
+  geom_line(data=philly_fall2021, aes(date, cases/1.6e6*1000, group=1), col="red") +
+  geom_point(data=philly_fall2021, aes(date, cases/1.6e6*1000), col="red") +
   scale_x_discrete("Date") +
-  scale_y_continuous("Princeton cases", expand=c(0, 0), limits=c(0, 500),
-                     sec.axis = sec_axis(trans=~.*400, "New York City cases")) +
+  scale_y_continuous("Princeton cases per 1000", expand=c(0, 0), limits=c(0, 20),
+                     sec.axis = sec_axis(trans=~., "Philadelphia cases per 1000")) +
   scale_fill_viridis_d() +
   ggtitle("C. Fall 2021-2022") +
   theme(
@@ -287,12 +287,12 @@ g3 <- ggplot(fall2021) +
   )
 
 g4 <- ggplot(spring2021) +
-  geom_bar(aes(as.factor(date), value, fill=key), stat="identity") +
-  geom_line(data=philly_spring2021, aes(date, cases/400, group=1), col="red") +
-  geom_point(data=philly_spring2021, aes(date, cases/400), col="red") +
+  geom_bar(aes(as.factor(date), value/13, fill=key), stat="identity") +
+  geom_line(data=philly_spring2021, aes(date, cases/1.6e6*1000, group=1), col="red") +
+  geom_point(data=philly_spring2021, aes(date, cases/1.6e6*1000), col="red") +
   scale_x_discrete("Date") +
-  scale_y_continuous("Princeton cases", expand=c(0, 0), limits=c(0, 500),
-                     sec.axis = sec_axis(trans=~.*400, "New York City cases")) +
+  scale_y_continuous("Princeton cases per 1000", expand=c(0, 0), limits=c(0, 550/13),
+                     sec.axis = sec_axis(trans=~., "Philadelphia cases per 1000")) +
   scale_fill_viridis_d() +
   ggtitle("D. Spring 2021-2022") +
   theme(
@@ -337,13 +337,14 @@ spring2021a <- spring2021 %>%
   ) %>%
   merge(philly_spring2021)
 
-cor.test(log(fall2020a$value+1), log(fall2020a$cases+1))
+cor.test(fall2020a$value, fall2020a$cases)
 
 g5 <- ggplot(fall2020a) +
-  geom_point(aes(cases+1, value+1)) +
-  geom_smooth(aes(cases+1, value+1), method="lm", col="black") +
-  scale_x_log10("New York City cases") +
-  scale_y_log10("Princeton cases") +
+  geom_point(aes(cases/1.6e6*1000, value/3)) +
+  geom_smooth(aes(cases/1.6e6*1000, value/3), method="lm", col="black") +
+  geom_abline(intercept=0, slope=1, lty=2) +
+  scale_x_continuous("Philadelphia cases per 1000") +
+  scale_y_continuous("Princeton cases per 1000") +
   ggtitle("D") +
   theme(
     panel.grid = element_blank(),
@@ -351,13 +352,14 @@ g5 <- ggplot(fall2020a) +
     axis.line = element_line()
   )
 
-cor.test(log(spring2020a$value+1), log(spring2020a$cases+1))
+cor.test(spring2020a$value, spring2020a$cases)
 
 g6 <- ggplot(spring2020a) +
-  geom_point(aes(cases+1, value+1)) +
-  geom_smooth(aes(cases+1, value+1), method="lm", col="black") +
-  scale_x_log10("New York City cases") +
-  scale_y_log10("Princeton cases") +
+  geom_point(aes(cases/1.6e6*1000, value/8)) +
+  geom_smooth(aes(cases/1.6e6*1000, value/8), method="lm", col="black") +
+  geom_abline(intercept=0, slope=1, lty=2) +
+  scale_x_continuous("Philadelphia cases per 1000") +
+  scale_y_continuous("Princeton cases per 1000") +
   ggtitle("E") +
   theme(
     panel.grid = element_blank(),
@@ -365,13 +367,14 @@ g6 <- ggplot(spring2020a) +
     axis.line = element_line()
   )
 
-cor.test(log(fall2021a$value+1), log(fall2021a$cases+1))
+cor.test(fall2021a$value, fall2021a$cases)
 
 g7 <- ggplot(fall2021a) +
-  geom_point(aes(cases+1, value+1)) +
-  geom_smooth(aes(cases+1, value+1), method="lm", col="black") +
-  scale_x_log10("New York City cases") +
-  scale_y_log10("Princeton cases") +
+  geom_point(aes(cases/1.6e6*1000, value/13)) +
+  geom_smooth(aes(cases/1.6e6*1000, value/13), method="lm", col="black") +
+  geom_abline(intercept=0, slope=1, lty=2) +
+  scale_x_continuous("Philadelphia cases per 1000") +
+  scale_y_continuous("Princeton cases per 1000") +
   ggtitle("F") +
   theme(
     panel.grid = element_blank(),
@@ -379,13 +382,14 @@ g7 <- ggplot(fall2021a) +
     axis.line = element_line()
   )
 
-cor.test(log(spring2021a$value+1), log(spring2021a$cases+1))
+cor.test(spring2021a$value, spring2021a$cases)
 
 g8 <- ggplot(spring2021a) +
-  geom_point(aes(cases+1, value+1)) +
-  geom_smooth(aes(cases+1, value+1), method="lm", col="black") +
-  scale_x_log10("New York City cases") +
-  scale_y_log10("Princeton cases") +
+  geom_point(aes(cases/1.6e6*1000, value/13)) +
+  geom_smooth(aes(cases/1.6e6*1000, value/13), method="lm", col="black") +
+  geom_abline(intercept=0, slope=1, lty=2) +
+  scale_x_continuous("Philadelphia cases per 1000") +
+  scale_y_continuous("Princeton cases per 1000") +
   ggtitle("F") +
   theme(
     panel.grid = element_blank(),
@@ -413,7 +417,7 @@ spring2021b <- spring2021 %>%
 g9 <- ggplot(fall2020b) +
   geom_point(aes(cases+1, value+1)) +
   geom_smooth(aes(cases+1, value+1), method="lm", col="black") +
-  scale_x_log10("New York City cases") +
+  scale_x_log10("Philadelphia cases") +
   scale_y_log10("Princeton cases") +
   ggtitle("A. Fall 2020-2021") +
   facet_wrap(~key, scale="free") +
@@ -424,7 +428,7 @@ g9 <- ggplot(fall2020b) +
 g10 <- ggplot(spring2020b) +
   geom_point(aes(cases+1, value+1)) +
   geom_smooth(aes(cases+1, value+1), method="lm", col="black") +
-  scale_x_log10("New York City cases") +
+  scale_x_log10("Philadelphia cases") +
   scale_y_log10("Princeton cases") +
   ggtitle("B. Spring 2020-2021") +
   facet_wrap(~key, scale="free") +
@@ -435,7 +439,7 @@ g10 <- ggplot(spring2020b) +
 g11 <- ggplot(fall2021b) +
   geom_point(aes(cases+1, value+1)) +
   geom_smooth(aes(cases+1, value+1), method="lm", col="black") +
-  scale_x_log10("New York City cases") +
+  scale_x_log10("Philadelphia cases") +
   scale_y_log10("Princeton cases") +
   ggtitle("C. Fall 2021-2022") +
   facet_wrap(~key, scale="free") +
@@ -446,7 +450,7 @@ g11 <- ggplot(fall2021b) +
 g12 <- ggplot(spring2021b) +
   geom_point(aes(cases+1, value+1)) +
   geom_smooth(aes(cases+1, value+1), method="lm", col="black") +
-  scale_x_log10("New York City cases") +
+  scale_x_log10("Philadelphia cases") +
   scale_y_log10("Princeton cases") +
   ggtitle("D. Spring 2021-2022") +
   facet_wrap(~key, scale="free") +
