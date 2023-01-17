@@ -156,7 +156,7 @@ All data used in this analysis are publicly available on the PU COVID-19 Dashboa
 Colored bar plots represent the weekly number of cases per 1000 from both asymptomatic and symptomatic testing in PU.
 Red lines represent the weekly number of cases per 1000 in Mercer County.
 Number of cases in Mercer County is obtained from \url{https://github.com/nytimes/covid-19-data}.
-The weekly number of cases per 1000 in Princeton is normalized by the approximate total size of the PU population present on campus for each semester: 3000 for Fall 2020--2021, 8000 for Spring 2020--2021, and 13000 for Fall and Spring 2021--2022.
+The weekly number of cases per 1000 in Princeton is normalized by the approximate total size of the PU population present on campus for each semester: 3000 for Fall 2020--2021, 8000 for Spring 2020--2021, 13000 for Fall 2021--2022, and 15000 for Spring 2021--2022.
 The weekly number of cases per 1000 in Princeton in Mercer County is calculated based on the total population size as of 2020: 387340 (\url{www.census.gov}).
 (E--H) Correlations between the weekly number of cases per 1000 in PU and in Mercer County.
 Solid lines and shaded areas represent the estimated linear regression lines and the associated 95\% CIs.
@@ -174,6 +174,7 @@ Both undergraduate and graduate students were required to get tested twice a wee
 The number of cases remained relatively low throughout the semester with a peak occurring in early December, coinciding with the epidemic trajectory in Mercer County (\fref{princeton}A).  
 A sudden decrease in the number of cases around Thanksgiving---a national holiday in the US during which many students---partly reflects the reduced number of tests (3852 and 2972 asymptomatic tests performed on the week ending November 20th and 27th, respectively).
 The highest number of cases was reported among faculty and staff members ($=169$), followed by graduate students ($=41$), and undergraduate students ($=4$).
+Even when we control for the differing population sizes among these groups, we find that a considerably larger amount of cases were reported among faculty and staff members (84.5 cases per 1000) than from graduate students (41 cases per 1000) (Supplementary Figure S1A)---we exclude undergraduate student population from this comparison due to a very low number of undergraduate students present on campus during this period.
 
 In the beginning of the \textbf{spring semester of the 2020--2021 academic year}, the number of cases suddenly increased before classes started (\fref{princeton}B), reflecting $\approx 3000$ undergraduate students returning to campus.
 Returning students were required to be tested and quarantine for 7 days regardless of their returning location.
@@ -181,6 +182,7 @@ Most classes remained virtual, and the testing protocol did not change (twice a 
 Some smaller classes were held in-person, but required social distancing (thereby limiting the size of the class) and mask-wearing at all times.
 The number of cases persisted at similar levels to the fall semester and eventually decreased as classes ended and students went home---the decrease in the number of cases in PU also coincided with the decrease in the number of cases in Mercer County.
 The highest number of cases was reported among faculty and staff members ($=111$), followed by undergraduate students ($=101$), and graduate students ($=29$).
+This ordering is robust to differences in population sizes: 37 cases per 1000 among faculty and staff members, 34.3 cases per 1000 among undergraduate students, and 14.5 cases per 1000 among graduate students (Supplementary Figure S1B).
 
 For the \textbf{fall semester of the 2021--2022 academic year}, all students and faculty and staff members were required to be vaccinated, with very few medical and religious exemptions.
 By the beginning of the semesters, 97\% of undergraduate students, 96\% of graduate students, and 94\% of faculty and staff members were vaccinated.
@@ -189,6 +191,7 @@ In-person classes and social events fully resumed on campus, though all individu
 The number of cases remained similar to previous semesters until November when cases began to increase, primarily among undergraduate students around Thanksgiving (\fref{princeton}C).  
 In order to prevent transmission, testing frequency was increased to twice a week for undergraduate students on November 27th, 2021; the size of non-academic gatherings were also limited to 20 people.
 The number of cases decreased slightly as classes ended but soon increased again as the Omicron (BA.1) variant began to spread on campus and in Mercer county.
+The total number of reported cases per 1000 remained high for all three population groups: 74 cases per 1000 among faculty and staff members, 63.5 cases per 1000 among graduate students, and 52.4 cases per 1000 among undergraduate students (Supplementary Figure S1C).
 
 For the \textbf{spring semester of the 2021--2022 academic year}, all eligible students and faculty and staff members were required to be boosted.
 By the beginning of the semesters, 65\% of undergraduate students, 71\% of graduate students, and 82\% of faculty and staff members were boosted.
@@ -199,24 +202,25 @@ in addition, the testing frequency was reduced to once a week.
 Following the policy change, a large outbreak occurred on campus with high case numbers persisting until Spring Break (March 5th, 2022).
 The timing of this outbreak also coincided with a rapid turnover of the Omicron subvariant BA.2---the proportion of BA.2 subvariant reached 93.5\% (372/398) compared to 26.9\% (14/52) from the previous week.
 On March 7, 2022, mask mandates were lifted and testing frequency was reduced to once a month.
+Cases were largely concentrated among undergraduate students during this semester: 309 cases per 1000 among undergraduate students, 106 cases per 1000 among faculty and staff members, and 65.3 cases per 1000 among graduate students.
 
 \subsection*{Comparisons of campus and community transmission}
 
-Across the first three semesters, we find strong and significant correlations between the weekly logged numbers of cases from PU and those from Mercer county:
-fall 2020--2021 ($\rho = 0.81$ (95\% CI: 0.55--0.92; $p < 0.001$), \fref{princeton}E); spring 2020--2021 ($\rho = 0.80$ (95\% CI: 0.51--0.92; $p < 0.001$), \fref{princeton}F); and fall 2021--2022 ($\rho = 0.86$ (95\% CI: 0.67--0.94; $p < 0.001$), \fref{princeton}G). 
-These correlations are robust even when we stratify cases by the population, except for undergraduate students during Fall 2020, when most were not physically present on campus (Supplementary Figure S1).
-However, the case patterns in PU were decoupled from those in Mercer county for the spring semester of the 2021--2022 academic year with unclear correlations (\fref{princeton}H): $\rho = 0.32$ (95\% CI: $-0.34$--0.77; $p = 0.33$).
-Stratifying cases by subpopulation shows that case patterns in graduate students and faculty and staff members were still strongly correlated with case patterns in Mercer county, meaning that the campus transmission was limited to undergraduate students (Supplementary Figure S1). 
-We also find strong correlations between the weekly logged numbers of cases from PU and those from other counties in New Jersey (Supplementary Figure S2)---these correlations significantly decreased with distance from Mercer county in both spring 2020--2021 ($\rho=-0.48$ (95\% CI: $-0.75$--$-0.06$; $p = 0.03$) for all cases and $\rho=-0.51$ (95\% CI: $-0.77$--$-0.10$; $p = 0.02$) for faculty and staff cases) and fall 2021--2022 ($\rho=-0.68$ (95\% CI: $-0.86$--$-0.35$, $p < 0.001$) for all cases and $\rho=-0.74$ (95\% CI: $-0.89$--$-0.46$, $p < 0.001$) for faculty and staff cases).
-Across the first three semesters, both the total cases and faculty and staff cases showed similar levels of correlations with local cases. 
-For the spring semester of the 2021--2022 academic year, we still find high correlations between faculty and staff cases and local cases throughout other counties ($\rho > 0.8$ across all counties in New Jersey); however, the total cases exhibit considerably weaker correlations due to student-to-student transmission on campus (Supplementary Figure S2).    
+Across the first three semesters, we find strong and significant correlations between the weekly numbers of cases from PU and those from Mercer county:
+fall 2020--2021 ($\rho = 0.79$ (95\% CI: 0.52--0.91; $p < 0.001$), \fref{princeton}E); spring 2020--2021 ($\rho = 0.84$ (95\% CI: 0.60--0.94; $p < 0.001$), \fref{princeton}F); and fall 2021--2022 ($\rho = 0.93$ (95\% CI: 0.84--0.97; $p < 0.001$), \fref{princeton}G). 
+These correlations are robust even when we stratify cases by the population, except for undergraduate students during Fall 2020, when most were not physically present on campus (Supplementary Figure S2).
+However, the case patterns in PU were decoupled from those in Mercer county for the spring semester of the 2021--2022 academic year with unclear correlations (\fref{princeton}H): $\rho = 0.47$ (95\% CI: $-0.18$--0.83; $p = 0.15$).
+Stratifying cases by subpopulation shows that case patterns in graduate students and faculty and staff members were still strongly correlated with case patterns in Mercer county, meaning that the campus transmission was limited to undergraduate students (Supplementary Figure S2). 
+We also find strong correlations between the weekly logged numbers of cases from PU and those from other counties in New Jersey (Supplementary Figure S3)---these correlations significantly decreased with distance from Mercer county in both spring 2020--2021 ($\rho=-0.48$ (95\% CI: $-0.75$--$-0.06$; $p = 0.03$) for all cases and $\rho=-0.51$ (95\% CI: $-0.77$--$-0.10$; $p = 0.02$) for faculty and staff cases) and fall 2021--2022 ($\rho=-0.68$ (95\% CI: $-0.86$--$-0.35$, $p < 0.001$) for all cases and $\rho=-0.74$ (95\% CI: $-0.89$--$-0.46$, $p < 0.001$) for faculty and staff cases).
+Across the first three semesters, both the total cases and faculty and staff cases showed similar levels of correlations with local cases.
+For the spring semester of the 2021--2022 academic year, we still find high correlations between faculty and staff cases and local cases throughout other counties ($\rho > 0.8$ across all counties in New Jersey); however, the total cases exhibit considerably weaker correlations due to student-to-student transmission on campus (Supplementary Figure S3).    
 
 These correlations likely reflect commuting and contact patterns, and therefore we expect SARS-CoV-2 dynamics on campus to be correlated with those from nearby large cities as well. 
-We find similarly strong correlations with New York City for the first three semesters: fall 2020--2021 ($\rho = 0.74$ (95\% CI: 0.44--0.90; $p < 0.001$), Supplementary Figure S3A); spring 2020--2021 ($\rho = 0.84$ (95\% CI: 0.61--0.94; $p < 0.001$), Supplementary Figure S3B); fall 2021--2022 ($\rho = 0.78$ (95\% CI: 0.51--0.91; $p < 0.001$), Supplementary Figure S3C); and spring 2021--2022 ($\rho = 0.33$ (95\% CI: $-0.34$--0.78; $p=0.3$), Supplementary Figure S3D).
+We find similarly strong correlations with New York City for the first three semesters: fall 2020--2021 ($\rho = 0.64$ (95\% CI: 0.26--0.85; $p = 0.003$), Supplementary Figure S4A); spring 2020--2021 ($\rho = 0.80$ (95\% CI: 0.53--0.93; $p < 0.001$), Supplementary Figure S4B); fall 2021--2022 ($\rho = 0.89 (95\% CI: 0.73--0.96; $p < 0.001$), Supplementary Figure S4C); and spring 2021--2022 ($\rho = 0.50$ (95\% CI: $-0.14$--0.85; $p=0.1$), Supplementary Figure S4D).
 
-The same picture emerges for Philadelphia except for spring 2020: fall 2020--2021 ($\rho = 0.83$ (95\% CI: 0.59--0.93; $p < 0.001$), Supplementary Figure S4A); spring 2020--2021 ($\rho = 0.29$ (95\% CI: $-0.22$--0.68; $p = 0.25$), Supplementary Figure S4B); fall 2021--2022 ($\rho = 0.78$ (95\% CI: 0.51--0.91; $p < 0.001$), Supplementary Figure S4C); 
-and spring 2021--2022 ($\rho=0.37$ (95\% CI: $-0.30$--0.80; $p=0.27$), Supplementary Figure S4D).
-Including counties from New York and Pennsylvania states into the spatial correlation analysis yields additional insights (Supplementary Figure S5):
+Similar picture emerges for Philadelphia except for spring 2020: fall 2020--2021 ($\rho = 0.87$ (95\% CI: 0.68--0.95; $p < 0.001$), Supplementary Figure S5A); spring 2020--2021 ($\rho = 0.27$ (95\% CI: $-0.24$--0.66; $p = 0.30$), Supplementary Figure S5B); fall 2021--2022 ($\rho = 0.89$ (95\% CI: 0.74--0.96; $p < 0.001$), Supplementary Figure S5C); 
+and spring 2021--2022 ($\rho=0.46$ (95\% CI: $-0.19$--0.83; $p=0.15$), Supplementary Figure S5D).
+Including counties from New York and Pennsylvania states into the spatial correlation analysis yields additional insights (Supplementary Figure S6):
 epidemic dynamics were highly synchronized across all counties in fall 2020--2021 and became less synchronized over time. 
 These correlations significantly decreased with distance in spring 2020--2021 ($\rho = -0.36$ (95\% CI: $-0.49$--$-0.21$; $p < 0.001$)) and fall 2021--2022 ($\rho = -0.58$ (95\% CI: $-0.68$--$-0.46$; $p < 0.001$)).
 These variations likely reflect differences in vaccination levels and the timing of the introduction of the Omicron variant.
@@ -244,7 +248,7 @@ Here, we present a generic and parsimonious version that encompasses sufficient 
 The model consists of four main components simulated on a daily time scale: (1) infection and transmission dynamics, (2) sampling and testing protocols, (3) isolation protocols, and (4) vaccination dynamics, including waning immunity and booster shots.
 Previous versions of the model included contact tracing, but we exclude it in this model for simplicity.
 
-Infection processes are modeled based on standard compartmental structures (Supplementary Figure S6).
+Infection processes are modeled based on standard compartmental structures (Supplementary Figure S7).
 Once infected, susceptible individuals remain in the exposed stage for $D_e = 2$ days on average, during which they cannot transmit or test positive. 
 Exposed individuals then enter the presymptomatic stage, during which they can test positive and transmit infections for $D_p = 3$ days on average.
 Presymptomatic individuals can then either remain asymptomatic with probability $p_a = 0.4$ or develop symptoms with the remaining probability of $1-p_a = 0.6$; both asymptomatic and symptomatic individuals are assumed to have the same duration of infectiousness ($D_s=3$) and equal transmission rates.
@@ -308,7 +312,7 @@ For \textbf{fall 2020--2021}, we simulate the model assuming 3000 individuals (1
 We find that a low level of contacts $\Rc=0.5$ and a small amount of community transmission $\theta=0.015$ is most consistent with the observed epidemic dynamics in fall 2020 (\fref{matching}A).
 With these parameters, the model is able to capture the rise and fall in the number of cases with the exception of a sudden decrease in the number of cases around Thanksgiving, which we do not model explicitly (\fref{matching}B).
 The median predictions are positively correlated with the observed dynamics ($\rho = 0.83$; 95\% CI: 0.61--0.93; \fref{matching}C).
-Although a wide range of assumptions about the levels of community transmission $\theta$ are consistent with the observed dynamics, our simulations preclude high levels of contact, $\Rc > 2$ (Supplementary Figure S7).
+Although a wide range of assumptions about the levels of community transmission $\theta$ are consistent with the observed dynamics, our simulations preclude high levels of contact, $\Rc > 2$ (Supplementary Figure S8).
 Distancing measures on campus and contact tracing efforts likely contributed to lowering contact levels $\Rc$.
 
 For \textbf{spring 2020--2021}, we simulate the model assuming 8000 individuals (3000 undergraduate students, 2000 graduate students, and 3000 faculty and staff members) on campus with 5000 of them participating in asymptomatic testing twice a week.
@@ -317,7 +321,7 @@ all returning individuals are assumed to be quarantined for 14 days and tested u
 Finally, to match the initial influx of cases, we assume that 1\% of both returning and on-campus populations are infected at the beginning of simulation (January 16, 2021).
 
 A similar set of parameters can capture the observed dynamics in spring 2020--2021.
-The best matching parameter predicts a slightly higher levels of community transmission $\theta=0.02$ (\fref{matching}D), but a wide range of parameters are consistent with the observed dynamics as before (Supplementary Figure S8). 
+The best matching parameter predicts a slightly higher levels of community transmission $\theta=0.02$ (\fref{matching}D), but a wide range of parameters are consistent with the observed dynamics as before (Supplementary Figure S9). 
 Simulations also preclude high $\Rc > 2$ again, suggesting that transmission between students were likely limited even though they had returned to campus---the absence of in-person teaching is likely to have contributed to lowering $\Rc$.
 We also find that initial infections (e.g., from returning students) are required to match relatively high levels of cases in the beginning of semester (\fref{matching}E). 
 Once again, the predicted and the observed numbers of cases are positively correlated ($\rho = 0.62$; 95\% CI: 0.20--0.85; \fref{matching}F).
@@ -334,7 +338,7 @@ Even though the numbers of cases during fall 2021 (before a large outbreak) were
 We note that the parameter $\theta$ necessarily depends on our assumed vaccine efficacy against susceptibility, and $\theta$ would decrease if we assume a lower vaccine efficacy.
 Nonetheless, the amount of community contact would still need to be higher than previous semesters as long as the vaccine provides some protection against infection and onward transmission.
 
-While $\theta = 0.15$ and $\Rc = 0.5$ gives the best matching parameter set with a median logged sum of squared errors of 8.88 (95\% quantile: 6.55--12.6), other parameter sets also give nearly identical fits (\fref{matching}H; Supplementary Figure S9):
+While $\theta = 0.15$ and $\Rc = 0.5$ gives the best matching parameter set with a median logged sum of squared errors of 8.88 (95\% quantile: 6.55--12.6), other parameter sets also give nearly identical fits (\fref{matching}H; Supplementary Figure S10):
 for example, $\theta = 0.1$ and $\Rc = 1$ gives a median logged sum of squared errors of 8.9 (95\% quantile: 5.79--13.6).
 Comparing simulations across a wide range of $\Rc$ (0.5--8) with $\theta = 0.1$ further illustrates that the predicted dynamics are largely insensitive to $\Rc$ until November 26th (\fref{matching}H).
 All simulations shown in \fref{matching}H, except for the $\Rc=8$ scenario, are similarly correlated with the observed numbers of cases (\fref{matching}G). 
@@ -342,7 +346,7 @@ While the logged sum of squared errors increases with $\Rc$ (\fref{matching}G), 
 Extremely high vaccination rates and frequent testing likely limited transmission on campus, making epidemic dynamics largely insensitive to $\Rc$ even at a reasonably high value of $\Rc = 4$.
 
 These simulations suggest that an increase in the number of cases in November can be explained by a combination of waning immunity alone without requiring additional changes in transmission dynamics (note we do not allow $\theta$ or $\Rc$ to vary over time).
-When we exclude immune waning from the model, predicted epidemic dynamics exhibit slower growth and require even higher values of campus and community contact rates ($\Rc$ and $\theta$) to qualitatively match the observed dynamics (Supplementary Figure S10)---even so, the logged sum of squared differences are generally higher (with median logged sum of squared differences ranging from 6.9 to 41.3 for the same parameter regime).
+When we exclude immune waning from the model, predicted epidemic dynamics exhibit slower growth and require even higher values of campus and community contact rates ($\Rc$ and $\theta$) to qualitatively match the observed dynamics (Supplementary Figure S11)---even so, the logged sum of squared differences are generally higher (with median logged sum of squared differences ranging from 6.9 to 41.3 for the same parameter regime).
 Thus, combining some amount of immune waning and high campus and community contact rates likely best explains the epidemic growth near the end of the semester.
 We note that other factors, such as changes in behavior, could have also contributed to the increase in the numbers of cases.
 
@@ -482,7 +486,17 @@ All data and code are stored in a publicly available GitHub repository (\url{htt
 \setcounter{figure}{0}
 
 \begin{figure}[!htp]
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_correlation2.pdf}
+\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_new_per_1000_bypop.pdf}
+\caption{
+\textbf{The weekly number of cases per 1000 stratified by subpopulations.}
+The case trajectory for undergraduate students was omitted for the fall semester of 2020--2021 academic year due to a very low number of undergraduate students present on campus.
+}
+\end{figure}
+
+\pagebreak
+
+\begin{figure}[!htp]
+\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_correlation_per_1000.pdf}
 \caption{
 \textbf{Correlations between the weekly number of cases in PU and in Mercer County stratified by subpopulations.}
 Points represent the number of reported cases.

@@ -138,9 +138,9 @@ spring2021 <- data %>%
     `Faculty and Staff`=`Faculty Staff Positive Tests`
   )  %>%
   mutate(
-    Undergrad=Undergrad/3000,
-    Grad=Grad/2000,
-    `Faculty and Staff`=`Faculty and Staff`/3000,
+    Undergrad=Undergrad/5000,
+    Grad=Grad/3000,
+    `Faculty and Staff`=`Faculty and Staff`/7000,
     date=as.Date(date)
   )  %>%
   mutate(

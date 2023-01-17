@@ -289,7 +289,7 @@ g3 <- ggplot(fall2021) +
   )
 
 g4 <- ggplot(spring2021) +
-  geom_bar(aes(as.factor(date), value/13, fill=key), stat="identity") +
+  geom_bar(aes(as.factor(date), value/15, fill=key), stat="identity") +
   geom_line(data=nyc_spring2021, aes(date, cases/8.8e6*1000, group=1), col="red") +
   geom_point(data=nyc_spring2021, aes(date, cases/8.8e6*1000), col="red") +
   scale_x_discrete("Date") +
@@ -384,11 +384,11 @@ g7 <- ggplot(fall2021a) +
     axis.line = element_line()
   )
 
-cor.test(log(spring2021a$value+1), log(spring2021a$cases+1))
+cor.test(spring2021a$value, spring2021a$cases)
 
 g8 <- ggplot(spring2021a) +
-  geom_point(aes(cases/8.8e6*1000, value/13)) +
-  geom_smooth(aes(cases/8.8e6*1000, value/13), method="lm", col="black") +
+  geom_point(aes(cases/8.8e6*1000, value/15)) +
+  geom_smooth(aes(cases/8.8e6*1000, value/15), method="lm", col="black") +
   geom_abline(intercept=0, slope=1, lty=2) +
   scale_x_continuous("New York City cases per 1000") +
   scale_y_continuous("Princeton cases per 1000") +

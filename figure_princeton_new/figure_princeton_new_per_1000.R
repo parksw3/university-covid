@@ -344,7 +344,7 @@ g3 <- g3_base +
 g4 <- ggplot(spring2021) +
   geom_segment(x=3, y=43/13, xend=3, yend=355/13, lty=3) +
   geom_segment(x=10, y=43/13, xend=10, yend=355/13, lty=3) +
-  geom_bar(aes(as.factor(date), value/13, fill=key), stat="identity") +
+  geom_bar(aes(as.factor(date), value/15, fill=key), stat="identity") +
   geom_line(data=mercer_spring2021, aes(date, cases/387340*1000, group=1), col="red") +
   geom_point(data=mercer_spring2021, aes(date, cases/387340*1000), col="red") +
   annotate("text", x=3, y=390/13, label="Classes\nbegin", family="Times") +
@@ -441,11 +441,11 @@ g7 <- ggplot(fall2021a) +
     axis.line = element_line()
   )
 
-cor.test(log(spring2021a$value+1), log(spring2021a$cases+1))
+cor.test(spring2021a$value, spring2021a$cases)
 
 g8 <- ggplot(spring2021a) +
-  geom_point(aes(cases/387340*1000, value/13)) +
-  geom_smooth(aes(cases/387340*1000, value/13), method="lm", col="black") +
+  geom_point(aes(cases/387340*1000, value/15)) +
+  geom_smooth(aes(cases/387340*1000, value/15), method="lm", col="black") +
   geom_abline(intercept=0, slope=1, lty=2) +
   scale_x_continuous("Mercer county cases per 1000") +
   scale_y_continuous("Princeton cases per 1000") +
@@ -502,8 +502,8 @@ g11 <- ggplot(fall2021a) +
   )
 
 g12 <- ggplot(spring2021a) +
-  geom_point(aes(date, value/13/(cases/387340*1000)))  +
-  geom_line(aes(date, value/13/(cases/387340*1000), group=1)) +
+  geom_point(aes(date, value/15/(cases/387340*1000)))  +
+  geom_line(aes(date, value/15/(cases/387340*1000), group=1)) +
   geom_hline(yintercept=1, lty=2) +
   scale_x_discrete("Date") +
   scale_y_continuous("Princeton to Mercer case ratio") +
@@ -552,7 +552,7 @@ fall2021b <- fall2021 %>%
 
 spring2021_pop <- data.frame(
   key=c("Faculty and Staff", "Grad", "Undergrad"),
-  pop=c(6000, 2000, 5000)
+  pop=c(7000, 3000, 5000)
 )
 
 spring2021b <- spring2021 %>%

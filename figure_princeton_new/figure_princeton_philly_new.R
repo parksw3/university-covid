@@ -287,7 +287,7 @@ g3 <- ggplot(fall2021) +
   )
 
 g4 <- ggplot(spring2021) +
-  geom_bar(aes(as.factor(date), value/13, fill=key), stat="identity") +
+  geom_bar(aes(as.factor(date), value/15, fill=key), stat="identity") +
   geom_line(data=philly_spring2021, aes(date, cases/1.6e6*1000, group=1), col="red") +
   geom_point(data=philly_spring2021, aes(date, cases/1.6e6*1000), col="red") +
   scale_x_discrete("Date") +
@@ -401,63 +401,3 @@ gcomb <- ggarrange(g1, g2, g3, g4, g5, g6, g7, g8, nrow=4, byrow=FALSE,
                     widths=c(2, 1), draw=FALSE)
 
 ggsave("figure_princeton_philly_new.pdf", gcomb, width=12*1.2, height=10*1.2)
-
-fall2020b <- fall2020 %>%
-  merge(philly_fall2020)
-
-spring2020b <- spring2020 %>%
-  merge(philly_spring2020)
-
-fall2021b <- fall2021 %>%
-  merge(philly_fall2021)
-
-spring2021b <- spring2021 %>%
-  merge(philly_spring2021)
-
-g9 <- ggplot(fall2020b) +
-  geom_point(aes(cases+1, value+1)) +
-  geom_smooth(aes(cases+1, value+1), method="lm", col="black") +
-  scale_x_log10("Philadelphia cases") +
-  scale_y_log10("Princeton cases") +
-  ggtitle("A. Fall 2020-2021") +
-  facet_wrap(~key, scale="free") +
-  theme(
-    panel.grid = element_blank()
-  )
-
-g10 <- ggplot(spring2020b) +
-  geom_point(aes(cases+1, value+1)) +
-  geom_smooth(aes(cases+1, value+1), method="lm", col="black") +
-  scale_x_log10("Philadelphia cases") +
-  scale_y_log10("Princeton cases") +
-  ggtitle("B. Spring 2020-2021") +
-  facet_wrap(~key, scale="free") +
-  theme(
-    panel.grid = element_blank()
-  )
-
-g11 <- ggplot(fall2021b) +
-  geom_point(aes(cases+1, value+1)) +
-  geom_smooth(aes(cases+1, value+1), method="lm", col="black") +
-  scale_x_log10("Philadelphia cases") +
-  scale_y_log10("Princeton cases") +
-  ggtitle("C. Fall 2021-2022") +
-  facet_wrap(~key, scale="free") +
-  theme(
-    panel.grid = element_blank()
-  )
-
-g12 <- ggplot(spring2021b) +
-  geom_point(aes(cases+1, value+1)) +
-  geom_smooth(aes(cases+1, value+1), method="lm", col="black") +
-  scale_x_log10("Philadelphia cases") +
-  scale_y_log10("Princeton cases") +
-  ggtitle("D. Spring 2021-2022") +
-  facet_wrap(~key, scale="free") +
-  theme(
-    panel.grid = element_blank()
-  )
-
-gfinal3 <- ggarrange(g9, g10, g11, g12, nrow=4, draw=FALSE)
-
-ggsave("figure_princeton_correlation_philly_new2.pdf", gfinal3, width=12, height=10)
