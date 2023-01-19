@@ -385,8 +385,8 @@ g7 <- ggplot(fall2021a) +
 cor.test(spring2021a$value, spring2021a$cases)
 
 g8 <- ggplot(spring2021a) +
-  geom_point(aes(cases/1.6e6*1000, value/13)) +
-  geom_smooth(aes(cases/1.6e6*1000, value/13), method="lm", col="black") +
+  geom_point(aes(cases/1.6e6*1000, value/15)) +
+  geom_smooth(aes(cases/1.6e6*1000, value/15), method="lm", col="black") +
   geom_abline(intercept=0, slope=1, lty=2) +
   scale_x_continuous("Philadelphia cases per 1000") +
   scale_y_continuous("Princeton cases per 1000") +

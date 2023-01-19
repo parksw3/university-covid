@@ -20,8 +20,8 @@ nsim <- 100
 
 simulation_spring_2020 <- vector('list')
 
-R0vec <- c(0.5, 1, 2)
-scalevec <- c(0.01, 0.015, 0.02, 0.025, 0.03)
+R0vec <- c(0.25, 0.5, 1, 2)
+scalevec <- c(1e-6, 2e-6, 3e-6, 4e-6, 5e-6)
 
 paramvec <- expand.grid(R0vec, scalevec)
 
@@ -43,7 +43,7 @@ for (j in 1:nrow(paramvec)) {
                    I=0.01,
                    return=c(rep(FALSE, 3000), rep(FALSE, 1000), rep(TRUE, 1000), rep(TRUE, 3000)),
                    returnfrac=1/14,
-                   thetavec=paramvec[j,2] * mercer_spring2020$cases,
+                   thetavec=paramvec[j,2] * mercer_spring2020$cases * 8000,
                    datestart=as.Date("2021-01-16"),
                    datesemester=as.Date("2021-02-01"),
                    dateinternal=as.Date("2021-02-01"),

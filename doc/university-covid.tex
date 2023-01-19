@@ -216,7 +216,7 @@ Across the first three semesters, both the total cases and faculty and staff cas
 For the spring semester of the 2021--2022 academic year, we still find high correlations between faculty and staff cases and local cases throughout other counties ($\rho > 0.8$ across all counties in New Jersey); however, the total cases exhibit considerably weaker correlations due to student-to-student transmission on campus (Supplementary Figure S3).    
 
 These correlations likely reflect commuting and contact patterns, and therefore we expect SARS-CoV-2 dynamics on campus to be correlated with those from nearby large cities as well. 
-We find similarly strong correlations with New York City for the first three semesters: fall 2020--2021 ($\rho = 0.64$ (95\% CI: 0.26--0.85; $p = 0.003$), Supplementary Figure S4A); spring 2020--2021 ($\rho = 0.80$ (95\% CI: 0.53--0.93; $p < 0.001$), Supplementary Figure S4B); fall 2021--2022 ($\rho = 0.89 (95\% CI: 0.73--0.96; $p < 0.001$), Supplementary Figure S4C); and spring 2021--2022 ($\rho = 0.50$ (95\% CI: $-0.14$--0.85; $p=0.1$), Supplementary Figure S4D).
+We find similarly strong correlations with New York City for the first three semesters: fall 2020--2021 ($\rho = 0.64$ (95\% CI: 0.26--0.85; $p = 0.003$), Supplementary Figure S4A); spring 2020--2021 ($\rho = 0.80$ (95\% CI: 0.53--0.93; $p < 0.001$), Supplementary Figure S4B); fall 2021--2022 ($\rho = 0.89$ (95\% CI: 0.73--0.96; $p < 0.001$), Supplementary Figure S4C); and spring 2021--2022 ($\rho = 0.50$ (95\% CI: $-0.14$--0.85; $p=0.1$), Supplementary Figure S4D).
 
 Similar picture emerges for Philadelphia except for spring 2020: fall 2020--2021 ($\rho = 0.87$ (95\% CI: 0.68--0.95; $p < 0.001$), Supplementary Figure S5A); spring 2020--2021 ($\rho = 0.27$ (95\% CI: $-0.24$--0.66; $p = 0.30$), Supplementary Figure S5B); fall 2021--2022 ($\rho = 0.89$ (95\% CI: 0.74--0.96; $p < 0.001$), Supplementary Figure S5C); 
 and spring 2021--2022 ($\rho=0.46$ (95\% CI: $-0.19$--0.83; $p=0.15$), Supplementary Figure S5D).
@@ -225,19 +225,16 @@ epidemic dynamics were highly synchronized across all counties in fall 2020--202
 These correlations significantly decreased with distance in spring 2020--2021 ($\rho = -0.36$ (95\% CI: $-0.49$--$-0.21$; $p < 0.001$)) and fall 2021--2022 ($\rho = -0.58$ (95\% CI: $-0.68$--$-0.46$; $p < 0.001$)).
 These variations likely reflect differences in vaccination levels and the timing of the introduction of the Omicron variant.
 
-Finally, mass testing allows us to infer the ratio between the weekly numbers of cases from Princeton and those from Mercer county---
-we expect this ratio to remain constant over time if the majority of infections on campus is caused by community transmission, provided that testing patterns remain roughly constant in both places.
-We find that the ratio between the weekly numbers of cases from Princeton and those from Mercer county stayed between 1:100 and 1:25 until the end of the fall semester of the 2021--2022 academic year (\fref{princeton}I--K).
+Finally, mass testing allows us to infer the ratio between the weekly numbers of cases per 1000 from Princeton and those from Mercer county---
+we expect this ratio to remain constant around 1 over time when (1) there is random, homogeneous mixing between the campus and community and (2) testing patterns remains constant in both places within each semester. 
+In this case, the majority of infections on PU campus would be caused by community transmission owing to its small population size.
+Instead, we find that the ratio generally hovers above 1 during the fall semester of the 2020--2021 academic year even though there was little to no documented transmission on campus (\fref{princeton}I).
+This pattern likely reflects higher testing rate on campus, thereby resulting in a higher case ascertainment rate.
+For the most part of the spring semester of the 2020--2021 academic year and the fall semester of the 2021--2022 academic year, the case ratios hover around 1 (\fref{princeton}J--K).
+Deviations from the one-to-one ratio were often associated with large campus events, such as school holidays and the beginning and end of semesters.
 An increase in this ratio at the end of November 2021 was associated with the campus outbreak before Thanksgiving followed by an introduction of the Omicron variant in December---this deviation indicates an increase in the amount of transmission on campus.
-During the spring semester of the 2021--2022 academic year, the ratio between PU cases and Mercer county cases increased above one, meaning that more cases were reported in PU than elsewhere in Mercer county (\fref{princeton}L);
-notably, we did not see an increase in Mercer county cases, meaning that there was little-to-no transmission from campus to local community.
-
-% We do not find significant changes in the ratio between the weekly numbers of cases from Princeton and those from Mercer county (\fref{princeton}G).
-% Instead, the mean ratios remained similar across three semesters despite changes in campus populations (e.g., undergraduate student returning in spring 2020) and vaccination levels: 0.034 (95\% CI: 0.021--0.047) for fall 2020, 0.019 (95\% CI: 0.015--0.023) for spring 2020, and 0.046 (95\% CI: 0.035--0.057) for fall 2021.
-% However, this does not necessarily imply that the contact or transmission levels stayed constant over time: given extremely high vaccination coverage in PU during fall 2021, the university population would been subject to a much higher forces of infection (e.g., a greater amount of mixing with the community population) to obtain similar levels of cases.
-% We also find that some variations in the ratio around the mean can be explained by holiday effects.
-% For example, sudden decreases in the number of cases around Thanksgiving of 2020, fall recess of 2021, and end of classes of 2021 correspond to a reduction in the ratio between university and community cases.
-% Similarly, a sudden increase in the number of cases during Thanksgiving of 2021 caused the ratio to increase, reflecting decoupling of epidemic dynamics due to on-campus transmission.
+During the spring semester of the 2021--2022 academic year, the ratio between PU cases and Mercer county cases increased above one due to a large outbreak on campus (\fref{princeton}L);
+notably, we did not see an increase in Mercer county cases (\fref{princeton}D), meaning that there was little-to-no transmission from campus to local community.
 
 \section*{Mathematical modeling of past outbreaks}
 
@@ -260,9 +257,15 @@ Assumed parameters are broadly consistent with other models of SARS-CoV-2 \citep
 
 Transmission processes are modeled by first setting the contact reproduction number $\Rc$, which we define as the average number of infectious contacts an infected individual would make throughout the course of their infection;
 here, infectious contacts refer to contacts that would result in infection when the contacted individual is susceptible to infection.
+We note that the definition of the contact reproduction number $\Rc$ is similar to the standard definition of basic reproduction number $\RR_0$.
+The main difference is that the contact reproduction number models the number of total contacts, rather than infections. 
+Since infected individuals make their contacts at random with replacement, the same susceptible person could be contacted multiple times by the same or different infected individual during a time step---all these overlapping contacts will result in one infection.
+Therefore, the number of actual infections may be smaller than the number of contacts, especially since contacts can also land on non-susceptible individuals.
+
 The contact reproduction number implicitly accounts for all intervention measures that we do not model explicitly, such as social distancing and contact tracing---in other words, this contact reproduction number does not account for asymptomatic testing or vaccination, which are modeled separately.
 We further decompose $\Rc$ into pre-symptomatic $\mathcal R_p = \beta_p D_p$ and (a)symptomatic $\mathcal R_s = \beta_s D_s$ reproduction numbers, where $\beta_p$ and $\beta_s$ represent the corresponding infectious contact rates during pre-symptomatic and (a)symptomatic stages, respectively. Pre-symptomatic and (a)symptomatic reproduction numbers are calculated based on the assumed value of the proportion of presymptomatic transmission $p_p = 0.5$: $\mathcal R_p/\mathcal R_s = p_p/(1 - p_p)$.
 On each day, all infected individuals who have not yet been isolated then make infectious contacts at random to anyone on campus; the number of infectious contacts are drawn from a negative binomial distribution with a mean of either $\beta_p$ or $\beta_s$ and an overdispersion parameter of $k=0.1$ to account for the possibility of super-spreading events \citep{10.12688/wellcomeopenres.15842.3}.
+
 We also rely on cases from Mercer County to crudely capture community dynamics.
 In particular, we assume that infectious contacts from local or regional community can be made at random to anyone on campus; these contacts are modeled using a Poisson distribution with a time-varying mean, which is calculated by scaling the daily number of cases by $\theta$ and shifting it by 1 week to account for reporting delays.
 Infectious contacts, whether made by individuals on campus or from outside, result in infection only when the contacted individuals are susceptible; when the contacted individuals are vaccinated, and therefore partially susceptible to infection, they have a reduced probability of infection corresponding to their susceptibility (discussed later).
@@ -280,6 +283,7 @@ As most students, as well as faculty and staff members, had received two doses o
 Instead, we assume that all vaccinated individuals have 90\% reduced susceptibility and 20\% reduced transmissibility at the beginning of the semester---these assumptions are consistent with recent estimates by \cite{prunas2022vaccination} that vaccination with BNT162b2 reduces susceptibility by 89.4\% (95\% CI: 88.7\%--90.0\%) and infectiousness by 23.0\% (95\% CI: $-11.3\%$--46.7\%) against the Delta strain.
 Based on \cite{tartof2021effectiveness}, vaccine efficacy against susceptibility is allowed to exponentially wane from 90\% to 50\% in 20 weeks (and continues to wane at the same rate) for each vaccinated individual;
 vaccine efficacy against transmissibility is also allowed to wane at the same rate (i.e., from 20\% to 11\% in 20 weeks).
+We note that these assumptions are specific to the Delta variant---we discuss vaccine effectiveness against the Omicron variant later on.
 
 In this study, we use this model to retrospectively analyze past outbreaks.
 First, we try to match our model to epidemic patterns seen on campus for the first three semesters, during which there was limited campus transmission, by varying the contact reproduction number $\Rc$ and the amount of community transmission $\theta$ and holding all other parameters constant.
@@ -316,8 +320,8 @@ Although a wide range of assumptions about the levels of community transmission 
 Distancing measures on campus and contact tracing efforts likely contributed to lowering contact levels $\Rc$.
 
 For \textbf{spring 2020--2021}, we simulate the model assuming 8000 individuals (3000 undergraduate students, 2000 graduate students, and 3000 faculty and staff members) on campus with 5000 of them participating in asymptomatic testing twice a week.
-We further assume that 4000 individuals (3000 undergraduate students and 1000 graduate students) returned to campus over 14 days (January 16, 2021--January 29, 2021);
-all returning individuals are assumed to be quarantined for 14 days and tested upon returning. 
+We further assume that 4000 individuals (3000 undergraduate students and 1000 graduate students) returned to campus over 14 days (January 16, 2021--January 29, 2021).
+In the beginning of the semester, all returning students were required to quarantine in their rooms for 14 and tested upon returning by the university---in our model, this was implemented by preventing returning students from getting infected or infecting other individuals.
 Finally, to match the initial influx of cases, we assume that 1\% of both returning and on-campus populations are infected at the beginning of simulation (January 16, 2021).
 
 A similar set of parameters can capture the observed dynamics in spring 2020--2021.
@@ -450,10 +454,9 @@ In reality, increases in cases were often associated with specific transmission 
 Contact levels also likely differ between different groups:
 for example, faculty and staff members are more likely to interact with community members than undergraduate students and would be at a higher risk for community infections \citep{frazier2022modeling};
 therefore, our homogeneous mixing assumption is conservatively pessimistic.
-We also do not account for changes in behavior; 
-instead, we assume constant values for $\theta$ and $\Rc$ throughout a semester.
-While we cannot rule out the possibility that changes in behavior (and therefore transmission rates) could have contributed to various epidemics (e.g., the Omicron wave beginning in the fall semester of the 2021--2022 academic year), we were able to capture the majority of epidemic patterns without modeling them. 
-% We note that the invasion of the Omicron variant was modeled separately for the spring semester of a 2021--2022 academic year by explicitly considering the immune evasion.
+We also do not account for explicit changes in behavior on campus and assume constant $\Rc$ throughout each semester.
+Instead, we implicitly account for behavioral changes in the community by modeling community transmission to campus as a function of community case numbers.
+While we cannot rule out the possibility that behavioral changes on campus could have contributed to various epidemics (e.g., the Omicron wave beginning in the fall semester of the 2021--2022 academic year), we were able to capture the majority of epidemic patterns without modeling them---when the majority of transmission is caused by imported cases from the community, we expect behavioral changes on campus to have relatively weaker effects on overall transmission dynamics.
 We also do not explore parameter uncertainty, which can lead to underestimation of overall uncertainty \citep{elderd2006uncertainty}. 
 We also note that intervention measures that were introduced to PU may not necessarily be applicable in other institutions.
 

@@ -121,13 +121,19 @@ simall_fall_2020_gof2 <- simall_fall_2020_gof %>%
 
 g1 <- ggplot(simall_fall_2020_gof2) +
   geom_tile(aes(R0, scale, fill=log(gof))) +
-  scale_x_log10(expression(R[contact]), expand=c(0, 0)) +
-  scale_y_continuous(expression(theta), expand=c(0, 0)) +
+  geom_point(aes(x=0.25, y=0.0000075), col="white", size=5, shape=1, stroke=2) +
+  scale_x_log10(expression(R[contact]), expand=c(0, 0), breaks=c(0.25, 0.5, 1, 2)) +
+  scale_y_continuous(expression(theta), expand=c(0, 0),
+                     breaks=c(5e-6, 7.5e-6, 10e-6, 12.5e-6, 15e-6)) +
   scale_fill_viridis_c("log SSQ ") +
   ggtitle("A. Fall 2020-2021")
 
+simall_fall_2020_gof2 %>%
+  ungroup %>%
+  filter(gof==min(gof))
+
 simall_fall_2020_best <- simall_fall_2020 %>%
-  filter(R0==0.5, scale==0.02) %>%
+  filter(R0==0.25, scale==0.0000075) %>%
   mutate(
     group=cut(as.numeric(as.Date(date)), breaks=unique(as.numeric(fall2020$date)))
   ) %>%
@@ -153,9 +159,35 @@ simall_fall_2020_best <- simall_fall_2020 %>%
     date=factor(date, levels=date)
   )
 
+simall_fall_2020_gof %>%
+  filter(R0==0.25, scale==0.0000075) %>%
+  filter(gof==min(gof)) ## sim 90
+
+simall_fall_2020_best2 <- simall_fall_2020 %>%
+  filter(R0==0.25, scale==0.0000075, sim==90)  %>%
+  mutate(
+    group=cut(as.numeric(as.Date(date)), breaks=unique(as.numeric(fall2020$date)))
+  ) %>%
+  group_by(sim, group) %>%
+  summarize(
+    cases=sum(cases),
+    date=max(date)
+  ) %>%
+  merge(fall2020) %>%
+  mutate(
+    year=substr(date, 1, 4),
+    month=as.numeric(gsub("-.*", "", gsub("20..-", "", date))), 
+    day=as.numeric(gsub(".*-", "", gsub("20..-", "", date)))
+  ) %>%
+  mutate(
+    date=paste0(month.abb[month], " ", day, ", ", year),
+    date=factor(date, levels=date)
+  )
+
 g2 <- ggplot(simall_fall_2020_best) +
   geom_ribbon(aes(date, ymin=lwr+1, ymax=upr+1, group=1), alpha=0.2, fill="red") +
   geom_line(aes(date, median+1, group=1), col="red", lwd=1) +
+  geom_line(data=simall_fall_2020_best2, aes(date, cases+1, group=1), col="black", lwd=1, lty=2) +
   geom_point(aes(date, weekly+1)) +
   scale_x_discrete("Date") +
   scale_y_log10("Number of positive cases", expand=c(0, 0))+
@@ -176,7 +208,7 @@ g2 <- ggplot(simall_fall_2020_best) +
     axis.title.y.right = element_text(color="red")
   )
 
-cor.test(log(simall_fall_2020_best$median+1), log(simall_fall_2020_best$weekly+1))
+cor.test(log(simall_fall_2020_best2$cases+1), log(simall_fall_2020_best$weekly+1))
 
 g3 <- ggplot(simall_fall_2020_best) +
   geom_point(aes(median+1, weekly+1)) +
@@ -189,7 +221,7 @@ g3 <- ggplot(simall_fall_2020_best) +
     panel.grid = element_blank()
   )
 
-simall_spring_2020 <- lapply(simulation_spring_2020, function(x){
+simall_spring_2020 <- lapply(simulation_spring_2020, function(x) {
   lapply(x, function(y) {
     data.frame(
       date=y$datevec,
@@ -228,15 +260,19 @@ simall_spring_2020_gof2 <- simall_spring_2020_gof %>%
 
 g4 <- ggplot(simall_spring_2020_gof2) +
   geom_tile(aes(R0, scale, fill=log(gof))) +
+  geom_point(aes(x=0.25, y=0.000003), col="white", size=5, shape=1, stroke=2) +
   scale_x_log10(expression(R[contact]), expand=c(0, 0),
-                     breaks=c(0.5, 1, 2)) +
+                     breaks=c(0.25, 0.5, 1, 2)) +
   scale_y_continuous(expression(theta), expand=c(0, 0)) +
   scale_fill_viridis_c("log SSQ ") +
   ggtitle("D. Spring 2020-2021")
 
+simall_spring_2020_gof2 %>%
+  ungroup %>%
+  filter(gof==min(gof))
 
 simall_spring_2020_best <- simall_spring_2020 %>%
-  filter(R0==0.5, scale==0.02) %>%
+  filter(R0==0.25, scale==0.000003) %>%
   mutate(
     group=cut(as.numeric(as.Date(date)), breaks=unique(as.numeric(spring2020$date)))
   ) %>%
@@ -262,9 +298,35 @@ simall_spring_2020_best <- simall_spring_2020 %>%
     date=factor(date, levels=date)
   )
 
+simall_spring_2020_gof %>%
+  filter(R0==0.25, scale==0.000003) %>%
+  filter(gof==min(gof)) ## sim 20
+
+simall_spring_2020_best2 <- simall_spring_2020 %>%
+  filter(R0==0.25, scale==0.000003, sim==20)  %>%
+  mutate(
+    group=cut(as.numeric(as.Date(date)), breaks=unique(as.numeric(spring2020$date)))
+  ) %>%
+  group_by(sim, group) %>%
+  summarize(
+    cases=sum(cases),
+    date=max(date)
+  ) %>%
+  merge(spring2020) %>%
+  mutate(
+    year=substr(date, 1, 4),
+    month=as.numeric(gsub("-.*", "", gsub("20..-", "", date))), 
+    day=as.numeric(gsub(".*-", "", gsub("20..-", "", date)))
+  ) %>%
+  mutate(
+    date=paste0(month.abb[month], " ", day, ", ", year),
+    date=factor(date, levels=date)
+  )
+
 g5 <- ggplot(simall_spring_2020_best) +
   geom_ribbon(aes(date, ymin=(lwr+1), ymax=(upr+1), group=1), alpha=0.2, fill="red") +
   geom_line(aes(date, (median+1), group=1), col="red", lwd=1) +
+  geom_line(data=simall_spring_2020_best2, aes(date, cases+1, group=1), col="black", lwd=1, lty=2) +
   geom_point(aes(date, weekly)) +
   scale_x_discrete("Date") +
   scale_y_log10("Number of positive cases", expand=c(0, 0))+
@@ -343,16 +405,20 @@ simall_fall_2021_gof2 <- simall_fall_2021_gof %>%
 
 g7 <- ggplot(simall_fall_2021_gof2) +
   geom_tile(aes(R0, scale, fill=log(gof))) +
+  geom_point(aes(x=0.25, y=0.00001), col="white", size=5, shape=1, stroke=2) +
   scale_x_log10(expression(R[contact]), expand=c(0, 0), 
-                breaks=c(0.5, 1, 2, 4, 8, 16)) +
-  scale_y_continuous(expression(theta), expand=c(0, 0)) +
+                breaks=c(0.25, 0.5, 1, 2, 4, 8, 16)) +
+  scale_y_continuous(expression(theta), expand=c(0, 0),
+                     breaks=c(5, 7.5, 10, 12.5, 15)*1e-6) +
   scale_fill_viridis_c("log SSQ ") +
   ggtitle("G. Fall 2021-2022")
 
-## not exactly best
-## but showing this one for simplicity
+simall_fall_2021_gof2 %>%
+  ungroup %>%
+  filter(gof==min(gof))
+
 simall_fall_2021_best <- simall_fall_2021 %>%
-  filter(R0 %in% c(0.5, 1, 2, 4, 8), scale==0.1) %>%
+  filter(R0 %in% c(0.25, 0.5, 1, 2, 4, 8), scale==0.00001) %>%
   mutate(
     group=cut(as.numeric(as.Date(date)), breaks=unique(as.numeric(fall2021$date)))
   ) %>%
@@ -379,9 +445,35 @@ simall_fall_2021_best <- simall_fall_2021 %>%
     R0=factor(R0)
   )
 
+simall_fall_2021_gof %>%
+  filter(R0==0.25, scale==0.00001) %>%
+  filter(gof==min(gof)) ## sim 70
+
+simall_fall_2021_best2 <- simall_fall_2021 %>%
+  filter(R0==0.25, scale==0.00001, sim==70)  %>%
+  mutate(
+    group=cut(as.numeric(as.Date(date)), breaks=unique(as.numeric(fall2021$date)))
+  ) %>%
+  group_by(sim, group) %>%
+  summarize(
+    cases=sum(cases),
+    date=max(date)
+  ) %>%
+  merge(fall2021) %>%
+  mutate(
+    year=substr(date, 1, 4),
+    month=as.numeric(gsub("-.*", "", gsub("20..-", "", date))), 
+    day=as.numeric(gsub(".*-", "", gsub("20..-", "", date)))
+  ) %>%
+  mutate(
+    date=paste0(month.abb[month], " ", day, ", ", year),
+    date=factor(date, levels=date)
+  )
+
 g8 <- ggplot(simall_fall_2021_best) +
   geom_ribbon(aes(date, ymin=lwr+1, ymax=upr+1, fill=R0, group=R0), alpha=0.2) +
   geom_line(aes(date, median+1, col=R0, group=R0), lwd=1) +
+  geom_line(data=simall_fall_2021_best2, aes(date, cases+1, group=1), col="black", lwd=1, lty=2) +
   geom_point(aes(date, weekly+1)) +
   geom_vline(xintercept="Nov 26, 2021", lty=2) +
   scale_x_discrete("Date") +
