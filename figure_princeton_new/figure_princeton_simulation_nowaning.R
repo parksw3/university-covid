@@ -106,6 +106,11 @@ simall_fall_2021_best <- simall_fall_2021 %>%
     date=paste0(month.abb[month], " ", day, ", ", year),
     date=factor(date, levels=unique(date)),
     scale=paste0("theta==", scale),
+    scale=factor(scale, levels=c("theta==5e-06",
+                                 "theta==7.5e-06",
+                                 "theta==1e-05",
+                                 "theta==1.25e-05",
+                                 "theta==1.5e-05")),
     R0=paste0("R[contact]==",R0)
   )
 

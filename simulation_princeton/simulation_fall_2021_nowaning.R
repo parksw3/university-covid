@@ -20,8 +20,8 @@ nsim <- 100
 
 simulation_fall_2021_nowaning <- vector('list')
 
-R0vec <- c(0.5, 1, 2, 4, 8)
-scalevec <- c(0.005, 0.01, 0.015, 0.02, 0.025) * 10
+R0vec <- c(0.25, 0.5, 1, 2, 4, 8)
+scalevec <- c(5e-6, 7.5e-6, 10e-6, 12.5e-6, 15e-6)
 
 paramvec <- expand.grid(R0vec, scalevec)
 
@@ -48,7 +48,7 @@ for (j in 1:nrow(paramvec)) {
                    boostdaily=0,
                    return=c(rep(FALSE, 5000), rep(TRUE, 8000)),
                    returnfrac=1/16,
-                   thetavec=paramvec[j,2] * mercer_fall2021$cases,
+                   thetavec=paramvec[j,2] * mercer_fall2021$cases * 13000,
                    datestart=as.Date("2021-08-14"),
                    datesemester=as.Date("2021-09-01"),
                    dateinternal=as.Date("2021-09-01"),

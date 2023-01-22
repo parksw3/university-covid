@@ -19,9 +19,9 @@ nsim <- 100
 
 simulation_omicron_spring <- vector('list')
 
-theta <- 0.15 * mercer_spring2021$cases * 5000/13000
+theta <- 1e-5 * mercer_spring2021$cases * 5000
 
-R0vec <- c(2, 4, 6, 8)
+R0vec <- c(2, 4, 6)
 
 paramvec <- expand.grid(R0vec)
 
