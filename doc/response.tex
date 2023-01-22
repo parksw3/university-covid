@@ -1,0 +1,359 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{color}
+
+\usepackage{xspace}
+
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+
+\usepackage[pdfencoding=auto, psdextra]{hyperref}
+
+\usepackage{natbib}
+\bibliographystyle{chicago}
+
+\newcommand{\eref}[1]{Eq.~(\ref{eq:#1})}
+\newcommand{\fref}[1]{Fig.~\ref{fig:#1}}
+
+\newcommand{\Rx}[1]{\ensuremath{{\mathcal R}_{#1}}} 
+\newcommand{\Ro}{\Rx{0}}
+\newcommand{\Rc}{\Rx{\textrm{\tiny{contact}}}}
+\newcommand{\RR}{\ensuremath{{\mathcal R}}}
+\newcommand{\Rhat}{\ensuremath{{\hat\RR}}}
+\newcommand{\tsub}[2]{#1_{{\textrm{\tiny #2}}}}
+
+\newcommand{\dd}[1]{\ensuremath{\, \mathrm{d}#1}}
+\newcommand{\dtau}{\dd{\tau}}
+\newcommand{\dx}{\dd{x}}
+\newcommand{\dsigma}{\dd{\sigma}}
+
+\newcommand{\rev}{\subsection*}
+\newcommand{\revtext}{\textsf}
+\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{0em}
+
+\newcommand{\comment}[3]{\textcolor{#1}{\textbf{[#2: }\textsl{#3}\textbf{]}}}
+\newcommand{\jd}[1]{\comment{cyan}{JD}{#1}}
+\newcommand{\swp}[1]{\comment{magenta}{SWP}{#1}}
+\newcommand{\dc}[1]{\comment{blue}{DC}{#1}}
+\newcommand{\jsw}[1]{\comment{green}{JSW}{#1}}
+\newcommand{\hotcomment}[1]{\comment{red}{HOT}{#1}}
+
+\newcommand{\psymp}{\ensuremath{p}} %% primary symptom time
+\newcommand{\ssymp}{\ensuremath{s}} %% secondary symptom time
+\newcommand{\pinf}{\ensuremath{\alpha_1}} %% primary infection time
+\newcommand{\sinf}{\ensuremath{\alpha_2}} %% secondary infection time
+
+\newcommand{\psize}{{\mathcal P}} %% primary cohort size
+\newcommand{\ssize}{{\mathcal S}} %% secondary cohort size
+
+\newcommand{\gtime}{\tau_{\rm g}} %% generation interval
+\newcommand{\gdist}{g} %% generation-interval distribution
+\newcommand{\idist}{\ell} %% incubation period distribution
+
+\newcommand{\total}{{\mathcal T}} %% total number of serial intervals
+
+
+\begin{document}
+
+\noindent Dear Editor:
+
+Thank you for the chance to revise and resubmit our manuscript.
+We have made major revisions to our manuscript to address reviewers' concerns about the methods and assumptions of our work.
+We now compare normalized cases divided by the population size---this allows us to directly compare case patterns on campus and those around the surrounding community.
+We have reparameterized the community contact rate in our model to account for variation in population sizes across semesters and refitted the model.
+We have also added sensitivity analyses and additional figures to show the robustness of our conclusion.
+Below please find our detailed responses to reviewers.
+
+\rev{Editor}
+
+\revtext{Associate Editor Comments: }
+
+\revtext{This paper has turned out to be extremely difficult to find sufficient expert reviewers who were willing to review. We have now received two reviews. The first reviewer \#1 is more supportive but the second reviewer \#2 has major concerns that need to be addressed. Please revise the paper to address the concerns and comments of the two reviewers. The revised paper will require further review.}
+
+\revtext{Reviewer \#1 Comments for the Author:}
+
+\revtext{The authors present a retrospective analysis of the COVID-19 epidemic at Princeton University and provide an extensive analysis that generally supports the hypothesis that a superspreading event led to a large uptick in case numbers after the introduction of the Omicron variant. Overall I like the paper. It's well written, and provide a detailed description of the application of a detailed computational model for policy support at an institutional level. It is therefore potentially a valuable contribution and I would support publication after some minor revisions.}
+
+Thank you.
+
+\revtext{Chief among these is the sensitivity of model results (i.e., calibration, and ultimate policy commentary) on the assumptions regarding test sensitivity. The authors claim "Our analysis highlights the power of mass asymptomatic testing" but the assumption is that a PCR test is 95\% sensitive after latency, and that case detection leads to full case isolation. These are both extremely strong assumptions, that are not conservative with respect to the claim. I recommend examining the results of Hellewell et al ("Estimating the effectiveness of routine asymptomatic PCR testing...") for strong evidence that sensitivity is much lower than claimed here. Also see Zachreson et al ("COVID-19 in low-tolerance border quarantine systems...") for a detailed individual-based implementation of dynamic test sensitivity.}
+
+We agree that 95\% sensitivity seem too strong.
+Hellewell et al estimated that the probability of detecting an infection from a PCR peaks at 77\% (54–88\%) 4 days after infection, and decreases to 50\% (38–65\%) by 10 days after infection.
+But this estimate implicitly accounts for latency, whereas we assume 95\% sensitivity after sensitivity.
+Therefore, while our sensitivity peaks at 92\% 5 days after infection, it decreases to 20\% by 10 days after infection (due to recovery from infections), which is considerably lower than what was estimated by Hellewell et al.
+Therefore, while the individual-level sensitivity is not dynamic (a step function changing from 0 to 0.95 and back down to 0), the population-level sensitivity is dynamic.
+We have added the following paragraph to our main text:
+
+``The 95\% sensitivity assumption may seem too high. 
+For example, \cite{hellewell2021estimating} estimated that the probability of detecting an infection from a PCR peaks at 77\% (54–88\%) 4 days after infection, and decreases to 50\% (38–65\%) by 10 days after infection.
+These estimates are considerably lower than our assumption because their estimates implicitly account for the latent period.
+At the individual level, we assume that an infected individual has no detectable infection (0\% sensitivity) during their latent period and 95\% sensitivity during their various stages of infectious periods.
+At the population level, this assumption translates to a peak sensitivity of 92\% by 4 days after infection, decreasing to 20\% sensitivity by 10 days after infection.
+Our assumption leads to a much lower PCR sensitivity 10 days after infection because we only model the PCR sensitivity during the infectious period.
+In reality, PCR can detect infections even after a person stops shedding infectious virus---we did not include this component in our model because it would not affect the effectiveness of isolation strategy in reducing transmission.''
+
+We further note that the full case isolation was what was happening at Princeton University during the investigation of the study period.
+However, we agree that this might be feasible in some institutions. We have added the following phrase:
+
+``while this assumption reflects the isolation policy in Princeton University during the investigation period, it may be inapplicable in studying institutional outbreaks in general.''
+
+\revtext{There are a number of other issues that are less important to my overall recommendation that I list below by section:}
+
+\revtext{Results:}
+
+\revtext{1) Figure 2 (B, E, H) - I would personally prefer to see a representative trajectory (i.e., one that is central in the ensemble based on summary statistics) than a median, since it's being compared to a single real-world trajectory, the 90\% quantiles can stay though. This would give a better illustration of the model dynamics (w.r.t. temporal fluctuations). 
+This figure could also benefit from a clearer illustration of which parameters from the grids in (A, D, G) correspond to the ensembles in B, E, H.}
+
+We now show a simulation with the best goodness of fit (least sum of squared errors) alongside a media. 
+We agree that showing an actual simulation is important for capturing the variability in the case trajectory.
+We also feel that the median is useful for understanding the general trend and decided to keep it in place.
+We also added a circle to panels A, D, and G to show the best fitting parameter.
+
+\revtext{2) There is a minor contradiction between Fig 2. A and the statement: "We find that a low level of contacts R contact = 0.5 and a small amount of community transmission $\theta = 0.015$ is most consistent with the observed epidemic dynamics in fall 2020 (Fig. 2A)." in Fig 2A, the minimum sits at Theta = 0.02, and is not definitive over the range > 0.01.}
+
+This was a typo on our side. We have now fixed this.
+
+\revtext{3) it looks like lower values of R could have been explored - what is the reason for the lower bound of 0.5?}
+
+We did this for computationally efficiency. We now explore R as low as 0.25.
+We could explore even lower values of R but we feel that lower values may be unrealistic.
+
+\revtext{4) Please explain "Thanksgiving" to non-Americans. This should be indicated visually in Fig. 2B}
+
+We now explain Thanksgiving the first time it is mentioned:
+
+``Thanksgiving---a national holiday in the US during which many students''
+
+\revtext{5) "all returning individuals are assumed to be quarantined for 14 days and tested upon returning." please elaborate (how is quarantine implemented?)}
+
+We have revised this sentence:
+
+``In the beginning of the semester, all returning students were required to quarantine in their rooms for 14 and tested upon returning by the university---in our model, this was implemented by preventing returning students from getting infected or infecting other individuals.''
+
+\revtext{6) Regarding Theta: The model should be refactored so that theta is per-capita on-campus population, the decision not to do so leads to re-scaling of the parameter to campus population fractions in the final section of the results and is confusing. This would probably also help explain why the values of theta are so much higher for the Delta period after vaccination (more people on campus). Finally, the parameter is variously referred to as 'contact rate' and 'transmission rate', this should be clarified in the methods description (they seem to mean the same thing for unvaccinated populations, but the definition gets fuzzier once the transmission event itself is subject to a Bernoulli trial given "infectious contact").}
+
+Thank you for pointing this out. 
+We have reparameterized the parameter theta and reran our simulations.
+We have also added the following description .
+
+``In particular, we assume that infectious contacts from local or regional community can be made at random to anyone on campus.
+These contacts are modeled using a Poisson distribution with a time-varying mean, which is calculated by multiplying the daily number of cases by the community contact rate $\theta$ and the population size on campus $N$.
+More precisely, $\theta$ is the probability that an infected individual from the community makes an infectious contact with an individual on campus per capita campus population. 
+By further multiplying this probability with the population size $N$, we are essentially assuming a density dependent contact, where a higher population size on campus leads to more infections from the community.''
+
+\revtext{7) The Omicron wave part has a lot of ad-hoc assumptions about policies (i.e., 70 boosters per day), it would be good to know which of these are guessed, and which are supported through consultation etc.}
+
+We have revised this section to make our assumptions clearer:
+
+``Based on known vaccination statuses, we assume that 99\% of students are vaccinated with 60\% of them being boosted as of January 1, 2022.
+Since all students were required to receive booster shots before returning to campus, we assumed that 70 booster shots were given on each day---this assumption allows all students to be boosted in 28 days.
+To match the high numbers of cases on the week ending January 7, 2022, we assume 14\% of the students present on campus are infected as of January 7, 2022 (roughly 100/700).
+To account for students who were infected with the Omicron variant during the fall semester, we assume that 100 students are already immune to Omicron infection at the beginning of the spring semester---this roughly corresponds to the number of PU cases that were reported in December.''
+
+\revtext{8) Figure 3: do the 9 plots on the right have different reproductive ratios? This should be clearly stated (Rcontact is given in the row label, but the column label gives a reproductive ratio multiplier, so it's unclear how assumed transmissibility varies between panels).}
+
+Thank you for pointing this out. The baseline Rcontact does not change within each row; only the reproductive ratio multiplier changes. 
+We have added the following sentences to clarify this:
+
+``
+For each row, we assume a fixed value of baseline contact reproduction number $\Rc$ ranging from 2 to 6 across rows.
+Then, we simulate increase in $\Rc$ at the time of policy change (indicated by column labels).
+''
+
+\revtext{9) Please be more clear about the policy change (dashed line in Fig 3). Was this strictly a change to gathering restrictions? Are you implying causation with the super-spreading event? I think the messaging around the relationship between the observed dynamics and the enacted policies needs to be stated more clearly and explicitly.} 
+
+There was a change to gathering restriction and testing frequency. This is explained in the Descriptive analysis section:
+
+``Coinciding with the decrease in the campus and local cases numbers, the gathering policy was updated on February 8, 2022 to allow food in events were no longer limited to 20 people;
+in addition, the testing frequency was reduced to once a week.''
+
+We have also rephrased the following sentence to make the causality clearer:
+
+``Following the policy change, a large gathering event was held on campus, which resulted in an outbreak with high case numbers persisting until Spring Break (March 5th, 2022).''
+
+\revtext{Discussion:}
+
+\revtext{10) Please explain the phrase "our homogeneous mixing assumption is conservatively pessimistic." One could argue that assuming homogeneity is not 'conservatively pessimistic', rather, it assumes the highest rate of case growth possible for a given natural transmissibility and secondary case dispersion (because transmission is unconstrained by group size beyond the size of the total population), this means the calibrated natural transmission rates (i.e., Rcontact) will be biased down, for the same case incidence. Lower estimates of natural transmission rates (vis. lower viral load of an index case) could lead to liberal conclusions regarding the required stringency of interventions, so it needs to be made clear in what policy decision context the statement 'conservatively pessimistic' applies.}
+
+We meant conservatively pessimistic from a dynamical perspective, allowing for rapid growth.
+We agree that this terminology is confusing in a policy decision context. 
+We have tried to clarify the consequences our assumption and decided to remove the term ``pessimistic'' to avoid confusion.
+
+``For example, we assume conservatively that the entire university populations mix homogeneously and have identical campus and community contact rates (captured by $\Rc$ and $\theta$, respectively).
+This assumption can lead to the fastest epidemic growth rates because transmission is not limited by the size of the contact network---in other words, our estimates of the reproduction will be necessarily low, making the epidemic easier to control.
+In reality, increases in cases were often associated with specific transmission clusters, suggesting heterogeneity in transmission patterns.
+Contact levels also likely differ between different groups:
+for example, faculty and staff members are more likely to interact with community members than undergraduate students and would be at a higher risk for community infections \citep{frazier2022modeling}.''
+
+\revtext{11) The paper claims not to model behaviour. While this is strictly true, because the model does not incorporate behaviour explicitly, it is a bit misleading because the model does implicitly model behaviour by attaching case importation rates to the community case numbers (which are a function of behaviour). A better way of explaining the model would be (in my opinion) that it implicitly accounts for changes in community behaviour but does not explicitly simulate behavioural change in the campus environment.}
+
+Thank you for pointing this out. We have reworded this sentence as the following:
+
+``We also do not account for explicit changes in behavior on campus and assume constant $\Rc$ throughout each semester.
+Instead, we implicitly account for behavioral changes in the community by modeling community transmission to campus as a function of community case numbers.
+While we cannot rule out the possibility that behavioral changes on campus could have contributed to various epidemics (e.g., the Omicron wave beginning in the fall semester of the 2021--2022 academic year), we were able to capture the majority of epidemic patterns without modeling them---when the majority of transmission is caused by imported cases from the community, we expect behavioral changes on campus to have relatively weaker effects on overall transmission dynamics.''
+
+\revtext{12) "Our analysis highlights the power of mass asymptomatic testing" (see above main comment)}
+
+We have rephrased this sentence:
+
+``First, our analysis highlights the power of mass asymptomatic testing for epidemic measurement and planning---even if PCR testing may have lower sensitivity than what we assumed here \citep{hellewell2021estimating}, mass asymptomatic testing can still help track ongoing epidemic dynamics in real time''
+
+\revtext{13) "preventing large gatherings can help prevent large superspreading events in the midst of a rising epidemic" The model does not simulate gatherings, so this claim should be connected to the results explicitly or it should be removed.}
+
+This was a comment from our Princeton experience rather than simulation. We agree that our model does not simulate gathering and so we have removed this comment.
+
+\revtext{14) "intervention measures placed on campuses must continue to adapt and change" is there a clear statement in this work about the policy changes that led up to the Omicron outbreak? The paper implies such claims, but I do not see them concretely stated (which is frustrating - this is related to point (9)).}
+
+Please see our response to point 9.
+
+\revtext{Methods:}
+
+\revtext{15) Regarding Rcontact, is there a difference between this and the generally-used R0? The definition seems the same... if not, it would be good to know the precise difference.}
+
+Rcontact and R0 are largely similar. But we wanted to use a different terminology to emphasize their subtle differences because Rcontact is a parameter in our individual-based model, which makes a specific set of assumptions that are different from continuous time SIR models using ordinary differential equations. We have tried to clarify the definition of Rcontact. 
+
+``We note that the definition of the contact reproduction number $\Rc$ is similar to the standard definition of basic reproduction number $\RR_0$.
+The main difference is that the contact reproduction number models the number of total contacts, rather than infections. 
+Since infected individuals make their contacts at random with replacement, the same susceptible person could be contacted multiple times by the same or different infected individual during a time step---all these overlapping contacts will result in one infection.
+Therefore, the number of actual infections may be smaller than the number of contacts, especially since contacts can also land on non-susceptible individuals.
+We also note that the contact reproduction number implicitly accounts for all intervention measures that we do not model explicitly, such as social distancing and contact tracing---therefore, $\Rc$ is similar to the effective reproduction number, which typically accounts for intervention efforts.
+However, our contact reproduction number does not account for the effects of asymptomatic testing or vaccination, which are modeled separately.''
+
+\revtext{Overall, I like the paper and appreciate having the opportunity to review it. Understand that my critiques are intended to help improve the quality of the work prior to publication, which I generally support.}
+
+Thank you for your review.
+
+\revtext{Reviewer \#2 Comments for the Author:} 
+
+\revtext{In this manuscript, Park et al. retrospectively examine the transmission patterns of COVID-19 at Princeton University and across the wider community in Mercer County, NJ. The authors explore correlations between university and community case counts and also employ a mechanistic modeling framework to see if patterns in transmission can be explained by changes in R-effective and transmission from the broader community. Retrospective analyses like this are important, and valuable evidence generation for decision makers.}
+
+Thank you.
+
+\revtext{I had two main concerns about the conclusions as presented that I hope the authors can address. The first is that while Princeton is an ideal ecosystem because of its asymptomatic screening protocols, the surrounding community is not necessarily one—this raises concerns about how differences in testing practices could be controlled for/accounted for in the correlation analysis.} 
+
+\revtext{Most estimates seem to a huge reduction in case ascertainment during the Omicron surge, which makes comparisons between the broader community and Princeton tricky for that time point. At the very least, I would encourage the authors to control for differences in denominator (e.g., converting to per 100K/day) and/or exploring test positivity as an additional metric to see if their observations still hold.}
+
+We have revised our analysis and figures to account for changes in population sizes across the semester. See below for a detailed response.
+We also present testing volumes over time and show that they are reasonably stable across each semester.
+
+\revtext{The second is that I wasn’t necessarily convinced that the authors could conclude with certainty that the discrepancies during the Omicron period were driven by superspreading events because the way that this is created in the model is by seeding new infections, not by adjusting contact structure per se. Some more thoughts here: (1) I think the vaccine effectiveness estimates stated for BA.1/BA.2 were overly optimistic, so that would be something to explore further; and (2) the model (in theory) should allow for some superspreading as a consequence of the overdispersion parameter used for the negative binomial distribution of infectious contacts. I’d be curious to see if the model can replicate that change more mechanistically by adjusting the mean and overdispersion of the binomial distribution.} 
+
+We recognize that our writing was unclear before.
+But we know from the observation that the large outbreak during the Omicron period was driven by superspreading event related to a campus event.
+We could not describe the event in detail due to privacy reasons, which led to unclear writing. 
+We have tried to make the causality clearer throughout (see response to Reviewer 1's comment 9).
+We also account for the possibility of shorter infectious periods and lower vaccine effectiveness.
+See below for detailed responses for each point.
+
+\revtext{Main comments:}
+
+\revtext{Fig. 1- you might consider converting case counts for Princeton and Mercer County into cases per 100,000 per day (or some other denominator quantity). These plots are comparing cases for populations of ~15,000 for Princeton and ~360,000 for Mercer County, which makes Fig. 1 panels I-L a bit difficult to parse at first—by controlling the denominator you could more easily compare to a 1:1 slope for panels E-J and a 1:1 ratio for panels I-L. This approach would also account for the changing student body size at Princeton across semesters with reopening, etc.}
+
+Thank you for the suggestion. 
+We have changed the main figure and corresponding supplementary figures for New York and Philadelphia to show weekly cases per 100,000.
+We have revised the writing accordingly and added a new Supplementary Figure comparing cases per 1000 for each population group on Princeton campus (Figure S1).
+We decided to keep the raw cases for comparisons with model projections since we are no longer comparing populations of two different sizes.
+
+\revtext{Lines 165-169- a key piece of this story seems to be variant predominance—you could consider adding a new figure with variant proportions through time or dashed vertical lines to Fig. 1 time courses indicating when a new variant reached dominance.}
+
+We have variant data but we feel analyzing variant data is beyond the scope of this paper.
+We decided not to add the variant data in this paper also because it involves a different group of individuals analysing the data.
+And so we prefer to keep that analysis as a separate paper.
+
+\revtext{Lines 214-226: the assumption that testing patterns remain the same on campus and off campus throughout the entire investigation period doesn’t seem realistic. In particular for the beginning of the Omicron period, the Princeton university campus continued with surveillance screening, while the general population likely experienced significantly decreased ascertainment rates in part due to the increased availability and use of at home tests which are not mandated reporting (e.g., one estimate of a change of ascertainment from 50\% pre-Omicron to 20-29\% during BA.1; \url{https://www.medrxiv.org/content/10.1101/2022.04.22.22274198v3.full.pdf}). Therefore, I would hesitate to conclude that the lack of correlation was indicative of a lack of community transmission—changes in testing patterns could really be driving that pattern for the final semester.}
+
+Thank you for pointing this out. 
+We meant that the testing patterns remained constant for each semester, rather than the entire investigation period.
+We also meant that the case ratio would stay the same if testing patterns and transmission conditions were to remain constant, but we are not necessarily assuming that the testing patterns remained constant.
+We have tried to make the writing of this paragraph clearer while acknowledging changes in testing patterns over the investigation period.
+
+Also, we know that the outbreak during the final semester was associated with a specific campus event among students on one specific day, which we unfortunately cannot described in detail due to privacy reasons. 
+So we know that the lack of correlation was likely driven by a lack of community transmission in this case. 
+We have tried to clarified this point.
+
+\revtext{Lines 243-245- Infectious periods changed with variants, e.g., Omicron << Delta. Was that component explored at all?} 
+
+We now provide simulations that assume shorter infectious and latent period during the Omicron outbreak:
+
+``We considered the possibility that the Omicron variant can have shorter latent and infectious periods by decreasing the mean duration of latent, pre-symptomatic, and (a)symptomatic stages of infection by 0.5 days (therefore a total of 1.5 reduction in the duration of infection).
+In this case, a shorter generation interval can lead to faster growth rate given the same values of $\Rc$ \citep{wallinga2007generation}.
+However, we find that the effects of shorter infection has small effects on the overall dynamics (Supplementary Figure S13).''
+
+\revtext{Lines 296-305- While reading through this the first time, I was wondering about differences in vaccine effectiveness during Omicron emergence however—maybe hint to the reader here that you address that later or separately?} 
+
+We have added the following sentence: 
+
+``We note that these assumptions are specific to the Delta variant---we discuss vaccine effectiveness against the Omicron variant later on.''
+
+\revtext{Lines 453-454- I think your vaccine effectiveness estimates against Omicron are still quite optimistic, which could explain why ramping up your R-value didn’t really do much. In practice, we’ve seen closer to 30-50\% effectiveness against infection for example vs. 70\% pre-waning (\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9398552/})}
+
+We now provide simulations that assume 30\% vaccine effectiveness as a supplementary figure with the following text in the main manuscript:
+
+``We also considered the possibility that the vaccine effectiveness against the Omicron variant might be lower by repeating the same analysis with 30\% effectiveness against infection \citep{tan2023vaccine}.
+When the baseline $\Rc$ is low ($\Rc=2$), increasing $\Rc$ still does not increase the number of cases sufficiently.
+When we assume an intermediate value of $\Rc=4$, the model does a better job at capturing the dynamics but it does so by overestimating the trough before the policy change and underestimating the peak after the policy change.
+When we assume a high value of $\Rc=6$, the model overestimates both the trough and the peak.''
+
+
+\revtext{Fig. 3-4- Apologies if you’ve stated this elsewhere and I’ve missed it, but have you taken a look at your testing volume through time? I know that the PU policy was x \# of tests per week based on vaccination status, but how was that enforced? I’m wondering if there is as much variation in the y-axis if you look at test positivity vs. raw number of cases? Another thing to consider, since I’m not sure about testing cadence and frequency would be to do some rolling averages to help smooth out differences across days/weeks.}
+
+We now show testing volume through time in Supplementary Figure S1.
+Everyone was required to be tested in order to be present on campus. 
+And as we see in Supplementary Figure S1, there was very good compliance and stable testing volumes within each semester, except during the end of fall semester of the 2021--2022 academic year (reflecting Omicron circulations) and the beginning of spring semester of the 2021--2022 academic year (reflecting students returning to school).
+Even then, these changes do not correlate with increase in cases---for example, the increase in testing volume at the end of fall semester of the 2021--2022 academic year is very sudden (doubling in a week), but the changes in cases at the same period is much smaller.
+
+We agree there is variation in cases within a week but testing patterns were fairly stable across weeks, which is why we chose to look at weekly data, instead of daily data.
+We feel that showing raw variation in weekly cases (rather than rolling averages) would be more accurate because we are also able to identify the sources of most variations (e.g., school holidays and classes ending).
+
+\revtext{Lines 456-457- instead of artificially introducing new infections, what happens if you decrease $k$ your overdispersion parameter to increase the potential variance (i.e., allow for bigger gatherings?)}
+
+Artificially introducing new infection is meant to emulate the increase in heterogeneity.
+Decreasing $k$ alone would certainly increase variance but we have no control over when large outbreaks will happen, meaning that most of the simulations will not be able to match the data.
+
+\revtext{Minor comments:} 
+
+\revtext{Line 40- double check consistency of variant name capitalization throughout (e.g., “omicron” vs. “Omicron”)}
+
+Fixed.
+
+\revtext{Lines 78-81- infrastructure including ventilation would also play a key role here}
+
+We have added ventilation infrastructure to this sentence.
+
+\revtext{Line 192- “counties” instead of “countries”?}
+
+Fixed.
+
+\revtext{Lines 270-271- in reality, those contacts are likely much more structured leading to a more modular network (e.g. dormmates would have repeated contacts, students would be more likely to have classes with others in that same major); how would you see less mixing affecting your model results and interpretation?}
+
+We have added the following paragraph:
+
+``In reality, the contact structure among the campus population is likely more structured, exhibiting strong assortativity.
+For example, undergraduate students are more likely to mix with other undergraduate students, rather than graduate students or faculty and staff members.
+Even among undergraduate students, students are more likely to mix with their close friend group than with other students.
+On one hand, assortative mixing may lead to faster epidemic growth within certain population groups;
+on the other hand, it can also make the disease more difficult to spread among other groups that have lower contact rates.
+Therefore, predicting the impact of structured contact network requires more detailed information about whether the majority of cases were infected at random or from certain groups of the campus population.
+For simplicity, we assume random mixing throughout the paper---nonetheless, allowing for overdispersion in transmission is expected to emulate variability in epidemic growth rates driven by complex contact structures \citep{lloyd2005superspreading}.''
+
+\revtext{Line 278- it would be helpful to label $\theta$ as your “community transmission” parameter on first use, since you refer to it that way later, but not stated explicitly here.}
+
+Based on suggestions by Reviewer 1, we now normalize $\theta$ by population size $N$ and provide a clear definition the first time it is used>
+
+\revtext{Line 387- “cannot” instead of “can”?}
+
+``can'' is correct. We have revised this sentence to make the point clearer:
+
+``These simulations suggest that an increase in the number of cases in November can be explained by a combination of waning immunity alone without requiring additional changes in transmission dynamics (note we do not allow $\theta$ or $\Rc$ to vary over time)---we see that extending the simulation beyond November 26th still captures the increase in cases.''
+
+\revtext{Lines 162-164- state date of policy implementation to make link clearer for Figs. 3 \& 4} 
+
+Done.
+
+\bibliography{university-covid}
+
+\end{document}
