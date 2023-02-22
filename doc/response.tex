@@ -82,7 +82,7 @@ Thank you.
 
 We agree that 95\% sensitivity seem too strong.
 Hellewell et al estimated that the probability of detecting an infection from a PCR peaks at 77\% (54–88\%) 4 days after infection, and decreases to 50\% (38–65\%) by 10 days after infection.
-But this estimate implicitly accounts for latency, whereas we assume 95\% sensitivity after sensitivity.
+But this estimate implicitly accounts for latency, whereas we assume 95\% sensitivity during the infectious period after 0\% sensitivity during latency.
 Therefore, while our sensitivity peaks at 92\% 5 days after infection, it decreases to 20\% by 10 days after infection (due to recovery from infections), which is considerably lower than what was estimated by Hellewell et al.
 Therefore, while the individual-level sensitivity is not dynamic (a step function changing from 0 to 0.95 and back down to 0), the population-level sensitivity is dynamic.
 We have added the following paragraph to our main text:
@@ -125,7 +125,7 @@ We could explore even lower values of R but we feel that lower values may be unr
 
 We now explain Thanksgiving the first time it is mentioned:
 
-``Thanksgiving---a national holiday in the US during which many students''
+``Thanksgiving---a national holiday in the US during which many students travel off campus''
 
 \revtext{5) "all returning individuals are assumed to be quarantined for 14 days and tested upon returning." please elaborate (how is quarantine implemented?)}
 
@@ -238,7 +238,12 @@ Thank you.
 \revtext{Most estimates seem to a huge reduction in case ascertainment during the Omicron surge, which makes comparisons between the broader community and Princeton tricky for that time point. At the very least, I would encourage the authors to control for differences in denominator (e.g., converting to per 100K/day) and/or exploring test positivity as an additional metric to see if their observations still hold.}
 
 We have revised our analysis and figures to account for changes in population sizes across the semester. See below for a detailed response.
-We also present testing volumes over time and show that they are reasonably stable across each semester.
+We also present testing volumes over time on campus and show that they are reasonably stable across each semester.
+We were not able to find information on testing at the county level and therefore were not able to explore test positivity as an additional metric.
+However, we feel that test positivity can be even more sensitive to testing behavior in our cases.
+For example, testing frequencies were doubled for undergraduate students during the initial Omicron break, but this change did not cause a doubling of case numbers, meaning that the ascertainment rate was already high. 
+It seems more likely that the increased numbers of cases during this period is reflective of real outbreak dynamics, rather than testing behavior---on the other hand, positivity would suddenly decrease during this period due to changes in testing behavior.
+Finally, strong cross correlations in case patterns across other counties in New Jersey and other large cities (New York City and Philadelphia) demonstrate the robustness of our observation.
 
 \revtext{The second is that I wasn’t necessarily convinced that the authors could conclude with certainty that the discrepancies during the Omicron period were driven by superspreading events because the way that this is created in the model is by seeding new infections, not by adjusting contact structure per se. Some more thoughts here: (1) I think the vaccine effectiveness estimates stated for BA.1/BA.2 were overly optimistic, so that would be something to explore further; and (2) the model (in theory) should allow for some superspreading as a consequence of the overdispersion parameter used for the negative binomial distribution of infectious contacts. I’d be curious to see if the model can replicate that change more mechanistically by adjusting the mean and overdispersion of the binomial distribution.} 
 
