@@ -153,7 +153,7 @@ Changes in testing frequency and other intervention measures throughout the stud
 All data used in this analysis are publicly available on the PU COVID-19 Dashboard website: \url{https://covid.princeton.edu/dashboard}.
 
 \begin{figure}[!th]
-\includegraphics[width=0.95\textwidth]{../figure_princeton_new/figure_princeton_new_per_1000.pdf}
+\includegraphics[width=0.95\textwidth]{figure_princeton_new_per_1000.pdf}
 \caption{
 \textbf{Dynamics of SARS-CoV-2 outbreaks in Princeton University (PU).}
 (A--D) Epidemic trajectories across four semesters: Fall 2020--2021 (A), Spring 2020--2021 (B), Fall 2021--2022 (C), and Spring 2021--2022 (D).
@@ -320,7 +320,7 @@ While these assumptions are most parsimonious, epidemiological parameters and mi
 Therefore, our model parameters describe average dynamics across different groups and must be interpreted with care.
 
 \begin{figure}[!th]
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_simulation.pdf}
+\includegraphics[width=\textwidth]{figure_princeton_simulation.pdf}
 \caption{
 \textbf{Retrospective analysis of past SARS-CoV-2 outbreaks on Princeton University (PU) campus.}
 (A, D, G) Time series comparisons of model predictions with observed data across ranges of contact reproduction number $\Rc$ and scaling parameter for community contact $\theta$.
@@ -414,7 +414,7 @@ Indeed, a $>10$-fold increase in the numbers of cases between the weeks ending F
 These simulations indicate that changes in distancing and testing policies and the increased transmissibility of the BA.2 subvariant alone are unlikely to be the direct causes of the outbreak.
 
 \begin{figure}[!ht]
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_simulation_omicron_spring.pdf}
+\includegraphics[width=\textwidth]{figure_princeton_simulation_omicron_spring.pdf}
 \caption{
 \textbf{The impact of changes in testing frequency and an increased reproduction number on the spread of the Omicron variant.}
 Solid lines represent median predictions.
@@ -444,7 +444,7 @@ Overall, the observed patterns in cases are more consistent with the epidemic dy
 This is also consistent with the observation that this outbreak was associated with a large gathering event on campus.
 
 \begin{figure}[!thp]
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_simulation_omicron_outbreak.pdf}
+\includegraphics[width=\textwidth]{figure_princeton_simulation_omicron_outbreak.pdf}
 \caption{
 \textbf{The impact of large super spreading events on the spread of the Omicron variant.}
 Solid lines represent median predictions.
@@ -515,199 +515,321 @@ Understanding the the landscape of SARS-CoV-2 immunity and its impact on evoluti
 
 All data and code are stored in a publicly available GitHub repository (\url{https://github.com/parksw3/university-covid}).
 
-\bibliography{university-covid}
+\section*{Author contribution}
 
-\pagebreak
+All authors contributed equally to the research design, data collection, formal analysis, interpretation of the results, and writing of the paper.
 
-\section*{Supplementary Figures}
+\begin{thebibliography}{}
 
-\renewcommand{\thefigure}{S\arabic{figure}}
-\setcounter{figure}{0}
+\bibitem[\protect\citeauthoryear{Baker, Mahmud, Wagner, Yang, Pitzer, Viboud,
+  Vecchi, Metcalf, and Grenfell}{Baker et~al.}{2019}]{baker2019epidemic}
+Baker, R.~E., A.~S. Mahmud, C.~E. Wagner, W.~Yang, V.~E. Pitzer, C.~Viboud,
+  G.~A. Vecchi, C.~J.~E. Metcalf, and B.~T. Grenfell (2019).
+\newblock Epidemic dynamics of respiratory syncytial virus in current and
+  future climates.
+\newblock {\em Nature communications\/}~{\em 10\/}(1), 1--8.
 
-\begin{figure}[!htp]
-\includegraphics[width=0.9\textwidth]{../figure_princeton_new/figure_princeton_testing.pdf}
-\caption{
-\textbf{The weekly number of PCR tests stratified by subpopulations.}
-}
-\end{figure}
+\bibitem[\protect\citeauthoryear{Baker, Park, Wagner, and Metcalf}{Baker
+  et~al.}{2021}]{baker2021limits}
+Baker, R.~E., S.~W. Park, C.~E. Wagner, and C.~J.~E. Metcalf (2021).
+\newblock {The limits of SARS-CoV-2 predictability}.
+\newblock {\em Nature Ecology \& Evolution\/}~{\em 5\/}(8), 1052--1054.
 
-\pagebreak
+\bibitem[\protect\citeauthoryear{Brett and Rohani}{Brett and
+  Rohani}{2020}]{brett2020transmission}
+Brett, T.~S. and P.~Rohani (2020).
+\newblock {Transmission dynamics reveal the impracticality of COVID-19 herd
+  immunity strategies}.
+\newblock {\em Proceedings of the National Academy of Sciences\/}~{\em
+  117\/}(41), 25897--25903.
 
-\begin{figure}[!htp]
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_new_per_1000_bypop.pdf}
-\caption{
-\textbf{The weekly number of cases per 1000 stratified by subpopulations.}
-The case trajectory for undergraduate students was omitted for the fall semester of 2020--2021 academic year due to a very low number of undergraduate students present on campus.
-}
-\end{figure}
+\bibitem[\protect\citeauthoryear{Brook, Northrup, Ehrenberg, Doudna, Boots,
+  Consortium, et~al.}{Brook et~al.}{2021}]{brook2021optimizing}
+Brook, C.~E., G.~R. Northrup, A.~J. Ehrenberg, J.~A. Doudna, M.~Boots,
+  I.~S.-C.-.~T. Consortium, et~al. (2021).
+\newblock {Optimizing COVID-19 control with asymptomatic surveillance testing
+  in a university environment}.
+\newblock {\em Epidemics\/}~{\em 37}, 100527.
 
-\pagebreak
+\bibitem[\protect\citeauthoryear{Cobey}{Cobey}{2020}]{cobey2020modeling}
+Cobey, S. (2020).
+\newblock Modeling infectious disease dynamics.
+\newblock {\em Science\/}~{\em 368\/}(6492), 713--714.
 
-\begin{figure}[!htp]
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_correlation_per_1000.pdf}
-\caption{
-\textbf{Correlations between the weekly number of cases in PU and in Mercer County stratified by subpopulations.}
-Points represent the number of reported cases.
-Solid lines and shaded areas represent the regression line and the associated 95\% confidence intervals.
-}
-\end{figure}
+\bibitem[\protect\citeauthoryear{Currie, Moreno, Delahoy, Pray, Jovaag, Braun,
+  Cole, Shechter, Fajardo, Griggs, et~al.}{Currie
+  et~al.}{2021}]{currie2021interventions}
+Currie, D.~W., G.~K. Moreno, M.~J. Delahoy, I.~W. Pray, A.~Jovaag, K.~M. Braun,
+  D.~Cole, T.~Shechter, G.~C. Fajardo, C.~Griggs, et~al. (2021).
+\newblock {Interventions to Disrupt Coronavirus Disease Transmission at a
+  University, Wisconsin, USA, August--October 2020}.
+\newblock {\em Emerging infectious diseases\/}~{\em 27\/}(11), 2776.
 
-\pagebreak
+\bibitem[\protect\citeauthoryear{{Duke University}}{{Duke
+  University}}{2021}]{dukeoutbreak}
+{Duke University} (2021).
+\newblock {Important COVID updates for undergrads, Aug. 30}.
 
+\bibitem[\protect\citeauthoryear{Elderd, Dukic, and Dwyer}{Elderd
+  et~al.}{2006}]{elderd2006uncertainty}
+Elderd, B.~D., V.~M. Dukic, and G.~Dwyer (2006).
+\newblock Uncertainty in predictions of disease spread and public health
+  responses to bioterrorism and emerging diseases.
+\newblock {\em Proceedings of the National Academy of Sciences\/}~{\em
+  103\/}(42), 15693--15697.
 
-\begin{figure}[!htp]
-\begin{center}
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_map_new.pdf}
-\end{center}
-\caption{
-\textbf{Correlations between the weekly number of cases in PU and in counties in New Jersey.}
-(A--C) Map of correlations between the weekly number of cases in PU and in counties in New Jersey.
-(D--F) Relationship between case correlations and distance from Mercer County.
-Points represent the estimated correlation coefficients.
-Solid lines and shaded areas represent the regression line and the associated 95\% confidence intervals.
-Black points and lines represent correlations based on all cases in PU.
-Red points and lines represent correlations based on cases among faculty and staff members in PU.
-}
-\end{figure}
+\bibitem[\protect\citeauthoryear{Endo, {Centre for the Mathematical Modelling
+  of Infectious Diseases COVID-19 Working Group}, Abbott, Kucharski, and
+  Funk}{Endo et~al.}{2020}]{10.12688/wellcomeopenres.15842.3}
+Endo, A., {Centre for the Mathematical Modelling of Infectious Diseases
+  COVID-19 Working Group}, S.~Abbott, A.~Kucharski, and S.~Funk (2020).
+\newblock {Estimating the overdispersion in COVID-19 transmission using
+  outbreak sizes outside China [version 3; peer review: 2 approved]}.
+\newblock {\em Wellcome Open Research\/}~{\em 5\/}(67).
 
+\bibitem[\protect\citeauthoryear{Ferguson, Ghani, Cori, Hogan, Hinsley, and
+  Volz}{Ferguson et~al.}{2021}]{ferguson2021report}
+Ferguson, N., A.~Ghani, A.~Cori, A.~Hogan, W.~Hinsley, and E.~Volz (2021).
+\newblock {Report 49: Growth, population distribution and immune escape of
+  Omicron in England}.
 
-\pagebreak
+\bibitem[\protect\citeauthoryear{Flaxman, Mishra, Gandy, Unwin, Mellan,
+  Coupland, Whittaker, Zhu, Berah, Eaton, et~al.}{Flaxman
+  et~al.}{2020}]{flaxman2020estimating}
+Flaxman, S., S.~Mishra, A.~Gandy, H.~J.~T. Unwin, T.~A. Mellan, H.~Coupland,
+  C.~Whittaker, H.~Zhu, T.~Berah, J.~W. Eaton, et~al. (2020).
+\newblock {Estimating the effects of non-pharmaceutical interventions on
+  COVID-19 in Europe}.
+\newblock {\em Nature\/}~{\em 584\/}(7820), 257--261.
 
-\begin{figure}[!htp]
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_newyork_new.pdf}
-\caption{
-\textbf{Dynamics of SARS-CoV-2 outbreaks in PU and New York City.}
-(A--C) Epidemic trajectories across three semesters: Fall 2020 (A), Spring 2020 (B), and Fall 20201 (C).
-Colored bar plots represent the weekly number of cases from both asymptomatic and symptomatic testing in PU.
-Red lines represent the weekly number of cases in New York City.
-(D--F) Correlations between the weekly number of cases in PU and in New York City.
-Solid lines and shaded areas represent the estimated linear regression lines and the associated 95\% CIs.
-}
-\end{figure}
+\bibitem[\protect\citeauthoryear{Fox, Bailey, Seamon, and Miranda}{Fox
+  et~al.}{2021}]{fox2021response}
+Fox, M.~D., D.~C. Bailey, M.~D. Seamon, and M.~L. Miranda (2021).
+\newblock {Response to a COVID-19 outbreak on a university campus—Indiana,
+  August 2020}.
+\newblock {\em Morbidity and Mortality Weekly Report\/}~{\em 70\/}(4), 118.
 
+\bibitem[\protect\citeauthoryear{Frazier, Cashore, Duan, Henderson, Janmohamed,
+  Liu, Shmoys, Wan, and Zhang}{Frazier et~al.}{2022}]{frazier2022modeling}
+Frazier, P.~I., J.~M. Cashore, N.~Duan, S.~G. Henderson, A.~Janmohamed, B.~Liu,
+  D.~B. Shmoys, J.~Wan, and Y.~Zhang (2022).
+\newblock {Modeling for COVID-19 college reopening decisions: Cornell, a case
+  study}.
+\newblock {\em Proceedings of the National Academy of Sciences\/}~{\em
+  119\/}(2).
 
-\pagebreak
+\bibitem[\protect\citeauthoryear{Galanti, Pei, Yamana, Angulo, Charos,
+  Swerdlow, and Shaman}{Galanti et~al.}{2021}]{galanti2021social}
+Galanti, M., S.~Pei, T.~K. Yamana, F.~J. Angulo, A.~Charos, D.~L. Swerdlow, and
+  J.~Shaman (2021).
+\newblock Social distancing remains key during vaccinations.
+\newblock {\em Science\/}~{\em 371\/}(6528), 473--474.
 
-\begin{figure}[!htp]
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_philly_new.pdf}
-\caption{
-\textbf{Dynamics of SARS-CoV-2 outbreaks in PU and Philadelphia.}
-(A--C) Epidemic trajectories across three semesters: Fall 2020 (A), Spring 2020 (B), and Fall 20201 (C).
-Colored bar plots represent the weekly number of cases from both asymptomatic and symptomatic testing in PU.
-Red lines represent the weekly number of cases in Philadelphia.
-(D--F) Correlations between the weekly number of cases in PU and in Philadelphia.
-Solid lines and shaded areas represent the estimated linear regression lines and the associated 95\% CIs.
-}
-\end{figure}
+\bibitem[\protect\citeauthoryear{Gibson, Weitz, Shannon, Holton, Bryksin, Liu,
+  Sieglinger, Coenen, Zhao, Beckett, et~al.}{Gibson
+  et~al.}{2021}]{gibson2021surveillance}
+Gibson, G., J.~S. Weitz, M.~P. Shannon, B.~Holton, A.~Bryksin, B.~Liu,
+  M.~Sieglinger, A.~R. Coenen, C.~Zhao, S.~J. Beckett, et~al. (2021).
+\newblock {Surveillance-to-Diagnostic Testing Program for Asymptomatic
+  SARS-CoV-2 Infections on a Large, Urban Campus in Fall 2020}.
+\newblock {\em Epidemiology\/}~{\em 33\/}(2), 209--216.
 
-\pagebreak
+\bibitem[\protect\citeauthoryear{Grenfell and Harwood}{Grenfell and
+  Harwood}{1997}]{grenfell1997meta}
+Grenfell, B. and J.~Harwood (1997).
+\newblock (meta) population dynamics of infectious diseases.
+\newblock {\em Trends in ecology \& evolution\/}~{\em 12\/}(10), 395--399.
 
-\begin{figure}[!htp]
-\includegraphics[width=0.8\textwidth]{../figure_princeton_new/figure_princeton_map_extended.pdf}
-\caption{
-\textbf{Correlations between the weekly number of cases in PU and in counties in New Jersey, Pennsylvania, and New York State.}
-(A--C) Map of correlations between the weekly number of cases in PU and in counties in New Jersey, Pennsylvania, and New York State.
-(D--F) Relationship between case correlations and distance from Mercer County.
-Points represent the estimated correlation coefficients.
-Solid lines and shaded areas represent the regression line and the associated 95\% confidence intervals.
-Black points and lines represent correlations based on all cases in PU.
-Red points and lines represent correlations based on cases among faculty and staff members in PU.
-New York City is excluded from this analysis as the data provided by New York Times are not further stratified by county levels.
-}
-\end{figure}
+\bibitem[\protect\citeauthoryear{Grenfell, Bj{\o}rnstad, and Kappey}{Grenfell
+  et~al.}{2001}]{grenfell2001travelling}
+Grenfell, B.~T., O.~N. Bj{\o}rnstad, and J.~Kappey (2001).
+\newblock Travelling waves and spatial hierarchies in measles epidemics.
+\newblock {\em Nature\/}~{\em 414\/}(6865), 716--723.
 
-\pagebreak
+\bibitem[\protect\citeauthoryear{Hamer, White, Jenkins, Gill, Landsberg,
+  Klapperich, Bulekova, Platt, Decarie, Gilmore, et~al.}{Hamer
+  et~al.}{2021}]{hamer2021assessment}
+Hamer, D.~H., L.~F. White, H.~E. Jenkins, C.~J. Gill, H.~E. Landsberg,
+  C.~Klapperich, K.~Bulekova, J.~Platt, L.~Decarie, W.~Gilmore, et~al. (2021).
+\newblock {Assessment of a COVID-19 control plan on an urban university campus
+  during a second wave of the pandemic}.
+\newblock {\em JAMA Network Open\/}~{\em 4\/}(6), e2116425--e2116425.
 
-\begin{figure}[!htp]
-\includegraphics[width=\textwidth]{../figure_diagram/diagram.pdf}
-\caption{
-\textbf{Compartmental diagram of the individual-based model.}
-Each compartment represents a stage of infection: susceptible $S$, exposed $S$, pre-symptomatic $I_p$, symptomatic $I_s$, asymptomatic $I_a$, and recovered $R$.
-Pre-symptomatic, symptomatic, and asymptomatic stages are further divided into two subcompartments.
-Individuals in pre-symptomatic, symptomatic, and asymptomatic stages can test positive with 95\% sensitivity.
-}
-\end{figure}
+\bibitem[\protect\citeauthoryear{{Harvard University}}{{Harvard
+  University}}{2021}]{harvardoutbreak}
+{Harvard University} (2021).
+\newblock {Increase in COVID-19 cases, Take Steps to Protect Yourself \& Our
+  Community}.
 
-\pagebreak
+\bibitem[\protect\citeauthoryear{He, Ionides, and King}{He
+  et~al.}{2010}]{he2010plug}
+He, D., E.~L. Ionides, and A.~A. King (2010).
+\newblock Plug-and-play inference for disease dynamics: measles in large and
+  small populations as a case study.
+\newblock {\em Journal of the Royal Society Interface\/}~{\em 7\/}(43),
+  271--283.
 
-\begin{figure}[!htp]
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_simulation_fall_2020_all.pdf}
-\caption{
-\textbf{Comparisons between model predictions and the observed numbers of cases for fall 2020.}
-Points represent the weekly number of reported cases in PU.
-Red lines and shaded areas represent median model predictions and 90\% quantiles across 100 simulations.
-See figure 2 in the main text for details.
-}
-\end{figure}
+\bibitem[\protect\citeauthoryear{Hellewell, Abbott, Gimma, Bosse, Jarvis,
+  Russell, Munday, Kucharski, Edmunds, Sun, et~al.}{Hellewell
+  et~al.}{2020}]{hellewell2020feasibility}
+Hellewell, J., S.~Abbott, A.~Gimma, N.~I. Bosse, C.~I. Jarvis, T.~W. Russell,
+  J.~D. Munday, A.~J. Kucharski, W.~J. Edmunds, F.~Sun, et~al. (2020).
+\newblock {Feasibility of controlling COVID-19 outbreaks by isolation of cases
+  and contacts}.
+\newblock {\em The Lancet Global Health\/}~{\em 8\/}(4), e488--e496.
 
-\pagebreak
+\bibitem[\protect\citeauthoryear{Hellewell, Russell, Beale, Kelly, Houlihan,
+  Nastouli, and Kucharski}{Hellewell et~al.}{2021}]{hellewell2021estimating}
+Hellewell, J., T.~W. Russell, R.~Beale, G.~Kelly, C.~Houlihan, E.~Nastouli, and
+  A.~J. Kucharski (2021).
+\newblock {Estimating the effectiveness of routine asymptomatic PCR testing at
+  different frequencies for the detection of SARS-CoV-2 infections}.
+\newblock {\em BMC medicine\/}~{\em 19\/}(1), 1--10.
 
-\begin{figure}[!htp]
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_simulation_spring_2020_all.pdf}
-\caption{
-\textbf{Comparisons between model predictions and the observed numbers of cases for spring 2020.}
-Points represent the weekly number of reported cases in PU.
-Red lines and shaded areas represent median model predictions and 90\% quantiles across 100 simulations.
-See figure 2 in the main text for details.
-}
-\end{figure}
+\bibitem[\protect\citeauthoryear{Holmdahl and Buckee}{Holmdahl and
+  Buckee}{2020}]{holmdahl2020wrong}
+Holmdahl, I. and C.~Buckee (2020).
+\newblock {Wrong but useful—what COVID-19 epidemiologic models can and cannot
+  tell us}.
+\newblock {\em New England Journal of Medicine\/}~{\em 383\/}(4), 303--305.
 
+\bibitem[\protect\citeauthoryear{Kissler, Tedijanto, Goldstein, Grad, and
+  Lipsitch}{Kissler et~al.}{2020}]{kissler2020projecting}
+Kissler, S.~M., C.~Tedijanto, E.~Goldstein, Y.~H. Grad, and M.~Lipsitch (2020).
+\newblock {Projecting the transmission dynamics of SARS-CoV-2 through the
+  postpandemic period}.
+\newblock {\em Science\/}~{\em 368\/}(6493), 860--868.
 
-\pagebreak
+\bibitem[\protect\citeauthoryear{Koelle, Martin, Antia, Lopman, and
+  Dean}{Koelle et~al.}{2022}]{koelle2022changing}
+Koelle, K., M.~A. Martin, R.~Antia, B.~Lopman, and N.~E. Dean (2022).
+\newblock {The changing epidemiology of SARS-CoV-2}.
+\newblock {\em Science\/}~{\em 375\/}(6585), 1116--1121.
 
-\begin{figure}[!htp]
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_simulation_fall_2021_all.pdf}
-\caption{
-\textbf{Comparisons between model predictions and the observed numbers of cases for fall 2021.}
-Points represent the weekly number of reported cases in PU.
-Red lines and shaded areas represent median model predictions and 90\% quantiles across 100 simulations.
-See figure 2 in the main text for details.
-}
-\end{figure}
+\bibitem[\protect\citeauthoryear{Kraemer, Pybus, Fraser, Cauchemez, Rambaut,
+  and Cowling}{Kraemer et~al.}{2021}]{kraemer2021monitoring}
+Kraemer, M.~U., O.~G. Pybus, C.~Fraser, S.~Cauchemez, A.~Rambaut, and B.~J.
+  Cowling (2021).
+\newblock {Monitoring key epidemiological parameters of SARS-CoV-2
+  transmission}.
+\newblock {\em Nature medicine\/}~{\em 27\/}(11), 1854--1855.
 
-\pagebreak
+\bibitem[\protect\citeauthoryear{Lavezzo, Franchin, Ciavarella,
+  Cuomo-Dannenburg, Barzon, Del~Vecchio, Rossi, Manganelli, Loregian, Navarin,
+  et~al.}{Lavezzo et~al.}{2020}]{lavezzo2020suppression}
+Lavezzo, E., E.~Franchin, C.~Ciavarella, G.~Cuomo-Dannenburg, L.~Barzon,
+  C.~Del~Vecchio, L.~Rossi, R.~Manganelli, A.~Loregian, N.~Navarin, et~al.
+  (2020).
+\newblock {Suppression of a SARS-CoV-2 outbreak in the Italian municipality of
+  Vo’}.
+\newblock {\em Nature\/}~{\em 584\/}(7821), 425--429.
 
-\begin{figure}[!htp]
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_simulation_nowaning.pdf}
-\caption{
-\textbf{Comparisons between model predictions and the observed numbers of cases for fall 2021 without immunity waning.}
-Points represent the weekly number of reported cases in PU.
-Red lines and shaded areas represent median model predictions and 90\% quantiles across 100 simulations.
-See figure 2 in the main text for details.
-}
-\end{figure}
+\bibitem[\protect\citeauthoryear{Lavine, Bjornstad, and Antia}{Lavine
+  et~al.}{2021}]{lavine2021immunological}
+Lavine, J.~S., O.~N. Bjornstad, and R.~Antia (2021).
+\newblock {Immunological characteristics govern the transition of COVID-19 to
+  endemicity}.
+\newblock {\em Science\/}~{\em 371\/}(6530), 741--745.
 
-\pagebreak
+\bibitem[\protect\citeauthoryear{Lloyd-Smith, Schreiber, Kopp, and
+  Getz}{Lloyd-Smith et~al.}{2005}]{lloyd2005superspreading}
+Lloyd-Smith, J.~O., S.~J. Schreiber, P.~E. Kopp, and W.~M. Getz (2005).
+\newblock Superspreading and the effect of individual variation on disease
+  emergence.
+\newblock {\em Nature\/}~{\em 438\/}(7066), 355--359.
 
-\begin{figure}[!htp]
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_simulation_omicron_spring_shortI.pdf}
-\caption{
-\textbf{The impact of changes in testing frequency and an increased reproduction number on the spread of the Omicron variant, assuming a shorter latent and infectious periods.}
-Solid lines represent median predictions.
-Shaded areas represent 90\% quantiles across 100 simulations.
-Points represent the observed data.
-Vertical dashed lines represent the week including February 8, 2022, when distancing and testing policies were updated on PU campus.
-For each row, we assume a fixed value of baseline contact reproduction number $\Rc$ ranging from 2 to 6 across rows.
-Then, we simulate increase in $\Rc$ at the time of policy change (indicated by column labels).
-Here, the assumed mean latent, presymptomatic, and asymptomatic stages of infection are 0.5 days shorter than the assumed values for simulations presented in Figure 3 in the main text.
-}
-\end{figure}
+\bibitem[\protect\citeauthoryear{Lopman, Liu, Le~Guillou, Lash, Isakov, and
+  Jenness}{Lopman et~al.}{2020}]{lopman2020model}
+Lopman, B., C.~Y. Liu, A.~Le~Guillou, T.~L. Lash, A.~P. Isakov, and S.~M.
+  Jenness (2020).
+\newblock {A model of COVID-19 transmission and control on university
+  campuses}.
+\newblock {\em MedRxiv\/}.
 
+\bibitem[\protect\citeauthoryear{Metcalf, Morris, and Park}{Metcalf
+  et~al.}{2020}]{metcalf2020mathematical}
+Metcalf, C. J.~E., D.~H. Morris, and S.~W. Park (2020).
+\newblock Mathematical models to guide pandemic response.
+\newblock {\em Science\/}~{\em 369\/}(6502), 368--369.
 
-\pagebreak
+\bibitem[\protect\citeauthoryear{Moreira~Jr, Kitchin, Xu, Dychter, Lockhart,
+  Gurtman, Perez, Zerbini, Dever, Jennings, et~al.}{Moreira~Jr
+  et~al.}{2022}]{moreira2022safety}
+Moreira~Jr, E.~D., N.~Kitchin, X.~Xu, S.~S. Dychter, S.~Lockhart, A.~Gurtman,
+  J.~L. Perez, C.~Zerbini, M.~E. Dever, T.~W. Jennings, et~al. (2022).
+\newblock Safety and efficacy of a third dose of {BNT162b2} {COVID-19} vaccine.
+\newblock {\em New England Journal of Medicine\/}.
 
-\begin{figure}[!htp]
-\includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_simulation_omicron_spring_shortI.pdf}
-\caption{
-\textbf{The impact of changes in testing frequency and an increased reproduction number on the spread of the Omicron variant, assuming a lower vaccine effectiveness.}
-Solid lines represent median predictions.
-Shaded areas represent 90\% quantiles across 100 simulations.
-Points represent the observed data.
-Vertical dashed lines represent the week including February 8, 2022, when distancing and testing policies were updated on PU campus.
-For each row, we assume a fixed value of baseline contact reproduction number $\Rc$ ranging from 2 to 6 across rows.
-Then, we simulate increase in $\Rc$ at the time of policy change (indicated by column labels).
-Here, we assume 30\% vaccine effectiveness against infection.
-}
-\end{figure}
+\bibitem[\protect\citeauthoryear{Prunas, Warren, Crawford, Gazit, Patalon,
+  Weinberger, and Pitzer}{Prunas et~al.}{2022}]{prunas2022vaccination}
+Prunas, O., J.~L. Warren, F.~W. Crawford, S.~Gazit, T.~Patalon, D.~M.
+  Weinberger, and V.~E. Pitzer (2022).
+\newblock {Vaccination with BNT162b2 reduces transmission of SARS-CoV-2 to
+  household contacts in Israel}.
+\newblock {\em Science\/}, eabl4292.
+
+\bibitem[\protect\citeauthoryear{Saad-Roy, Morris, Metcalf, Mina, Baker,
+  Farrar, Holmes, Pybus, Graham, Levin, et~al.}{Saad-Roy
+  et~al.}{2021}]{saad2021epidemiological}
+Saad-Roy, C.~M., S.~E. Morris, C.~J.~E. Metcalf, M.~J. Mina, R.~E. Baker,
+  J.~Farrar, E.~C. Holmes, O.~G. Pybus, A.~L. Graham, S.~A. Levin, et~al.
+  (2021).
+\newblock {Epidemiological and evolutionary considerations of SARS-CoV-2
+  vaccine dosing regimes}.
+\newblock {\em Science\/}~{\em 372\/}(6540), 363--370.
+
+\bibitem[\protect\citeauthoryear{Saad-Roy, Wagner, Baker, Morris, Farrar,
+  Graham, Levin, Mina, Metcalf, and Grenfell}{Saad-Roy
+  et~al.}{2020}]{saad2020immune}
+Saad-Roy, C.~M., C.~E. Wagner, R.~E. Baker, S.~E. Morris, J.~Farrar, A.~L.
+  Graham, S.~A. Levin, M.~J. Mina, C.~J.~E. Metcalf, and B.~T. Grenfell (2020).
+\newblock {Immune life history, vaccination, and the dynamics of SARS-CoV-2
+  over the next 5 years}.
+\newblock {\em Science\/}~{\em 370\/}(6518), 811--818.
+
+\bibitem[\protect\citeauthoryear{Tan, Chiew, Pang, Lee, Ong, Lye, and Tan}{Tan
+  et~al.}{2023}]{tan2023vaccine}
+Tan, C.~Y., C.~J. Chiew, D.~Pang, V.~J. Lee, B.~Ong, D.~C. Lye, and K.~B. Tan
+  (2023).
+\newblock {Vaccine effectiveness against Delta, Omicron BA. 1, and BA. 2 in a
+  highly vaccinated Asian setting: a test-negative design study}.
+\newblock {\em Clinical Microbiology and Infection\/}~{\em 29\/}(1), 101--106.
+
+\bibitem[\protect\citeauthoryear{Tartof, Slezak, Fischer, Hong, Ackerson,
+  Ranasinghe, Frankland, Ogun, Zamparo, Gray, et~al.}{Tartof
+  et~al.}{2021}]{tartof2021effectiveness}
+Tartof, S.~Y., J.~M. Slezak, H.~Fischer, V.~Hong, B.~K. Ackerson, O.~N.
+  Ranasinghe, T.~B. Frankland, O.~A. Ogun, J.~M. Zamparo, S.~Gray, et~al.
+  (2021).
+\newblock {Effectiveness of mRNA BNT162b2 COVID-19 vaccine up to 6 months in a
+  large integrated health system in the USA: a retrospective cohort study}.
+\newblock {\em The Lancet\/}~{\em 398\/}(10309), 1407--1416.
+
+\bibitem[\protect\citeauthoryear{Viboud, Bj{\o}rnstad, Smith, Simonsen, Miller,
+  and Grenfell}{Viboud et~al.}{2006}]{viboud2006synchrony}
+Viboud, C., O.~N. Bj{\o}rnstad, D.~L. Smith, L.~Simonsen, M.~A. Miller, and
+  B.~T. Grenfell (2006).
+\newblock Synchrony, waves, and spatial hierarchies in the spread of influenza.
+\newblock {\em science\/}~{\em 312\/}(5772), 447--451.
+
+\bibitem[\protect\citeauthoryear{Wallinga and Lipsitch}{Wallinga and
+  Lipsitch}{2007}]{wallinga2007generation}
+Wallinga, J. and M.~Lipsitch (2007).
+\newblock How generation intervals shape the relationship between growth rates
+  and reproductive numbers.
+\newblock {\em Proceedings of the Royal Society B: Biological Sciences\/}~{\em
+  274\/}(1609), 599--604.
+
+\bibitem[\protect\citeauthoryear{Wilson, Donovan, Campbell, Chai, Pittman,
+  Se{\~n}a, Pettifor, Weber, Mallick, Cope, et~al.}{Wilson
+  et~al.}{2020}]{wilson2020multiple}
+Wilson, E., C.~V. Donovan, M.~Campbell, T.~Chai, K.~Pittman, A.~C. Se{\~n}a,
+  A.~Pettifor, D.~J. Weber, A.~Mallick, A.~Cope, et~al. (2020).
+\newblock {Multiple COVID-19 clusters on a university campus—North Carolina,
+  August 2020}.
+\newblock {\em Morbidity and Mortality Weekly Report\/}~{\em 69\/}(39), 1416.
+
+\end{thebibliography}
+
 
 \end{document}

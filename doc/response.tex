@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage{color}
+\usepackage{graphicx}
 
 \usepackage{xspace}
 
@@ -54,6 +55,74 @@
 
 \newcommand{\total}{{\mathcal T}} %% total number of serial intervals
 
+\usepackage{lineno}
+\linenumbers
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFaddtex}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdeltex}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
+\providecommand{\DIFmodend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF HYPERREF PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{\texorpdfstring{\DIFaddtex{#1}}{#1}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{\texorpdfstring{\DIFdeltex{#1}}{}} %DIF PREAMBLE
+\newcommand{\DIFscaledelfig}{0.5}
+%DIF HIGHLIGHTGRAPHICS PREAMBLE %DIF PREAMBLE
+\RequirePackage{settobox} %DIF PREAMBLE
+\RequirePackage{letltxmacro} %DIF PREAMBLE
+\newsavebox{\DIFdelgraphicsbox} %DIF PREAMBLE
+\newlength{\DIFdelgraphicswidth} %DIF PREAMBLE
+\newlength{\DIFdelgraphicsheight} %DIF PREAMBLE
+% store original definition of \includegraphics %DIF PREAMBLE
+\LetLtxMacro{\DIFOincludegraphics}{\includegraphics} %DIF PREAMBLE
+\newcommand{\DIFaddincludegraphics}[2][]{{\color{blue}\fbox{\DIFOincludegraphics[#1]{#2}}}} %DIF PREAMBLE
+\newcommand{\DIFdelincludegraphics}[2][]{% %DIF PREAMBLE
+\sbox{\DIFdelgraphicsbox}{\DIFOincludegraphics[#1]{#2}}% %DIF PREAMBLE
+\settoboxwidth{\DIFdelgraphicswidth}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\settoboxtotalheight{\DIFdelgraphicsheight}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\scalebox{\DIFscaledelfig}{% %DIF PREAMBLE
+\parbox[b]{\DIFdelgraphicswidth}{\usebox{\DIFdelgraphicsbox}\\[-\baselineskip] \rule{\DIFdelgraphicswidth}{0em}}\llap{\resizebox{\DIFdelgraphicswidth}{\DIFdelgraphicsheight}{% %DIF PREAMBLE
+\setlength{\unitlength}{\DIFdelgraphicswidth}% %DIF PREAMBLE
+\begin{picture}(1,1)% %DIF PREAMBLE
+\thicklines\linethickness{2pt} %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\framebox(1,1){}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\line( 1,1){1}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,1){\line(1,-1){1}}}% %DIF PREAMBLE
+\end{picture}% %DIF PREAMBLE
+}\hspace*{3pt}}} %DIF PREAMBLE
+} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbegin}{\DIFaddbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddend}{\DIFaddend} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbegin}{\DIFdelbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelend}{\DIFdelend} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbegin}{\DIFOaddbegin \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbegin}{\DIFOdelbegin \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbeginFL}{\DIFaddbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddendFL}{\DIFaddendFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbeginFL}{\DIFdelbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelendFL}{\DIFdelendFL} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbeginFL}{\DIFOaddbeginFL \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbeginFL}{\DIFOdelbeginFL \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
 
 \begin{document}
 
@@ -65,8 +134,6 @@ We now compare normalized cases divided by the population size---this allows us 
 We have reparameterized the community contact rate in our model to account for variation in population sizes across semesters and refitted the model.
 We have also added sensitivity analyses and additional figures to show the robustness of our conclusion.
 Below please find our detailed responses to reviewers.
-
-\rev{Editor}
 
 \revtext{Associate Editor Comments: }
 
@@ -359,6 +426,895 @@ Based on suggestions by Reviewer 1, we now normalize $\theta$ by population size
 
 Done.
 
-\bibliography{university-covid}
+\pagebreak
+
+
+\begin{flushleft}{
+	\Large
+	\textbf\newline{
+		Relative role of community transmission and campus contagion in driving the spread of SARS-CoV-2: lessons from Princeton University
+	}
+}
+\newline
+\\
+Sang Woo Park\textsuperscript{1}
+Irini Daskalaki\textsuperscript{2}
+Robin M. Izzo\textsuperscript{3}
+Irina Aranovich\textsuperscript{4}
+Aartjan J.W. te Velthuis\textsuperscript{5}
+Daniel A. Notterman\textsuperscript{5}
+C. Jessica E. Metcalf\textsuperscript{1\DIFaddbegin \DIFadd{,6}\DIFaddend }
+Bryan T.\ Grenfell\textsuperscript{1,6}
+\\
+\bigskip
+\textbf{1} Department of Ecology and Evolutionary Biology, Princeton University, Princeton, NJ, USA
+\\
+\textbf{2} University Health Services, Princeton University, Princeton, NJ, USA
+\\
+\textbf{3} Environmental Health and Safety, Princeton University, Princeton, NJ, USA
+\\
+\textbf{4} Princeton University Clinical Laboratory, Princeton University, Princeton, NJ, USA
+\\
+\textbf{5} Department of Molecular Biology, Princeton University, Princeton, NJ, USA
+\\
+\textbf{6} Princeton School of Public and International Affairs, Princeton University, Princeton, NJ, USA
+\\
+\bigskip
+
+Corresponding author: swp2@princeton.edu
+\bigskip
+\end{flushleft}
+
+\section*{Abstract}
+
+Mathematical models have played a crucial role in \DIFaddbegin \DIFadd{exploring and }\DIFaddend guiding pandemic responses. 
+University campuses present a particularly well-documented case for institutional outbreaks, thereby providing a unique opportunity to understand detailed patterns of pathogen spread.
+Here, we present descriptive and modeling analyses of SARS-CoV-2 transmission on the Princeton University campus---this model was used throughout the pandemic to inform policy decisions and operational guidelines for the university campus.
+We demonstrate strong spatiotemporal correlations in epidemic patterns between the university campus and surrounding communities.
+These findings are corroborated by our model predictions, which indicate that the amount of on-campus transmission was likely limited during much of the wider pandemic until the end of 2021.
+Finally, we find that a super-spreading event likely played a major role in driving the \DIFdelbegin \DIFdel{recent }\DIFdelend Omicron variant outbreak on the Princeton University campus during the spring semester of the 2021--2022 academic year.
+Despite large numbers of cases on campus in this period, case levels in surrounding communities remained low, suggesting that there was little spillover transmission from campus to the local community.
+
+\section*{Significance}
+
+University campuses present challenges to preventing SARS-CoV-2 transmission, due to a high proportion of asymptomatic infections and high contact rates. SARS-CoV-2 outbreaks on the Princeton University campus offer an unusually well-documented perspective, rooted in mass asymptomatic testing, further informed by mathematical modeling aimed at guiding policy decisions. Here, we show that this model can parsimoniously capture observed outbreak patterns on campus during different eras of control. Our analysis reveals that strong coupling between epidemic dynamics on campus and in local communities drives the early epidemic. Subsequently, especially in the \DIFdelbegin \DIFdel{omicron }\DIFdelend \DIFaddbegin \DIFadd{Omicron }\DIFaddend era, superspreading events came to dominate transmission on campus, thereby weakening the dynamical coupling of campus and community outbreaks.
+
+\pagebreak
+
+\section*{Introduction}
+
+Predicting and controlling the spread of SARS-CoV-2 has remained a critical public health and scientific question throughout the ongoing SARS-CoV-2 pandemic \citep{baker2021limits}.
+Rapid, asymptomatic transmission of SARS-CoV-2 has hindered intervention efforts, such as contact tracing \citep{hellewell2020feasibility}.
+Social distancing measures have played major roles in preventing transmission, but can be difficult to maintain for a prolonged period \citep{galanti2021social}.
+The development of vaccines has provided a safe means of reopening society, but uncertainty remains on their long-term effectiveness in preventing infection and transmission, especially in the face of new viral variants.
+
+Mathematical models have played a significant role in guiding these pandemic responses and \DIFdelbegin \DIFdel{devising }\DIFdelend \DIFaddbegin \DIFadd{exploring }\DIFaddend control strategies \citep{cobey2020modeling,holmdahl2020wrong,metcalf2020mathematical,koelle2022changing}.
+Models can help monitor key parameters that govern epidemic dynamics \citep{kraemer2021monitoring} and retrospectively estimate the impact of intervention measures in reducing transmission \citep{flaxman2020estimating}.
+These estimates can further inform projections of future scenarios and allow us to explore the endemicity of SARS-CoV-2 \citep{kissler2020projecting,saad2020immune,lavine2021immunological,saad2021epidemiological}.
+% While models are useful for exploring such counterfactuals, they must be paired with real-life implementations to properly assess the effectiveness of intervention measures.
+
+Mathematical models have also been widely deployed in planning campus reopenings.
+Researchers from various institutions in the US---including Cornell \citep{frazier2022modeling}, Emory \citep{lopman2020model}, Georgia Institute of Technology \citep{gibson2021surveillance}, and UC Berkeley \citep{brook2021optimizing}---modeled the feasibility of controlling the epidemic on their campuses and considered mass asymptomatic testing as their main intervention.
+\DIFaddbegin \DIFadd{Mathematical models also played crucial roles in helping to make decisions about reopening, ensuring that infrastructure (e.g., isolation methods and spaces, supporting isolation and quarantine with food, etc.) and levels of mitigation (masks, ventilation, testing frequency, etc.) were adequate and appropriate.
+}\DIFaddend These modeling efforts helped identify key parameters for control, such as the testing turnaround time, and provided support for implementing similar measures at other institutions.
+Coupling modeling efforts with real-life implementations in university campuses further provided unique opportunities to directly test model-based predictions of intervention effects in preventing the transmission of SARS-CoV-2 \citep{frazier2022modeling}---
+each university campus offers a relatively well-controlled epidemic setting with a relatively homogeneously behaving population (especially among undergraduate students).
+Campuses can also offer strong opportunities for control by non-pharmaceutical interventions, such as isolation and mask-wearing;
+mass asymptomatic testing further provides robust ascertainment for epidemic sizes, allowing for accurate understanding of epidemic patterns.
+
+On the other hand, university campuses also present unique challenges to controlling an outbreak.
+A large fraction of asymptomatic infections (due to the young age of university students) and high-density interactions---such as eating in large dining halls and various social activities---can readily permit rapid transmission.
+These kinds of contacts are inherently difficult to keep track of, making contact tracing less effective.
+The impact of intervention measures is expected to vary across different university campuses, reflecting heterogeneity in campus settings such as compliance, resources, community prevalence, \DIFaddbegin \DIFadd{ventilation infrastructure, }\DIFaddend as well as effects of other interventions present on campuses.
+For example, Duke and Harvard Universities experienced moderate outbreaks at the beginning of the fall semester in 2021 when in-person classes were allowed, despite high vaccination rates and weekly asymptomatic testing protocols \citep{dukeoutbreak,harvardoutbreak}, whereas the number of cases remained low in Princeton University (PU) during the same time period with similar levels of testing and vaccination.
+Here, we focused on the dynamics of SARS-CoV-2 on the PU campus alone to eliminate heterogeneities inherent to such comparisons; we return to comparisons with other campuses later in the discussion.
+
+We begin with a descriptive analysis of the PU outbreak (\fref{princeton}), \DIFdelbegin \DIFdel{and }\DIFdelend \DIFaddbegin \DIFadd{then }\DIFaddend present modeling analyses of the individual epidemics during 2020--2022.
+PU is located in Mercer County, New Jersey, USA;
+the population comprises \DIFdelbegin \DIFdel{of }\DIFdelend 5267 undergraduate students, 2946 graduate students, and around 7000 faculty and staff members.
+For simplicity, we divided the epidemic into four time periods representing four semesters across two academic years: Fall 2020--2021 (August 24, 2020--January 1, 2021; \fref{princeton}A), Spring 2020--2021 (January 16, 2021--May 14, 2021; \fref{princeton}B), Fall 2021--2022 (August 14, 2021--December 31, 2021; \fref{princeton}C), and Spring 2021--2022 (January 1, 2022--March 18, 2022; \fref{princeton}D).
+Throughout the majority of the study period, all students, faculty and staff members who were physically present for more than 8 hours on campus per week were required to participate in asymptomatic testing with varying frequencies.
+Asymptomatic individuals submitted self-collected saliva samples, from which the presence of SARS-CoV-2 was tested using Reverse Transcription Polymerase Chain Reaction (RT-PCR).  
+Those who tested positive were required to isolate for at least 10 days after symptom onset or test date (whichever was longer) and were released when they had been at least 48 hours with improving or resolving symptoms as per New Jersey Department of Health guidance\DIFaddbegin \DIFadd{;
+the isolation duration switched to 5 days on January 14, 2022, for all vaccinated people}\DIFaddend .
+PCR positives were exempt from asymptomatic testing for 90 days.
+Since March 7, 2022, asymptomatic testing frequencies decreased to once a month from once a week for individuals whose vaccine status is up-to-date. This in turn likely reduced the accuracy of surveillance; therefore, we chose to focus on epidemic patterns before this change was implemented.
+\DIFaddbegin \DIFadd{In Supplementary Figure S1, we show the testing volumes over time---the testing volumes remained roughly constant within each semester, except when testing frequency changed, which we note in the paper.
+However, changes in testing frequency were not associated with sudden changes in cases, meaning that the patterns in case trajectories likely reflect patterns of spread, rather than testing behavior.
+}\DIFaddend Throughout the study period, contact tracing was also performed for positive cases to alert their close contacts to \DIFdelbegin \DIFdel{either quarantine or }\DIFdelend test more frequently \DIFaddbegin \DIFadd{and quarantine as applicable, }\DIFaddend according to the close contacts\DIFdelbegin \DIFdel{' }\DIFdelend \DIFaddbegin \DIFadd{’ }\DIFaddend vaccination status, and to gather data that could help uncover clusters of transmission or superspreader events.
+Changes in testing frequency and other intervention measures throughout the study period reflected various factors, including the impact of COVID-19 cases on continuity of operations or continuity of teaching; on severity of disease on campus; the capacity of testing and the healthcare system; and hospitalization rates on campus and in the area.
+All data used in this analysis are publicly available on the PU COVID-19 Dashboard website: \url{https://covid.princeton.edu/dashboard}.
+
+\begin{figure}[!th]
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_new.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.95\textwidth]{figure_princeton_new_per_1000.pdf}
+\DIFaddendFL \caption{
+\textbf{Dynamics of SARS-CoV-2 outbreaks in Princeton University (PU).}
+(A--D) Epidemic trajectories across four semesters: Fall 2020--2021 (A), Spring 2020--2021 (B), Fall 2021--2022 (C), and Spring 2021--2022 (D).
+Colored bar plots represent the weekly number of cases \DIFaddbeginFL \DIFaddFL{per 1000 }\DIFaddendFL from both asymptomatic and symptomatic testing in PU.
+Red lines represent the weekly number of cases \DIFaddbeginFL \DIFaddFL{per 1000 }\DIFaddendFL in Mercer County.
+Number of cases in Mercer County is obtained from \url{https://github.com/nytimes/covid-19-data}.
+\DIFaddbeginFL \DIFaddFL{The weekly number of cases per 1000 in Princeton is normalized by the approximate total size of the PU population present on campus for each semester: 3000 for Fall 2020--2021, 8000 for Spring 2020--2021, 13000 for Fall 2021--2022, and 15000 for Spring 2021--2022.
+The weekly number of cases per 1000 in Princeton in Mercer County is calculated based on the total population size as of 2020: 387340 }\DIFaddendFL (\DIFaddbeginFL \url{www.census.gov}\DIFaddFL{).
+(}\DIFaddendFL E--H) Correlations between the weekly number of cases \DIFaddbeginFL \DIFaddFL{per 1000 }\DIFaddendFL in PU and in Mercer County.
+Solid lines and shaded areas represent the estimated linear regression lines and the associated 95\% CIs.
+(I--L) Ratios between weekly \DIFdelbeginFL \DIFdelFL{numbers }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{number }\DIFaddendFL of cases \DIFdelbeginFL \DIFdelFL{reported from }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{per 1000 in }\DIFaddendFL PU and Mercer County.
+The \DIFdelbeginFL \DIFdelFL{shaded orange area covers }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{dashed lines represent }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{region between }\DIFdelendFL 1:\DIFdelbeginFL \DIFdelFL{100 and }\DIFdelendFL 1 \DIFdelbeginFL \DIFdelFL{:25 ratios}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{ratio}\DIFaddendFL .
+\label{fig:princeton}
+}
+\end{figure}
+
+\section*{Descriptive analysis}
+
+During the \textbf{fall semester of the 2020--2021 academic year}, roughly 1000 grad students and 2000 faculty and staff members were present on campus and participated in asymptomatic testing. 
+All classes were held virtually, and so only a few undergraduate students remained on campus ($<300$).  
+Both undergraduate and graduate students were required to get tested twice a week, whereas faculty and staff members were required to get tested once a week.
+The number of cases remained relatively low throughout the semester with a peak occurring in early December, coinciding with the epidemic trajectory in Mercer County (\fref{princeton}A).  
+A sudden decrease in the number of cases around \DIFdelbegin \DIFdel{Thanksgiving partly }\DIFdelend \DIFaddbegin \DIFadd{Thanksgiving---a national holiday in the US during which many students travel off campus---partly }\DIFaddend reflects the reduced number of tests (3852 and 2972 asymptomatic tests performed on the week ending November 20th and 27th, respectively).
+The highest number of cases was reported among faculty and staff members ($=169$), followed by graduate students ($=41$), and undergraduate students ($=4$).
+\DIFaddbegin \DIFadd{Even when we control for the differing population sizes among these groups, we find that a considerably larger amount of cases were reported among faculty and staff members (84.5 cases per 1000) than from graduate students (41 cases per 1000) (Supplementary Figure S2A)---we exclude the undergraduate student population from this comparison due to a very low number of undergraduate students present on campus during this period.
+}\DIFaddend 
+
+In the beginning of the \textbf{spring semester of the 2020--2021 academic year}, the number of cases suddenly increased before classes started (\fref{princeton}B), reflecting $\approx 3000$ undergraduate students returning to campus.
+Returning students were required to be tested \DIFaddbegin \DIFadd{upon arrival }\DIFaddend and quarantine for 7 days regardless of their returning location.
+Most classes remained virtual, and the testing protocol did not change (twice a week for undergraduate and graduate students, and once a week for faculty and staff members).
+Some smaller classes were held in-person, but required social distancing (thereby limiting the size of the class) and mask-wearing at all times.
+The number of cases persisted at similar levels to the fall semester and eventually decreased as classes ended and students went home---the decrease in the number of cases in PU also coincided with the decrease in the number of cases in Mercer County.
+The highest number of cases was reported among faculty and staff members ($=111$), followed by undergraduate students ($=101$), and graduate students ($=29$).
+\DIFaddbegin \DIFadd{This ordering is robust to differences in population sizes: 37 cases per 1000 among faculty and staff members, 34.3 cases per 1000 among undergraduate students, and 14.5 cases per 1000 among graduate students (Supplementary Figure S2B).
+}\DIFaddend 
+
+For the \textbf{fall semester of the 2021--2022 academic year}, all students and faculty and staff members were required to be vaccinated \DIFaddbegin \DIFadd{with the COVID vaccine primary series}\DIFaddend , with very few medical and religious exemptions.
+By the beginning of the semesters, 97\% of undergraduate students, 96\% of graduate students, and 94\% of faculty and staff members were vaccinated.
+Vaccinees were required to be tested once a week, while unvaccinated \DIFaddbegin \DIFadd{and partially vaccinated }\DIFaddend individuals were required to be tested twice a week.
+In-person classes and social events fully resumed on campus, though all individuals were required to wear masks indoors with a few exceptions (e.g., when eating or drinking, or when teaching \DIFdelbegin \DIFdel{a small class }\DIFdelend \DIFaddbegin \DIFadd{any size of class if social distancing can be maintained at all times}\DIFaddend ).
+The number of cases remained similar to previous semesters until November when cases began to increase, primarily among undergraduate students around Thanksgiving (\fref{princeton}C).  
+In order to prevent transmission, testing frequency was increased to twice a week for undergraduate students on November 27th, 2021; the size of non-academic gatherings were also limited to 20 people.
+The number of cases decreased slightly as classes ended but soon increased again as the Omicron (BA.1) variant began to spread on campus and in Mercer county.
+\DIFaddbegin \DIFadd{The total number of reported cases per 1000 remained high for all three population groups: 74 cases per 1000 among faculty and staff members, 63.5 cases per 1000 among graduate students, and 52.4 cases per 1000 among undergraduate students (Supplementary Figure S2C).
+}\DIFaddend 
+
+For the \textbf{spring semester of the 2021--2022 academic year}, all eligible students and faculty and staff members were required to \DIFdelbegin \DIFdel{be boosted}\DIFdelend \DIFaddbegin \DIFadd{have obtained booster vaccination}\DIFaddend .
+By the beginning of the semesters, 65\% of undergraduate students, 71\% of graduate students, and 82\% of faculty and staff members were boosted.
+Undergraduate students were still required to be tested twice a week to prevent the additional spread of the Omicron variant.
+The number of cases remained high before classes began but decreased over time, following epidemic patterns in Mercer County (\fref{princeton}D).
+Coinciding with the decrease in the campus and local cases numbers, the gathering policy was updated \DIFaddbegin \DIFadd{on February 8, 2022 }\DIFaddend to allow food in events \DIFaddbegin \DIFadd{and event sizes }\DIFaddend were no longer limited to 20 people;
+in addition, the testing frequency was reduced to once a week \DIFaddbegin \DIFadd{(but not for unvaccinated individuals)}\DIFaddend .
+Following the policy change, a large \DIFdelbegin \DIFdel{outbreak occurred on campus}\DIFdelend \DIFaddbegin \DIFadd{gathering event was held on campus, which resulted in an outbreak }\DIFaddend with high case numbers persisting until Spring Break (March 5th, 2022).
+The timing of this outbreak also coincided with a rapid \DIFdelbegin \DIFdel{turnover of }\DIFdelend \DIFaddbegin \DIFadd{increases in }\DIFaddend the Omicron subvariant BA.2 \DIFdelbegin \DIFdel{---the }\DIFdelend \DIFaddbegin \DIFadd{cases---the }\DIFaddend proportion of BA.2 subvariant reached 93.5\% (372/398) compared to 26.9\% (14/52) from the previous week.
+On March 7, 2022, mask mandates were lifted and testing frequency was reduced to once a month.
+\DIFaddbegin \DIFadd{Cases were largely concentrated among undergraduate students during this semester: 309 cases per 1000 among undergraduate students, 106 cases per 1000 among faculty and staff members, and 65.3 cases per 1000 among graduate students.
+}\DIFaddend 
+
+\subsection*{Comparisons of campus and community transmission}
+
+Across the first three semesters, we find strong and significant correlations between the weekly \DIFdelbegin \DIFdel{logged }\DIFdelend numbers of cases from PU and those from Mercer county:
+fall 2020--2021 (\DIFdelbegin \DIFdel{$\rho = 0.81$ }\DIFdelend \DIFaddbegin \DIFadd{$\rho = 0.79$ }\DIFaddend (95\% CI: \DIFdelbegin \DIFdel{0.55}\DIFdelend \DIFaddbegin \DIFadd{0.52}\DIFaddend --0\DIFdelbegin \DIFdel{.92}\DIFdelend \DIFaddbegin \DIFadd{.91}\DIFaddend ; $p < 0.001$), \fref{princeton}E); spring 2020--2021 (\DIFdelbegin \DIFdel{$\rho = 0.80$ }\DIFdelend \DIFaddbegin \DIFadd{$\rho = 0.84$ }\DIFaddend (95\% CI: \DIFdelbegin \DIFdel{0.51}\DIFdelend \DIFaddbegin \DIFadd{0.60}\DIFaddend --0\DIFdelbegin \DIFdel{.92}\DIFdelend \DIFaddbegin \DIFadd{.94}\DIFaddend ; $p < 0.001$), \fref{princeton}F); and fall 2021--2022 (\DIFdelbegin \DIFdel{$\rho = 0.86$ }\DIFdelend \DIFaddbegin \DIFadd{$\rho = 0.93$ }\DIFaddend (95\% CI: \DIFdelbegin \DIFdel{0.67}\DIFdelend \DIFaddbegin \DIFadd{0.84}\DIFaddend --0\DIFdelbegin \DIFdel{.94}\DIFdelend \DIFaddbegin \DIFadd{.97}\DIFaddend ; $p < 0.001$), \fref{princeton}G). 
+These correlations are robust even when we stratify cases by the population, except for undergraduate students during Fall 2020, when most were not physically present on campus (Supplementary Figure \DIFdelbegin \DIFdel{S1}\DIFdelend \DIFaddbegin \DIFadd{S3}\DIFaddend ).
+However, the case patterns in PU were decoupled from those in Mercer county for the spring semester of the 2021--2022 academic year with unclear correlations (\fref{princeton}H): \DIFdelbegin \DIFdel{$\rho = 0.32$ }\DIFdelend \DIFaddbegin \DIFadd{$\rho = 0.47$ }\DIFaddend (95\% CI: \DIFdelbegin \DIFdel{$-0.34$}\DIFdelend \DIFaddbegin \DIFadd{$-0.18$}\DIFaddend --0\DIFdelbegin \DIFdel{.77; $p = 0.33$}\DIFdelend \DIFaddbegin \DIFadd{.83; $p = 0.15$}\DIFaddend ).
+Stratifying cases by subpopulation shows that case patterns in graduate students and faculty and staff members were still strongly correlated with case patterns in Mercer county, meaning that the campus transmission was limited to undergraduate students (Supplementary Figure \DIFdelbegin \DIFdel{S1}\DIFdelend \DIFaddbegin \DIFadd{S3}\DIFaddend ). 
+We also find strong correlations between the weekly logged numbers of cases from PU and those from other counties in New Jersey (Supplementary Figure \DIFdelbegin \DIFdel{S2}\DIFdelend \DIFaddbegin \DIFadd{S4}\DIFaddend )---these correlations significantly decreased with distance from Mercer county in both spring 2020--2021 ($\rho=-0.48$ (95\% CI: $-0.75$--$-0.06$; $p = 0.03$) for all cases and $\rho=-0.51$ (95\% CI: $-0.77$--$-0.10$; $p = 0.02$) for faculty and staff cases) and fall 2021--2022 ($\rho=-0.68$ (95\% CI: $-0.86$--$-0.35$, $p < 0.001$) for all cases and $\rho=-0.74$ (95\% CI: $-0.89$--$-0.46$, $p < 0.001$) for faculty and staff cases).
+Across the first three semesters, both the total cases and faculty and staff cases showed similar levels of correlations with local cases.
+For the spring semester of the 2021--2022 academic year, we still find high correlations between faculty and staff cases and local cases throughout other \DIFdelbegin \DIFdel{countries }\DIFdelend \DIFaddbegin \DIFadd{counties }\DIFaddend ($\rho > 0.8$ across all counties in New Jersey); however, the total cases exhibit considerably weaker correlations due to student-to-student transmission on campus (Supplementary Figure \DIFdelbegin \DIFdel{S2}\DIFdelend \DIFaddbegin \DIFadd{S4}\DIFaddend ).    
+
+These correlations likely reflect commuting and contact patterns, and therefore we expect SARS-CoV-2 dynamics on campus to be correlated with those from nearby large cities as well. 
+We find similarly strong correlations with New York City for the first three semesters: fall 2020--2021 (\DIFdelbegin \DIFdel{$\rho = 0.74$ }\DIFdelend \DIFaddbegin \DIFadd{$\rho = 0.64$ }\DIFaddend (95\% CI: \DIFdelbegin \DIFdel{0.44}\DIFdelend \DIFaddbegin \DIFadd{0.26}\DIFaddend --0\DIFdelbegin \DIFdel{.90; $p < 0.001$}\DIFdelend \DIFaddbegin \DIFadd{.85; $p = 0.003$}\DIFaddend ), Supplementary Figure \DIFdelbegin \DIFdel{S3A}\DIFdelend \DIFaddbegin \DIFadd{S5A}\DIFaddend ); spring 2020--2021 (\DIFdelbegin \DIFdel{$\rho = 0.84$ }\DIFdelend \DIFaddbegin \DIFadd{$\rho = 0.80$ }\DIFaddend (95\% CI: \DIFdelbegin \DIFdel{0.61}\DIFdelend \DIFaddbegin \DIFadd{0.53}\DIFaddend --0\DIFdelbegin \DIFdel{.94}\DIFdelend \DIFaddbegin \DIFadd{.93}\DIFaddend ; $p < 0.001$), Supplementary Figure \DIFdelbegin \DIFdel{S3B}\DIFdelend \DIFaddbegin \DIFadd{S5B}\DIFaddend ); fall 2021--2022 (\DIFdelbegin \DIFdel{$\rho = 0.78$ }\DIFdelend \DIFaddbegin \DIFadd{$\rho = 0.89$ }\DIFaddend (95\% CI: \DIFdelbegin \DIFdel{0.51}\DIFdelend \DIFaddbegin \DIFadd{0.73}\DIFaddend --0\DIFdelbegin \DIFdel{.91}\DIFdelend \DIFaddbegin \DIFadd{.96}\DIFaddend ; $p < 0.001$), Supplementary Figure \DIFdelbegin \DIFdel{S3C}\DIFdelend \DIFaddbegin \DIFadd{S5C}\DIFaddend ); and spring 2021--2022 (\DIFdelbegin \DIFdel{$\rho = 0.33$ }\DIFdelend \DIFaddbegin \DIFadd{$\rho = 0.50$ }\DIFaddend (95\% CI: \DIFdelbegin \DIFdel{$-0.34$}\DIFdelend \DIFaddbegin \DIFadd{$-0.14$}\DIFaddend --0\DIFdelbegin \DIFdel{.78; $p=0.3$}\DIFdelend \DIFaddbegin \DIFadd{.85; $p=0.1$}\DIFaddend ), Supplementary  \DIFdelbegin \DIFdel{S3D}\DIFdelend \DIFaddbegin \DIFadd{S5D}\DIFaddend ).
+
+\DIFdelbegin \DIFdel{The same }\DIFdelend \DIFaddbegin \DIFadd{A similar }\DIFaddend picture emerges for Philadelphia except for spring 2020: fall 2020--2021 (\DIFdelbegin \DIFdel{$\rho = 0.83$ }\DIFdelend \DIFaddbegin \DIFadd{$\rho = 0.87$ }\DIFaddend (95\% CI: \DIFdelbegin \DIFdel{0.59}\DIFdelend \DIFaddbegin \DIFadd{0.68}\DIFaddend --0\DIFdelbegin \DIFdel{.93}\DIFdelend \DIFaddbegin \DIFadd{.95}\DIFaddend ; $p < 0.001$), Supplementary Figure \DIFdelbegin \DIFdel{S4A}\DIFdelend \DIFaddbegin \DIFadd{S6A}\DIFaddend ); spring 2020--2021 (\DIFdelbegin \DIFdel{$\rho = 0.29$ }\DIFdelend \DIFaddbegin \DIFadd{$\rho = 0.27$ }\DIFaddend (95\% CI: \DIFdelbegin \DIFdel{$-0.22$}\DIFdelend \DIFaddbegin \DIFadd{$-0.24$}\DIFaddend --0\DIFdelbegin \DIFdel{.68; $p = 0.25$}\DIFdelend \DIFaddbegin \DIFadd{.66; $p = 0.30$}\DIFaddend ), Supplementary Figure \DIFdelbegin \DIFdel{S4B}\DIFdelend \DIFaddbegin \DIFadd{S6B}\DIFaddend ); fall 2021--2022 (\DIFdelbegin \DIFdel{$\rho = 0.78$ }\DIFdelend \DIFaddbegin \DIFadd{$\rho = 0.89$ }\DIFaddend (95\% CI: \DIFdelbegin \DIFdel{0.51}\DIFdelend \DIFaddbegin \DIFadd{0.74}\DIFaddend --0\DIFdelbegin \DIFdel{.91}\DIFdelend \DIFaddbegin \DIFadd{.96}\DIFaddend ; $p < 0.001$), Supplementary Figure \DIFdelbegin \DIFdel{S4C}\DIFdelend \DIFaddbegin \DIFadd{S6C}\DIFaddend ); 
+and spring 2021--2022 (\DIFdelbegin \DIFdel{$\rho=0.37$ }\DIFdelend \DIFaddbegin \DIFadd{$\rho=0.46$ }\DIFaddend (95\% CI: \DIFdelbegin \DIFdel{$-0.30$}\DIFdelend \DIFaddbegin \DIFadd{$-0.19$}\DIFaddend --0\DIFdelbegin \DIFdel{.80; $p=0.27$}\DIFdelend \DIFaddbegin \DIFadd{.83; $p=0.15$}\DIFaddend ), Supplementary Figure \DIFdelbegin \DIFdel{S4D}\DIFdelend \DIFaddbegin \DIFadd{S6D}\DIFaddend ).
+Including counties from New York and Pennsylvania states into the spatial correlation analysis yields additional insights (Supplementary Figure \DIFdelbegin \DIFdel{S5}\DIFdelend \DIFaddbegin \DIFadd{S7}\DIFaddend ):
+epidemic dynamics were highly synchronized across all counties in fall 2020--2021 and became less synchronized over time. 
+These correlations significantly decreased with distance in spring 2020--2021 ($\rho = -0.36$ (95\% CI: $-0.49$--$-0.21$; $p < 0.001$)) and fall 2021--2022 ($\rho = -0.58$ (95\% CI: $-0.68$--$-0.46$; $p < 0.001$)).
+These variations likely reflect differences in vaccination levels and the timing of the introduction of the Omicron variant.
+
+Finally, mass testing allows us to infer the ratio between the weekly numbers of cases \DIFaddbegin \DIFadd{per 1000 }\DIFaddend from Princeton and those from Mercer county---
+we expect this ratio to remain constant \DIFdelbegin \DIFdel{over time if the }\DIFdelend \DIFaddbegin \DIFadd{around 1 over time when (1) there is random, homogeneous mixing between the campus and community and (2) testing patterns remains constant in both places within each semester. 
+In this case, the }\DIFaddend majority of infections on \DIFdelbegin \DIFdel{campus is }\DIFdelend \DIFaddbegin \DIFadd{PU campus would be }\DIFaddend caused by community transmission \DIFdelbegin \DIFdel{, provided that testing patterns remain roughly constant in both places.
+We }\DIFdelend \DIFaddbegin \DIFadd{owing to its small population size.
+Instead, we }\DIFaddend find that the ratio \DIFdelbegin \DIFdel{between the weekly numbers of cases from Princeton and those from Mercer county stayed between }\DIFdelend \DIFaddbegin \DIFadd{generally hovers above }\DIFaddend 1 \DIFdelbegin \DIFdel{:100 and 1:25 until the end of the }\DIFdelend \DIFaddbegin \DIFadd{during the fall semester of the 2020--2021 academic year even though there was little to no documented transmission on campus (\fref{princeton}I).
+This pattern likely reflects a higher testing rate on campus, thereby resulting in a higher case ascertainment rate.
+For the most part of the spring semester of the 2020--2021 academic year and the }\DIFaddend fall semester of the 2021--2022 academic year\DIFdelbegin \DIFdel{(\fref{princeton}I--K).
+}\DIFdelend \DIFaddbegin \DIFadd{, the case ratios hover around 1 (\fref{princeton}J--K).
+Deviations from the one-to-one ratio were often associated with large campus events, such as school holidays and the beginning and end of semesters.
+}\DIFaddend An increase in this ratio at the end of November 2021 was associated with the campus outbreak before Thanksgiving followed by an introduction of the Omicron variant in December---this deviation indicates an increase in the amount of transmission on campus.
+During the spring semester of the 2021--2022 academic year, the ratio between PU cases and Mercer county cases increased above one \DIFdelbegin \DIFdel{, meaning that more cases were reported in PU than elsewhere in Mercer county }\DIFdelend \DIFaddbegin \DIFadd{due to a large outbreak on campus }\DIFaddend (\fref{princeton}L);
+notably, we did not see an increase in Mercer county cases \DIFaddbegin \DIFadd{(\fref{princeton}D)}\DIFaddend , meaning that there was little-to-no transmission from campus to local community.
+
+%DIF <  We do not find significant changes in the ratio between the weekly numbers of cases from Princeton and those from Mercer county (\fref{princeton}G).
+%DIF <  Instead, the mean ratios remained similar across three semesters despite changes in campus populations (e.g., undergraduate student returning in spring 2020) and vaccination levels: 0.034 (95\% CI: 0.021--0.047) for fall 2020, 0.019 (95\% CI: 0.015--0.023) for spring 2020, and 0.046 (95\% CI: 0.035--0.057) for fall 2021.
+%DIF <  However, this does not necessarily imply that the contact or transmission levels stayed constant over time: given extremely high vaccination coverage in PU during fall 2021, the university population would been subject to a much higher forces of infection (e.g., a greater amount of mixing with the community population) to obtain similar levels of cases.
+%DIF <  We also find that some variations in the ratio around the mean can be explained by holiday effects.
+%DIF <  For example, sudden decreases in the number of cases around Thanksgiving of 2020, fall recess of 2021, and end of classes of 2021 correspond to a reduction in the ratio between university and community cases.
+%DIF <  Similarly, a sudden increase in the number of cases during Thanksgiving of 2021 caused the ratio to increase, reflecting decoupling of epidemic dynamics due to on-campus transmission.
+\DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \section*{Mathematical modeling of past outbreaks}
+
+We use a discrete-time, individual-based model to simulate the spread of SARS-CoV-2 on the PU campus.
+This model was initially developed and used throughout the pandemic to inform policy decisions in PU, including the frequency of asymptomatic tests and the number of isolation beds required.
+We continuously updated the model to reflect changes in school settings (e.g., students returning back to campus after a virtual semester) as well as intervention measures (e.g., vaccination in fall 2021 and booster shots with the emergence of the Omicron variant).
+Here, we present a generic and parsimonious version that encompasses sufficient details to characterize the overall spread of SARS-CoV-2 in PU without an over-proliferation of parameters.
+The model consists of four main components simulated on a daily time scale: (1) infection and transmission dynamics, (2) sampling and testing protocols, (3) isolation protocols, and (4) vaccination dynamics, including waning immunity and booster shots.
+Previous versions of the model included contact tracing, but we exclude it in this model for simplicity.
+
+Infection processes are modeled based on standard compartmental structures (Supplementary Figure \DIFdelbegin \DIFdel{S6}\DIFdelend \DIFaddbegin \DIFadd{S8}\DIFaddend ).
+Once infected, susceptible individuals remain in the exposed stage for $D_e = 2$ days on average, during which they cannot transmit or test positive. 
+Exposed individuals then enter the presymptomatic stage, during which they can test positive and transmit infections for $D_p = 3$ days on average.
+Presymptomatic individuals can then either remain asymptomatic with probability $p_a = 0.4$ or develop symptoms with the remaining probability of $1-p_a = 0.6$; both asymptomatic and symptomatic individuals are assumed to have the same duration of infectiousness ($D_s=3$) and equal transmission rates.
+Recovered individuals are assumed to be immune to reinfections throughout a semester.
+Presymptomatic, symptomatic, and asymptomatic infection stages are further divided into two subcompartments\DIFdelbegin \DIFdel{to allow for more realistic and narrower }\DIFdelend \DIFaddbegin \DIFadd{.
+Dividing each infection stage into subcompartments allows for the duration of infection to have narrower (and more realistic) }\DIFaddend distributions than the exponential distribution \citep{brett2020transmission}.
+Transitions between each (sub)compartments are modeled using a Bernoulli process with probabilities that match the assumed means \citep{he2010plug}:
+more specifically, transition probabilities are equal to $1 - \exp(-\delta_x)$, where $\delta_x = -log(1-n/D_x)$ represent the transition rate from stage $X$ and $n$ represents the number of subcompartments.
+Assumed parameters are broadly consistent with other models of SARS-CoV-2 \citep{brett2020transmission,lavezzo2020suppression}.
+
+Transmission processes are modeled by first setting the contact reproduction number $\Rc$, which we define as the average number of infectious contacts an infected individual would make throughout the course of their infection;
+here, infectious contacts refer to contacts that would result in infection when the contacted individual is susceptible to infection.
+\DIFdelbegin \DIFdel{The }\DIFdelend \DIFaddbegin \DIFadd{We note that the definition of the contact reproduction number $\Rc$ is similar to the standard definition of basic reproduction number $\RR_0$.
+The main difference is that the }\DIFaddend contact reproduction number \DIFaddbegin \DIFadd{models the number of total contacts, rather than infections. 
+Since infected individuals make their contacts at random with replacement, the same susceptible person could be contacted multiple times by the same or different infected individual during a time step---all these overlapping contacts will result in one infection.
+Therefore, the number of actual infections may be smaller than the number of contacts, especially since contacts can also land on non-susceptible individuals.
+We also note that the contact reproduction number }\DIFaddend implicitly accounts for all intervention measures that we do not model explicitly, such as social distancing and contact \DIFdelbegin \DIFdel{tracing---in other words, this }\DIFdelend \DIFaddbegin \DIFadd{tracing---therefore, $\Rc$ is similar to the effective reproduction number, which typically accounts for intervention efforts.
+However, our }\DIFaddend contact reproduction number does not account for \DIFaddbegin \DIFadd{the effects of }\DIFaddend asymptomatic testing or vaccination, which are modeled separately.
+We further decompose $\Rc$ into pre-symptomatic $\mathcal R_p = \beta_p D_p$ and (a)symptomatic $\mathcal R_s = \beta_s D_s$ reproduction numbers, where $\beta_p$ and $\beta_s$ represent the corresponding infectious contact rates during pre-symptomatic and (a)symptomatic stages, respectively. Pre-symptomatic and (a)symptomatic reproduction numbers are calculated based on the assumed value of the proportion of presymptomatic transmission $p_p = 0.5$: $\mathcal R_p/\mathcal R_s = p_p/(1 - p_p)$.
+On each day, all infected individuals who have not yet been isolated then make infectious contacts at random to anyone on campus; the number of infectious contacts are drawn from a negative binomial distribution with a mean of either $\beta_p$ or $\beta_s$ and an overdispersion parameter of $k=0.1$ to account for the possibility of super-spreading events \citep{10.12688/wellcomeopenres.15842.3}.
+\DIFaddbegin 
+
+\DIFadd{In reality, the contact structure among the campus population is likely more structured, exhibiting strong assortativity.
+For example, undergraduate students are more likely to mix with other undergraduate students, rather than graduate students or faculty and staff members.
+Even among undergraduate students, students are more likely to mix with their close friend group than with other students.
+On one hand, assortative mixing may lead to faster epidemic growth within certain population groups.
+On the other hand, it can also make the disease more difficult to spread among other groups that have lower contact rates.
+Therefore, predicting the impact of structured contact network requires more detailed information about whether the majority of cases were infected at random or from certain groups of the campus population.
+For simplicity, we assume random mixing throughout the paper---nonetheless, allowing for overdispersion in transmission is expected to emulate variability in epidemic growth rates driven by complex contact structures \mbox{%DIFAUXCMD
+\citep{lloyd2005superspreading}}\hskip0pt%DIFAUXCMD
+.
+}
+
+\DIFaddend We also rely on cases from Mercer County to crudely capture community dynamics.
+In particular, we assume that infectious contacts from local or regional community can be made at random to anyone on campus\DIFdelbegin \DIFdel{; these }\DIFdelend \DIFaddbegin \DIFadd{.
+These }\DIFaddend contacts are modeled using a Poisson distribution with a time-varying mean, which is calculated by \DIFdelbegin \DIFdel{scaling }\DIFdelend \DIFaddbegin \DIFadd{multiplying }\DIFaddend the daily number of cases by \DIFaddbegin \DIFadd{the community contact rate }\DIFaddend $\theta$ and \DIFdelbegin \DIFdel{shifting it }\DIFdelend \DIFaddbegin \DIFadd{the population size on campus $N$.
+More precisely, $\theta$ is the probability that an infected individual from the community makes an infectious contact with an individual on campus per capita campus population. 
+By further multiplying this probability with the population size $N$, we are essentially assuming a density dependent contact, where a higher population size on campus leads to more infections from the community.
+We further shift community contacts }\DIFaddend by 1 week to account for reporting delays.
+Infectious contacts, whether made by individuals on campus or from outside, result in infection only when the contacted individuals are susceptible; when the contacted individuals are vaccinated, and therefore partially susceptible to infection, they have a reduced probability of infection corresponding to their susceptibility (discussed later).
+
+All individuals on campus are assumed to follow a pre-determined asymptomatic testing plan at a fixed frequency---
+for example, under weekly testing, one individual can get sampled on days 1, 8, 15, and so forth, while another individual get sampled on days 2, 9, 16, and so forth.
+We assume that test results come back after one day.
+Symptomatic individuals can choose to take rapid PCR tests (with results returning on the same day) with a given probability on each day until their symptoms resolve---this probability is set to 1 for simulations presented in the main text.
+We further assume that symptomatic individuals are isolated immediately when they submit their samples until they receive negative results.
+All individuals who test positive are required to isolate (following the same isolation rule as described earlier) and are exempt from asymptomatic testing for 90 \DIFdelbegin \DIFdel{days}\DIFdelend \DIFaddbegin \DIFadd{days---while this assumption reflects the isolation policy in Princeton University during the investigation period, it may be inapplicable in studying institutional outbreaks in general}\DIFaddend .
+Isolated individuals are assumed to no longer transmit infections.
+We assume that PCR tests can detect infections from individuals who are in pre-symptomatic, symptomatic, and asymptomatic stages with 95\% sensitivity and 100\% specificity.
+
+\DIFaddbegin \DIFadd{The 95\% sensitivity assumption may seem too high. 
+For example, \mbox{%DIFAUXCMD
+\cite{hellewell2021estimating} }\hskip0pt%DIFAUXCMD
+estimated that the probability of detecting an infection from a PCR peaks at 77\% (54–88\%) 4 days after infection, and decreases to 50\% (38–65\%) by 10 days after infection.
+These estimates are considerably lower than our assumption because their estimates implicitly account for the latent period.
+At the individual level, we assume that an infected individual has no detectable infection (0\% sensitivity) during their latent period and 95\% sensitivity during their various stages of infectious periods.
+At the population level, this assumption translates to a peak sensitivity of 92\% by 4 days after infection, decreasing to 20\% sensitivity by 10 days after infection.
+Our assumption leads to a much lower PCR sensitivity 10 days after infection because we only model the PCR sensitivity during the infectious period.
+In reality, PCR can also detect viral nucleic acids even after a person stops shedding infectious virus, but since these nucleic acids cannot contribute to person-to-person transmission or affect the effectiveness of the isolation strategy, we did not include this component in our model.
+}
+
+\DIFaddend As most students, as well as faculty and staff members, had received two doses of vaccination in the beginning of fall 2021, we do not distinguish the first and second doses.
+Instead, we assume that all vaccinated individuals have 90\% reduced susceptibility and 20\% reduced transmissibility at the beginning of the semester---these assumptions are consistent with recent estimates by \cite{prunas2022vaccination} that vaccination with BNT162b2 reduces susceptibility by 89.4\% (95\% CI: 88.7\%--90.0\%) and infectiousness by 23.0\% (95\% CI: $-11.3\%$--46.7\%) against the Delta \DIFdelbegin \DIFdel{strain}\DIFdelend \DIFaddbegin \DIFadd{variant}\DIFaddend .
+Based on \cite{tartof2021effectiveness}, vaccine efficacy against susceptibility is allowed to exponentially wane from 90\% to 50\% in 20 weeks (and continues to wane at the same rate) for each vaccinated individual;
+vaccine efficacy against transmissibility is also allowed to wane at the same rate (i.e., from 20\% to 11\% in 20 weeks).
+\DIFaddbegin \DIFadd{We note that these assumptions are specific to the Delta variant---we discuss vaccine effectiveness against the Omicron variant later on.
+}\DIFaddend 
+
+In this study, we use this model to retrospectively analyze past outbreaks.
+First, we try to match our model to epidemic patterns seen on campus for the first three semesters, during which there was limited campus transmission, by varying the contact reproduction number $\Rc$ and the amount of community \DIFdelbegin \DIFdel{transmission }\DIFdelend \DIFaddbegin \DIFadd{contact }\DIFaddend $\theta$ and holding all other parameters constant.
+For each parameter combination, we simulate 100 epidemic trajectories and calculate the sum of squared differences between the weekly numbers of the observed and predicted positive cases.
+The population size and testing frequencies (with twice weekly testing modeled as testing every 3 days) are set to reflect realistic campus settings.
+Although we account for heterogeneity in the number of individuals in each population group on campus (i.e., undergraduate students, graduate students, and faculty and staff members) and their respective testing patterns (e.g., twice a week for undergraduate and graduate students and once a week for faculty and staff members during fall and spring, 2020), we assume, for simplicity, that all other parameters are equal across different groups\DIFaddbegin \DIFadd{.
+}\DIFaddend We further assume that the population mixes homogeneously.
+While these assumptions are most parsimonious, epidemiological parameters and mixing patterns likely differ across groups (e.g., undergraduate students are more likely to infect undergraduate students and also remain asymptomatic).
+Therefore, our model parameters describe average dynamics across different groups and must be interpreted with care.
+
+\begin{figure}[!th]
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_simulation.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figure_princeton_simulation.pdf}
+\DIFaddendFL \caption{
+\textbf{Retrospective analysis of past SARS-CoV-2 outbreaks on Princeton University (PU) campus.}
+(A, D, G) Time series comparisons of model predictions with observed data across ranges of contact reproduction number $\Rc$ and scaling parameter for community \DIFdelbeginFL \DIFdelFL{transmission }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{contact }\DIFaddendFL $\theta$.
+For each parameter combination, we simulate the model 100 times and calculate the sum of squared differences (SSQ) between the reported number of positive cases and the model-predicted number of positive cases. 
+Heat maps represent medians of the logged sum of squared differences.
+\DIFaddbeginFL \DIFaddFL{Circles represent the best fitting parameter set.
+}\DIFaddendFL (B, E, H) Model predictions. 
+Solid lines represent median predictions.
+\DIFaddbeginFL \DIFaddFL{Dashed lines represent a realization with the least sum of squared errors.
+}\DIFaddendFL Shaded areas represent 90\% quantiles for the best matching parameter set.
+Points represent the observed data.
+(C, F, I) Correlations between model predictions with observed data.
+Colored solid lines and shaded areas represent the estimated linear regression lines and the associated 95\% CIs.
+Dashed lines represent the one-to-one line.
+\label{fig:matching}
+}
+\end{figure}
+
+For \textbf{fall 2020--2021}, we simulate the model assuming 3000 individuals (1000 graduate students and 2000 faculty and staff members) on campus with 1000 of them participating in asymptomatic testing twice a week.
+We find that a low level of contacts \DIFdelbegin \DIFdel{$\Rc=0.5$ }\DIFdelend \DIFaddbegin \DIFadd{$\Rc=0.25$ }\DIFaddend and a small amount of community \DIFdelbegin \DIFdel{transmission $\theta=0.015$ }\DIFdelend \DIFaddbegin \DIFadd{contact $\theta=7.5\times 10^{-6}$ }\DIFaddend is most consistent with the observed epidemic dynamics in fall 2020 (\fref{matching}A).
+With these parameters, the model is able to capture the rise and fall in the number of cases with the exception of a sudden decrease in the number of cases around Thanksgiving, which we do not model explicitly (\fref{matching}B).
+The median predictions are positively correlated with the observed dynamics ($\rho = 0.83$; 95\% CI: 0.61--0.93; \fref{matching}C).
+Although a wide range of assumptions about the levels of community \DIFdelbegin \DIFdel{transmission }\DIFdelend \DIFaddbegin \DIFadd{contact }\DIFaddend $\theta$ are consistent with the observed dynamics, our simulations preclude high levels of contact, $\Rc > 2$ (Supplementary Figure \DIFdelbegin \DIFdel{S7}\DIFdelend \DIFaddbegin \DIFadd{S9}\DIFaddend ).
+Distancing measures on campus and contact tracing efforts likely contributed to lowering contact levels $\Rc$.
+
+For \textbf{spring 2020--2021}, we simulate the model assuming 8000 individuals (3000 undergraduate students, 2000 graduate students, and 3000 faculty and staff members) on campus with 5000 of them participating in asymptomatic testing twice a week.
+We further assume that 4000 individuals (3000 undergraduate students and 1000 graduate students) returned to campus over 14 days (January 16, 2021--January 29, 2021)\DIFdelbegin \DIFdel{;
+all returning individuals are assumed to be quarantined }\DIFdelend \DIFaddbegin \DIFadd{.
+In the beginning of the semester, all returning students were required to quarantine in their rooms }\DIFaddend for 14 days and tested upon returning \DIFaddbegin \DIFadd{by the university---in our model, this was implemented by preventing returning students from getting infected or infecting other individuals}\DIFaddend .
+Finally, to match the initial influx of cases, we assume that 1\% of both returning and on-campus populations are infected at the beginning of simulation (January 16, 2021).
+
+A similar set of parameters can capture the observed dynamics in spring 2020--2021.
+The best matching parameter predicts \DIFdelbegin \DIFdel{a slightly higher }\DIFdelend \DIFaddbegin \DIFadd{considerably lower }\DIFaddend levels of community \DIFdelbegin \DIFdel{transmission $\theta=0.02$ }\DIFdelend \DIFaddbegin \DIFadd{contact $\theta=3\times 10^{-6}$ }\DIFaddend (\fref{matching}D), but a wide range of parameters are consistent with the observed dynamics as before (Supplementary Figure \DIFdelbegin \DIFdel{S8}\DIFdelend \DIFaddbegin \DIFadd{S10}\DIFaddend ). 
+Simulations also preclude high $\Rc > 2$ again, suggesting that transmission between students were likely limited even though they had returned to campus---the absence of in-person teaching is likely to have contributed to lowering $\Rc$.
+We also find that initial infections (e.g., from returning students) are required to match relatively high levels of cases in the beginning of semester (\fref{matching}E). 
+Once again, the predicted and the observed numbers of cases are positively correlated ($\rho = 0.62$; 95\% CI: 0.20--0.85; \fref{matching}F).
+
+For \textbf{fall 2021--2022}, we assume 13000 individuals are present on campus (5000 undergraduate students, 2000 graduate students, and 6000 staff and faculty members) with 98\% of them vaccinated---here, vaccine-derived immunity is allowed to wane over time to ask whether the increase in the number of cases around November is consistent with the dynamics predicted by immunity waning.
+Vaccinated individuals are tested every week, whereas unvaccinated individuals are tested every 3 days. 
+We further assume 5000 undergraduate students returned to campus over 16 days (August 14, 2021--August 29, 2021).
+All students were required to test upon return and quarantine until they received a negative test result;
+for simplicity, we only model the testing process in our simulation (without quarantine) given a short testing delay.
+Finally, we assume that 0.5\% of both returning and on-campus populations are infected at the beginning of simulation (August 14, 2021).
+We limit our model comparison to November 26th before the Omicron variant was introduced on campus.
+
+\DIFdelbegin \DIFdel{Even though the }\DIFdelend \DIFaddbegin \DIFadd{The per capita }\DIFaddend numbers of cases during fall 2021 (before a large outbreak) were \DIFdelbegin \DIFdel{similar }\DIFdelend \DIFaddbegin \DIFadd{considerably lower than }\DIFaddend to those during previous semesters\DIFaddbegin \DIFadd{.
+Nonetheless}\DIFaddend , we find that \DIFdelbegin \DIFdel{considerably }\DIFdelend higher levels of community contact \DIFdelbegin \DIFdel{$\theta$ ($\approx 10$ fold higher) }\DIFdelend \DIFaddbegin \DIFadd{$\theta=1 \times 10^{-5}$ }\DIFaddend are required to explain the observed dynamics due to a decreased susceptibility \DIFdelbegin \DIFdel{derived }\DIFdelend from vaccination (\fref{matching}G).
+We note that the parameter $\theta$ necessarily depends on our assumed vaccine efficacy against susceptibility, and $\theta$ would decrease if we assume a lower vaccine efficacy.
+Nonetheless, the amount of community contact would still need to be higher than previous semesters as long as the vaccine provides some protection against infection and onward transmission.
+
+While \DIFdelbegin \DIFdel{$\theta = 0.15$ and $\Rc = 0.5$ }\DIFdelend \DIFaddbegin \DIFadd{$\theta = 1 \times 10^{-5}$ and $\Rc = 0.25$ }\DIFaddend gives the best matching parameter set with a median logged sum of squared errors of \DIFdelbegin \DIFdel{8.88 }\DIFdelend \DIFaddbegin \DIFadd{8.61 }\DIFaddend (95\% quantile: \DIFdelbegin \DIFdel{6.55--12}\DIFdelend \DIFaddbegin \DIFadd{5.80--11}\DIFaddend .6), other parameter sets also give nearly identical fits (\fref{matching}H; Supplementary Figure \DIFdelbegin \DIFdel{S9):
+for example, $\theta = 0.1$ and $\Rc = 1$ gives a median logged sum of squared errors of 8.9 (95\% quantile: 5.79--13.6)}\DIFdelend \DIFaddbegin \DIFadd{S11)}\DIFaddend .
+Comparing simulations across a wide range of $\Rc$ (\DIFdelbegin \DIFdel{0.5}\DIFdelend \DIFaddbegin \DIFadd{0.25}\DIFaddend --8) with \DIFdelbegin \DIFdel{$\theta = 0.1$ }\DIFdelend \DIFaddbegin \DIFadd{$\theta = 1 \times 10^{-5}$ }\DIFaddend further illustrates that the predicted dynamics are largely insensitive to $\Rc$ until November 26th (\fref{matching}H).
+All simulations shown in \fref{matching}H, except for the $\Rc=8$ scenario, are similarly correlated with the observed numbers of cases (\fref{matching}G). 
+While the logged sum of squared errors increases with $\Rc$ (\fref{matching}G), these patterns are likely driven by the discrepancy around fall break (week ending October 26th) when the number of cases decreased suddenly, rather than a lack of fit---we did not explicitly model holiday effects for simplicity.
+Extremely high vaccination rates and frequent testing likely limited transmission on campus, making epidemic dynamics largely insensitive to $\Rc$ even at a reasonably high value of $\Rc = 4$.
+
+These simulations suggest that an increase in the number of cases in November can be explained by a combination of waning immunity alone without requiring additional changes in transmission dynamics (note we do not allow $\theta$ or $\Rc$ to vary over time)\DIFaddbegin \DIFadd{---we see that extending the simulation beyond November 26th still captures the increase in cases}\DIFaddend .
+When we exclude immune waning from the model, predicted epidemic dynamics exhibit slower growth and require even higher values of campus and community contact rates ($\Rc$ and $\theta$) to qualitatively match the observed dynamics (Supplementary Figure \DIFdelbegin \DIFdel{S10}\DIFdelend \DIFaddbegin \DIFadd{S12}\DIFaddend )---even so, the logged sum of squared differences are generally higher (with median logged sum of squared differences ranging from \DIFdelbegin \DIFdel{6.9 to 41.3 }\DIFdelend \DIFaddbegin \DIFadd{7.2 to 33.9 }\DIFaddend for the same parameter regime).
+Thus, combining some amount of immune waning and high campus and community contact rates likely best explains the epidemic growth near the end of the semester.
+We note that other factors, such as changes in behavior, could have also contributed to the increase in the numbers of cases.
+
+Projecting the model beyond November 26th implies that we would have seen a similar growth in the number of cases if conditions remained constant even without the introduction of the Omicron variant.
+In other words, the Delta strain would have continued to spread on campus at a similar rate if the semester were to (hypothetically) continue until January without additional interventions due to immune waning and growing cases in the community (\fref{matching}H).
+In reality, the situation was more complex: testing frequencies increased and social gatherings were limited in response to an increase in the number of cases.
+These interventions---as well as students returning back home as classes ended---likely would have reduced contact rates (and therefore transmission of the Delta variant).
+This reduction in transmission was likely counterbalanced by the introduction of the Omicron variant and its high transmissibility and immune evasion, leading to similar and persistent growth in the number of cases.
+
+\section*{The spread of the Omicron variant on campus}
+
+Epidemiological conditions and intervention measures changed throughout the spring semester of the 2021--2022 academic year.
+We therefore extend \DIFdelbegin \DIFdel{to }\DIFdelend \DIFaddbegin \DIFadd{the }\DIFaddend model to account for these alterations and focus on the outbreak patterns among undergraduate students.
+First, based on \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\citep{ferguson2021report}}\hskip0pt%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{ferguson2021report}}\hskip0pt%DIFAUXCMD
+}\DIFaddend , we assume that two and three doses of vaccines reduce susceptibility against the \DIFaddbegin \DIFadd{early }\DIFaddend Omicron variant by 10\% and 70\%, respectively. 
+We also assume that the transmissibility of Omicron is reduced proportionally following the previously assumed 90--to--20 ratio for the Delta variant;
+in other words, two and three doses of vaccines reduce transmissibility by 2.2\% and 15.6\%, respectively.
+The immunity from the third dose is assumed to take 7 days to develop \DIFaddbegin \DIFadd{in our model }\DIFaddend \citep{moreira2022safety} and wane at the same rate as before (in this case, 70\% to 39\% in 20 weeks).
+Finally, the isolation period \DIFdelbegin \DIFdel{is }\DIFdelend \DIFaddbegin \DIFadd{was }\DIFaddend reduced to 5 \DIFdelbegin \DIFdel{days}\DIFdelend \DIFaddbegin \DIFadd{days---the actual change was implemented on January 14, 2022 but we keep the 5 day isolation period throughout our simulations, which begins on January 7, 2022, for simplicity}\DIFaddend .
+
+Here, we use the extended model to try to understand the drivers of a large campus outbreak that happened on the week ending February 18, 2022 (\fref{princeton}D).
+First, we ask whether changes in testing frequency from biweekly to weekly and an increased reproduction number can explain the outbreak. 
+The increase in the reproduction number can reflect increased contact rates following changes in distancing policy as well as increased transmissibility of the BA.2 subvariant---we do not explicitly distinguish the cause of the increase in the reproduction number. 
+We do so by simulating the model forward across a range of contact reproduction numbers that are consistent with previous estimates ($\Rc$=2--6) and introducing a 20\%--100\% increase in the contact reproduction number on February 8, 2022, with changes in the testing frequency.
+To match the realistic campus setting, we assume that 700 students are present on campus as of January 1, 2022, and the remaining 4300 students come back to campus across 28 days.
+\DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{Based on known vaccination statuses, we }\DIFaddend assume that 99\% of students are vaccinated with 60\% of them being \DIFdelbegin \DIFdel{boosted---we further allow }\DIFdelend \DIFaddbegin \DIFadd{boosted as of January 1, 2022.
+Since all students were required to receive booster shots before returning to campus, we assumed that }\DIFaddend 70 booster shots \DIFdelbegin \DIFdel{on each day such that most students will be boosted by the time everyone is back on campus}\DIFdelend \DIFaddbegin \DIFadd{were given on each day---this assumption allows all students to be boosted in 28 days}\DIFaddend .
+To match the high numbers of cases on the week ending January 7, 2022, we assume 14\% of the students present on campus are infected as of January 7, 2022 (roughly 100/700).
+To account for students who were infected with the Omicron variant during the fall semester, we assume that 100 students are already immune to Omicron infection at the beginning of the spring semester---this roughly corresponds to the number of PU cases that were reported in December.
+\DIFdelbegin \DIFdel{Finally, we take the best matching $\theta$ value for the previous semester and scale it by the number of undergraduate students relative to the entire population (therefore using $\theta = 0.15 \times 5000/13000$ throughout).
+}\DIFdelend 
+
+In the absence of changes in testing frequency or an increased reproduction number, the model predicts the number of cases among undergraduate students to continue to decrease over time (\fref{omicron1}).
+Changes in testing frequency alone have negligible impact on the overall dynamics; when the baseline contact reproduction number $\Rc$ is sufficiently high ($\Rc = 6$), changing testing frequency from biweekly to weekly causes the weekly case numbers to stay at a constant level (instead of decreasing).
+Additional increases in the reproduction number (alongside the changes in testing frequency) can cause the case numbers to further increase, but we are unable to match the observed dynamics even with a 100\% increase in the reproduction number.
+Indeed, a $>10$-fold increase in the numbers of cases between the weeks ending February 11 and 18, 2022, would require an unrealistically high increase in the contact reproduction number to explain.
+These simulations indicate that changes in distancing and testing policies and the increased transmissibility of the BA.2 subvariant alone are unlikely to be the direct causes of the outbreak.
+
+\begin{figure}[!ht]
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_simulation_omicron_spring.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figure_princeton_simulation_omicron_spring.pdf}
+\DIFaddendFL \caption{
+\textbf{The impact of changes in testing frequency and an increased reproduction number on the spread of the Omicron variant.}
+Solid lines represent median predictions.
+Shaded areas represent 90\% quantiles across 100 simulations.
+Points represent the observed data.
+Vertical dashed lines represent the week including February 8, 2022, when distancing and testing policies were updated on PU campus.
+\DIFaddbeginFL \DIFaddFL{For each row, we assume a fixed value of baseline contact reproduction number $\Rc$ ranging from 2 to 6 across rows.
+Then, we simulate increase in $\Rc$ at the time of policy change (indicated by column labels).
+}\DIFaddendFL }
+\label{fig:omicron1}
+\end{figure}
+
+\DIFaddbegin \DIFadd{We considered the possibility that the Omicron variant can have shorter latent and infectious periods by decreasing the mean duration of latent, pre-symptomatic, and (a)symptomatic stages of infection by 0.5 days (therefore a total of 1.5 reduction in the duration of infection).
+In this case, a shorter generation interval can lead to faster growth rate given the same values of $\Rc$ \mbox{%DIFAUXCMD
+\citep{wallinga2007generation}}\hskip0pt%DIFAUXCMD
+.
+However, we find that the effects of shorter infection has small effects on the overall dynamics (Supplementary Figure S13).
+}
+
+\DIFadd{We also considered the possibility that the vaccine effectiveness against the Omicron variant might be lower by repeating the same analysis with 30\% effectiveness against infection \mbox{%DIFAUXCMD
+\citep{tan2023vaccine}}\hskip0pt%DIFAUXCMD
+.
+When the baseline $\Rc$ is low ($\Rc=2$), increasing $\Rc$ still does not increase the number of cases sufficiently.
+When we assume an intermediate value of $\Rc=4$, the model does a better job at capturing the dynamics but it does so by overestimating the trough before the policy change and underestimating the peak after the policy change.
+When we assume a high value of $\Rc=6$, the model overestimates both the trough and the peak (Supplementary Figure S14).
+}
+
+\DIFaddend Instead, we consider the role of super-spreading events in driving a large Omicron outbreak by simulating 100--300 infections happening on the same day (February 12, 2022, the weekend following the policy change).
+We still include changes in testing to reflect realistic settings on campus but do not model the increase in the reproduction number to test the sole effects of super-spreading events.
+In contrast to previous simulations (\fref{omicron1}), which showed persistent growth in cases following the increase in the reproduction number, an epidemic driven by a super-spreading event plateaus and decays quickly (\fref{omicron2}).
+In this case, moderate values of baseline reproduction numbers permit a small amount of onward transmission, which can sustain the epidemic for a few weeks, but the reproduction number is not high enough to cause the epidemic to keep growing.
+Overall, the observed patterns in cases are more consistent with the epidemic dynamics driven by super-spreading events.
+\DIFaddbegin \DIFadd{This is also consistent with the observation that this outbreak was associated with a large gathering event on campus.
+}\DIFaddend 
+
+\begin{figure}[!thp]
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{../figure_princeton_new/figure_princeton_simulation_omicron_outbreak.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figure_princeton_simulation_omicron_outbreak.pdf}
+\DIFaddendFL \caption{
+\textbf{The impact of large super spreading events on the spread of the Omicron variant.}
+Solid lines represent median predictions.
+Shaded areas represent 90\% quantiles across 100 simulations.
+Points represent the observed data.
+Vertical dashed lines represent the week including February 8, 2022, when distancing and testing policies were updated on PU campus.
+}
+\label{fig:omicron2}
+\end{figure}
+
+\section*{Discussion}
+
+Here, we analyze SARS-CoV-2 outbreaks on the PU campus between fall 2020 and early 2022.
+We demonstrate strong spatiotemporal correlations between the patterns of spread of SARS-CoV-2 on campus and those from surrounding communities.
+These correlations decreased with distance from Mercer County in fall 2021--2022, likely reflecting contact and commuting patterns as the university campus reopened.
+Mathematical modeling further suggests limited transmission between the university population during fall and spring semesters of the 2020--2021 academic year and an increased frequency of infective community contacts during the fall semester of the 2021--2022 academic year, compared to previous semesters.
+An increase in the number of cases by the end of November 2021 is consistent with the increase in the levels of community cases and waning immunity.
+Finally, our analysis highlights the \DIFaddbegin \DIFadd{potential }\DIFaddend role of super-spreading events in driving the spread of the Omicron variant on the PU campus.
+
+Although previous outbreak reports from other universities primarily focused on within-campus transmission \citep{wilson2020multiple,currie2021interventions}, a few studies identified off-campus infections as an important source of transmission \citep{fox2021response,hamer2021assessment}.
+For example, extensive modeling efforts from Cornell University demonstrated an increase in the amount of transmission from outside the university campus during fall 2021 and found that community transmissions are the biggest risk for faculty and staff members \citep{frazier2022modeling}.
+Our study further extends these findings in demonstrating a strong spatiotemporal correlation in the spread of SARS-CoV-2 between university campuses and surrounding communities;
+however, when campus transmission is sustained, community coupling becomes less important.
+The degree to which community coupling affects campus transmission also depends on the campus. 
+Although Princeton University is located in a small \DIFdelbegin \DIFdel{town }\DIFdelend \DIFaddbegin \DIFadd{county }\DIFaddend (Mercer County) with a population of ~390,000 (\url{www.census.gov}), it is located near large cities, such as New York City and Philadelphia, which can drive infections in smaller cities nearby \citep{grenfell1997meta}.
+For example, contact tracing efforts from Boston University, which is located in a large metropolitan area, found that more than 50\% of infections among Boston University affiliates with known exposures could be attributed to sources outside of the university campus \citep{hamer2021assessment}.
+In contrast, other university campuses that are far from urban areas may experience weaker community coupling.
+The degree of coupling will also depend on intervention measures in surrounding communities and on campus.
+Understanding these heterogeneities is critical for preventing future campus outbreaks.
+
+Our analysis also suggests that comparing the ratios between the cases on university campuses and neighboring communities can also provide a useful measure for how well a university campus is controlling the epidemic; 
+however, that this ratio needs to be interpreted with caution\DIFaddbegin \DIFadd{, }\DIFaddend as it is sensitive to changes in testing patterns as well as the numbers of students on campus.
+For example, the ratios of cases can suddenly change during holidays when students are away from campus.
+Future studies could combine viral phylogenetic data to better understand spatial patterns of SARS-CoV-2 on campus.
+
+There are several limitations to our analysis.
+While we demonstrate strong spatiotemporal correlation in the spread of SARS-CoV-2, we are not able to infer the direction of causality---that is, our analysis does not rule out the possibility that transmission on campus drove infections in nearby communities (as opposed to community transmission driving on-campus infections).
+However, seeding from campus is unlikely: 
+intervention measures on campus (e.g., frequent asymptomatic testing, contact tracing, and virtual classes during fall and spring semesters of 2020) likely limited onward transmission on campus.
+In addition, even during periods of large Omicron outbreaks on campus in early 2022, the number of COVID-19 cases in Mercer County remained low, implying limited transmission from campus to community.
+Decreasing patterns in epidemic correlations with distance further highlight the role of spatial spread in driving dynamics of SARS-CoV-2---such patterns are consistent with spatial spread of many other respiratory pathogens \citep{grenfell2001travelling, viboud2006synchrony, baker2019epidemic}.
+
+Our mathematical model relies on simplifying assumptions.
+For example, we assume conservatively that the entire university populations mix homogeneously and have identical campus and community contact rates (captured by $\Rc$ and $\theta$, respectively).
+\DIFaddbegin \DIFadd{This assumption can lead to the fastest epidemic growth rates because transmission is not limited by the size of the contact network---in other words, our estimates of the reproduction will be necessarily low, making the epidemic easier to control.
+}\DIFaddend In reality, increases in cases were often associated with specific transmission clusters, suggesting heterogeneity in transmission patterns.
+Contact levels also likely differ between different groups:
+for example, faculty and staff members are more likely to interact with community members than undergraduate students and would be at a higher risk for community infections \citep{frazier2022modeling}\DIFdelbegin \DIFdel{;
+therefore, our homogeneous mixing assumption is conservatively pessimistic}\DIFdelend .
+We also do not account for \DIFaddbegin \DIFadd{explicit }\DIFaddend changes in behavior \DIFdelbegin \DIFdel{; 
+instead, we assume constant values for $\theta$ and }\DIFdelend \DIFaddbegin \DIFadd{on campus and assume constant }\DIFaddend $\Rc$ throughout \DIFdelbegin \DIFdel{a semester.
+}\DIFdelend \DIFaddbegin \DIFadd{each semester.
+Instead, we implicitly account for behavioral changes in the community by modeling community transmission to campus as a function of community case numbers.
+}\DIFaddend While we cannot rule out the possibility that \DIFdelbegin \DIFdel{changes in behavior (and therefore transmission rates) }\DIFdelend \DIFaddbegin \DIFadd{behavioral changes on campus }\DIFaddend could have contributed to various epidemics (e.g., the Omicron wave beginning in the fall semester of the 2021--2022 academic year), we were able to capture the majority of epidemic patterns without modeling \DIFdelbegin \DIFdel{them.
+%DIF <  We note that the invasion of the Omicron variant was modeled separately for the spring semester of a 2021--2022 academic year by explicitly considering the immune evasion.
+}\DIFdelend \DIFaddbegin \DIFadd{them---when the majority of transmission is caused by imported cases from the community, we expect behavioral changes on campus to have relatively weaker effects on overall transmission dynamics.
+}\DIFaddend We also do not explore parameter uncertainty, which can lead to underestimation of overall uncertainty \citep{elderd2006uncertainty}. 
+We also note that intervention measures that were introduced to PU may not necessarily be applicable in other institutions.
+
+Despite the simplicity of the analysis, our study provides important lessons for controlling SARS-CoV-2 \DIFaddbegin \DIFadd{and similar }\DIFaddend outbreaks on university campuses in general.
+First, our analysis highlights the power of mass asymptomatic testing for epidemic measurement and \DIFdelbegin \DIFdel{planning}\DIFdelend \DIFaddbegin \DIFadd{planning---even if PCR testing may have lower sensitivity than what we assumed here \mbox{%DIFAUXCMD
+\citep{hellewell2021estimating}}\hskip0pt%DIFAUXCMD
+, mass asymptomatic testing can still help track ongoing epidemic dynamics in real time}\DIFaddend .
+Combining other interventions measures, such as social distancing, mask wearing, and vaccination, can help provide \DIFdelbegin \DIFdel{a safe means of reopening university }\DIFdelend \DIFaddbegin \DIFadd{some measures to consider for restoring operations on }\DIFaddend campuses---but the extent to which these interventions are implemented will necessarily depend on resource availability.
+Second, we expect \DIFdelbegin \DIFdel{immune }\DIFdelend \DIFaddbegin \DIFadd{immunity }\DIFaddend waning and superspreading to continue to play important roles in driving campus transmission---keeping vaccine statuses up-to-date within the campus community will be critical moving forward.
+\DIFdelbegin \DIFdel{In addition, preventing large gatherings can help prevent large superspreading events in the midst of a rising epidemic.
+}\DIFdelend Third, the safe reopening of a university campus must consider the spread of SARS-CoV-2 within the surrounding community as they can both potentially drive transmission in each other---however, the degree to which infections spread from campus to community remains uncertain.
+Finally, intervention measures placed on campuses must continue to adapt and change to reflect changes in epidemiological conditions.
+\DIFaddbegin \DIFadd{We note that the generality of our conclusions will necessarily depend on specific campus settings.
+}\DIFaddend 
+
+The emergence of new variants---in particular, their ability to evade prior immunity and transmit better---continues to add uncertainty to the future controllability of the ongoing SARS-CoV-2 pandemic.
+Nonetheless, as population-level immunity increases (either due to infection or vaccination), we are \DIFdelbegin \DIFdel{(hopefully) }\DIFdelend transitioning to an endemic phase, during which COVID-19 is expected to become less severe \citep{lavine2021immunological}.
+\DIFdelbegin \DIFdel{Many institutions have so far sought to minimize infections on their campuses early in the pandemic, thereby implementing as many interventions as possible---but such measures can be difficult to maintain for prolonged periods both economically and societally.
+As the Omicron variant began to spread, many campuses---including the PU campus---opted in for less intense interventions, reflecting difficulties in controlling the spread and a lack of severe cases among the majority of vaccinated students.
+As we continue to transition to future phases of the pandemic, the expectations for reopening campuses (e.g., whether to minimize infections on campuses)need to be re-evaluated, accounting not only for changes in epidemic dynamicsbut also for our perception of the pathogen.
+The answers to
+  these questions ultimately depend on the landscape of }\DIFdelend \DIFaddbegin \DIFadd{Understanding the the landscape of }\DIFaddend SARS-CoV-2 \DIFdelbegin \DIFdel{immunity and its future evolutionary dynamics \mbox{%DIFAUXCMD
+\citep{saad2020immune,baker2021limits}}\hskip0pt%DIFAUXCMD
+.
+}\DIFdelend \DIFaddbegin \DIFadd{immunity and its impact on evolutionary dynamics will be critical to predicting future outbreak dynamics \mbox{%DIFAUXCMD
+\citep{saad2020immune,baker2021limits}}\hskip0pt%DIFAUXCMD
+.
+}\DIFaddend 
+
+\section*{Data availability}
+
+All data and \DIFdelbegin \DIFdel{code are stored in a publicly available GitHub repository (}%DIFDELCMD < \url{https://github.com/parksw3/university-covid}%%%
+\DIFdel{).
+}\DIFdelend \DIFaddbegin \DIFadd{code are stored in a publicly available GitHub repository (}\url{https://github.com/parksw3/university-covid}\DIFadd{).
+}\DIFaddend 
+
+\DIFdelbegin %DIFDELCMD < \bibliography{university-covid}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \section*{\DIFadd{Author contribution}}
+
+\DIFadd{All authors contributed equally to the research design, data collection, formal analysis, interpretation of the results, and writing of the paper.
+}
+
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Baker, Mahmud, Wagner, Yang, Pitzer, Viboud,
+  Vecchi, Metcalf, and Grenfell}{Baker et~al.}{2019}]{baker2019epidemic}
+\DIFadd{Baker, R.~E., A.~S. Mahmud, C.~E. Wagner, W.~Yang, V.~E. Pitzer, C.~Viboud,
+  G.~A. Vecchi, C.~J.~E. Metcalf, and B.~T. Grenfell (2019).
+}\newblock \DIFadd{Epidemic dynamics of respiratory syncytial virus in current and
+  future climates.
+}\newblock {\em \DIFadd{Nature communications\/}}\DIFadd{~}{\em \DIFadd{10\/}}\DIFadd{(1), 1--8.
+}
+
+\bibitem[\protect\citeauthoryear{Baker, Park, Wagner, and Metcalf}{Baker
+  et~al.}{2021}]{baker2021limits}
+\DIFadd{Baker, R.~E., S.~W. Park, C.~E. Wagner, and C.~J.~E. Metcalf (2021).
+}\newblock {\DIFadd{The limits of SARS-CoV-2 predictability}}\DIFadd{.
+}\newblock {\em \DIFadd{Nature Ecology \& Evolution\/}}\DIFadd{~}{\em \DIFadd{5\/}}\DIFadd{(8), 1052--1054.
+}
+
+\bibitem[\protect\citeauthoryear{Brett and Rohani}{Brett and
+  Rohani}{2020}]{brett2020transmission}
+\DIFadd{Brett, T.~S. and P.~Rohani (2020).
+}\newblock {\DIFadd{Transmission dynamics reveal the impracticality of COVID-19 herd
+  immunity strategies}}\DIFadd{.
+}\newblock {\em \DIFadd{Proceedings of the National Academy of Sciences\/}}\DIFadd{~}{\em
+  \DIFadd{117\/}}\DIFadd{(41), 25897--25903.
+}
+
+\bibitem[\protect\citeauthoryear{Brook, Northrup, Ehrenberg, Doudna, Boots,
+  Consortium, et~al.}{Brook et~al.}{2021}]{brook2021optimizing}
+\DIFadd{Brook, C.~E., G.~R. Northrup, A.~J. Ehrenberg, J.~A. Doudna, M.~Boots,
+  I.~S.-C.-.~T. Consortium, et~al. (2021).
+}\newblock {\DIFadd{Optimizing COVID-19 control with asymptomatic surveillance testing
+  in a university environment}}\DIFadd{.
+}\newblock {\em \DIFadd{Epidemics\/}}\DIFadd{~}{\em \DIFadd{37}}\DIFadd{, 100527.
+}
+
+\bibitem[\protect\citeauthoryear{Cobey}{Cobey}{2020}]{cobey2020modeling}
+\DIFadd{Cobey, S. (2020).
+}\newblock \DIFadd{Modeling infectious disease dynamics.
+}\newblock {\em \DIFadd{Science\/}}\DIFadd{~}{\em \DIFadd{368\/}}\DIFadd{(6492), 713--714.
+}
+
+\bibitem[\protect\citeauthoryear{Currie, Moreno, Delahoy, Pray, Jovaag, Braun,
+  Cole, Shechter, Fajardo, Griggs, et~al.}{Currie
+  et~al.}{2021}]{currie2021interventions}
+\DIFadd{Currie, D.~W., G.~K. Moreno, M.~J. Delahoy, I.~W. Pray, A.~Jovaag, K.~M. Braun,
+  D.~Cole, T.~Shechter, G.~C. Fajardo, C.~Griggs, et~al. (2021).
+}\newblock {\DIFadd{Interventions to Disrupt Coronavirus Disease Transmission at a
+  University, Wisconsin, USA, August--October 2020}}\DIFadd{.
+}\newblock {\em \DIFadd{Emerging infectious diseases\/}}\DIFadd{~}{\em \DIFadd{27\/}}\DIFadd{(11), 2776.
+}
+
+\bibitem[\protect\citeauthoryear{{Duke University}}{{Duke
+  University}}{2021}]{dukeoutbreak}
+{\DIFadd{Duke University}} \DIFadd{(2021).
+}\newblock {\DIFadd{Important COVID updates for undergrads, Aug. 30}}\DIFadd{.
+}
+
+\bibitem[\protect\citeauthoryear{Elderd, Dukic, and Dwyer}{Elderd
+  et~al.}{2006}]{elderd2006uncertainty}
+\DIFadd{Elderd, B.~D., V.~M. Dukic, and G.~Dwyer (2006).
+}\newblock \DIFadd{Uncertainty in predictions of disease spread and public health
+  responses to bioterrorism and emerging diseases.
+}\newblock {\em \DIFadd{Proceedings of the National Academy of Sciences\/}}\DIFadd{~}{\em
+  \DIFadd{103\/}}\DIFadd{(42), 15693--15697.
+}
+
+\bibitem[\protect\citeauthoryear{Endo, {Centre for the Mathematical Modelling
+  of Infectious Diseases COVID-19 Working Group}, Abbott, Kucharski, and
+  Funk}{Endo et~al.}{2020}]{10.12688/wellcomeopenres.15842.3}
+\DIFadd{Endo, A., }{\DIFadd{Centre for the Mathematical Modelling of Infectious Diseases
+  COVID-19 Working Group}}\DIFadd{, S.~Abbott, A.~Kucharski, and S.~Funk (2020).
+}\newblock {\DIFadd{Estimating the overdispersion in COVID-19 transmission using
+  outbreak sizes outside China }[\DIFadd{version 3; peer review: 2 approved}]}\DIFadd{.
+}\newblock {\em \DIFadd{Wellcome Open Research\/}}\DIFadd{~}{\em \DIFadd{5\/}}\DIFadd{(67).
+}
+
+\bibitem[\protect\citeauthoryear{Ferguson, Ghani, Cori, Hogan, Hinsley, and
+  Volz}{Ferguson et~al.}{2021}]{ferguson2021report}
+\DIFadd{Ferguson, N., A.~Ghani, A.~Cori, A.~Hogan, W.~Hinsley, and E.~Volz (2021).
+}\newblock {\DIFadd{Report 49: Growth, population distribution and immune escape of
+  Omicron in England}}\DIFadd{.
+}
+
+\bibitem[\protect\citeauthoryear{Flaxman, Mishra, Gandy, Unwin, Mellan,
+  Coupland, Whittaker, Zhu, Berah, Eaton, et~al.}{Flaxman
+  et~al.}{2020}]{flaxman2020estimating}
+\DIFadd{Flaxman, S., S.~Mishra, A.~Gandy, H.~J.~T. Unwin, T.~A. Mellan, H.~Coupland,
+  C.~Whittaker, H.~Zhu, T.~Berah, J.~W. Eaton, et~al. (2020).
+}\newblock {\DIFadd{Estimating the effects of non-pharmaceutical interventions on
+  COVID-19 in Europe}}\DIFadd{.
+}\newblock {\em \DIFadd{Nature\/}}\DIFadd{~}{\em \DIFadd{584\/}}\DIFadd{(7820), 257--261.
+}
+
+\bibitem[\protect\citeauthoryear{Fox, Bailey, Seamon, and Miranda}{Fox
+  et~al.}{2021}]{fox2021response}
+\DIFadd{Fox, M.~D., D.~C. Bailey, M.~D. Seamon, and M.~L. Miranda (2021).
+}\newblock {\DIFadd{Response to a COVID-19 outbreak on a university campus—Indiana,
+  August 2020}}\DIFadd{.
+}\newblock {\em \DIFadd{Morbidity and Mortality Weekly Report\/}}\DIFadd{~}{\em \DIFadd{70\/}}\DIFadd{(4), 118.
+}
+
+\bibitem[\protect\citeauthoryear{Frazier, Cashore, Duan, Henderson, Janmohamed,
+  Liu, Shmoys, Wan, and Zhang}{Frazier et~al.}{2022}]{frazier2022modeling}
+\DIFadd{Frazier, P.~I., J.~M. Cashore, N.~Duan, S.~G. Henderson, A.~Janmohamed, B.~Liu,
+  D.~B. Shmoys, J.~Wan, and Y.~Zhang (2022).
+}\newblock {\DIFadd{Modeling for COVID-19 college reopening decisions: Cornell, a case
+  study}}\DIFadd{.
+}\newblock {\em \DIFadd{Proceedings of the National Academy of Sciences\/}}\DIFadd{~}{\em
+  \DIFadd{119\/}}\DIFadd{(2).
+}
+
+\bibitem[\protect\citeauthoryear{Galanti, Pei, Yamana, Angulo, Charos,
+  Swerdlow, and Shaman}{Galanti et~al.}{2021}]{galanti2021social}
+\DIFadd{Galanti, M., S.~Pei, T.~K. Yamana, F.~J. Angulo, A.~Charos, D.~L. Swerdlow, and
+  J.~Shaman (2021).
+}\newblock \DIFadd{Social distancing remains key during vaccinations.
+}\newblock {\em \DIFadd{Science\/}}\DIFadd{~}{\em \DIFadd{371\/}}\DIFadd{(6528), 473--474.
+}
+
+\bibitem[\protect\citeauthoryear{Gibson, Weitz, Shannon, Holton, Bryksin, Liu,
+  Sieglinger, Coenen, Zhao, Beckett, et~al.}{Gibson
+  et~al.}{2021}]{gibson2021surveillance}
+\DIFadd{Gibson, G., J.~S. Weitz, M.~P. Shannon, B.~Holton, A.~Bryksin, B.~Liu,
+  M.~Sieglinger, A.~R. Coenen, C.~Zhao, S.~J. Beckett, et~al. (2021).
+}\newblock {\DIFadd{Surveillance-to-Diagnostic Testing Program for Asymptomatic
+  SARS-CoV-2 Infections on a Large, Urban Campus in Fall 2020}}\DIFadd{.
+}\newblock {\em \DIFadd{Epidemiology\/}}\DIFadd{~}{\em \DIFadd{33\/}}\DIFadd{(2), 209--216.
+}
+
+\bibitem[\protect\citeauthoryear{Grenfell and Harwood}{Grenfell and
+  Harwood}{1997}]{grenfell1997meta}
+\DIFadd{Grenfell, B. and J.~Harwood (1997).
+}\newblock \DIFadd{(meta) population dynamics of infectious diseases.
+}\newblock {\em \DIFadd{Trends in ecology \& evolution\/}}\DIFadd{~}{\em \DIFadd{12\/}}\DIFadd{(10), 395--399.
+}
+
+\bibitem[\protect\citeauthoryear{Grenfell, Bj{\o}rnstad, and Kappey}{Grenfell
+  et~al.}{2001}]{grenfell2001travelling}
+\DIFadd{Grenfell, B.~T., O.~N. Bj}{\DIFadd{\o}}\DIFadd{rnstad, and J.~Kappey (2001).
+}\newblock \DIFadd{Travelling waves and spatial hierarchies in measles epidemics.
+}\newblock {\em \DIFadd{Nature\/}}\DIFadd{~}{\em \DIFadd{414\/}}\DIFadd{(6865), 716--723.
+}
+
+\bibitem[\protect\citeauthoryear{Hamer, White, Jenkins, Gill, Landsberg,
+  Klapperich, Bulekova, Platt, Decarie, Gilmore, et~al.}{Hamer
+  et~al.}{2021}]{hamer2021assessment}
+\DIFadd{Hamer, D.~H., L.~F. White, H.~E. Jenkins, C.~J. Gill, H.~E. Landsberg,
+  C.~Klapperich, K.~Bulekova, J.~Platt, L.~Decarie, W.~Gilmore, et~al. (2021).
+}\newblock {\DIFadd{Assessment of a COVID-19 control plan on an urban university campus
+  during a second wave of the pandemic}}\DIFadd{.
+}\newblock {\em \DIFadd{JAMA Network Open\/}}\DIFadd{~}{\em \DIFadd{4\/}}\DIFadd{(6), e2116425--e2116425.
+}
+
+\bibitem[\protect\citeauthoryear{{Harvard University}}{{Harvard
+  University}}{2021}]{harvardoutbreak}
+{\DIFadd{Harvard University}} \DIFadd{(2021).
+}\newblock {\DIFadd{Increase in COVID-19 cases, Take Steps to Protect Yourself \& Our
+  Community}}\DIFadd{.
+}
+
+\bibitem[\protect\citeauthoryear{He, Ionides, and King}{He
+  et~al.}{2010}]{he2010plug}
+\DIFadd{He, D., E.~L. Ionides, and A.~A. King (2010).
+}\newblock \DIFadd{Plug-and-play inference for disease dynamics: measles in large and
+  small populations as a case study.
+}\newblock {\em \DIFadd{Journal of the Royal Society Interface\/}}\DIFadd{~}{\em \DIFadd{7\/}}\DIFadd{(43),
+  271--283.
+}
+
+\bibitem[\protect\citeauthoryear{Hellewell, Abbott, Gimma, Bosse, Jarvis,
+  Russell, Munday, Kucharski, Edmunds, Sun, et~al.}{Hellewell
+  et~al.}{2020}]{hellewell2020feasibility}
+\DIFadd{Hellewell, J., S.~Abbott, A.~Gimma, N.~I. Bosse, C.~I. Jarvis, T.~W. Russell,
+  J.~D. Munday, A.~J. Kucharski, W.~J. Edmunds, F.~Sun, et~al. (2020).
+}\newblock {\DIFadd{Feasibility of controlling COVID-19 outbreaks by isolation of cases
+  and contacts}}\DIFadd{.
+}\newblock {\em \DIFadd{The Lancet Global Health\/}}\DIFadd{~}{\em \DIFadd{8\/}}\DIFadd{(4), e488--e496.
+}
+
+\bibitem[\protect\citeauthoryear{Hellewell, Russell, Beale, Kelly, Houlihan,
+  Nastouli, and Kucharski}{Hellewell et~al.}{2021}]{hellewell2021estimating}
+\DIFadd{Hellewell, J., T.~W. Russell, R.~Beale, G.~Kelly, C.~Houlihan, E.~Nastouli, and
+  A.~J. Kucharski (2021).
+}\newblock {\DIFadd{Estimating the effectiveness of routine asymptomatic PCR testing at
+  different frequencies for the detection of SARS-CoV-2 infections}}\DIFadd{.
+}\newblock {\em \DIFadd{BMC medicine\/}}\DIFadd{~}{\em \DIFadd{19\/}}\DIFadd{(1), 1--10.
+}
+
+\bibitem[\protect\citeauthoryear{Holmdahl and Buckee}{Holmdahl and
+  Buckee}{2020}]{holmdahl2020wrong}
+\DIFadd{Holmdahl, I. and C.~Buckee (2020).
+}\newblock {\DIFadd{Wrong but useful—what COVID-19 epidemiologic models can and cannot
+  tell us}}\DIFadd{.
+}\newblock {\em \DIFadd{New England Journal of Medicine\/}}\DIFadd{~}{\em \DIFadd{383\/}}\DIFadd{(4), 303--305.
+}
+
+\bibitem[\protect\citeauthoryear{Kissler, Tedijanto, Goldstein, Grad, and
+  Lipsitch}{Kissler et~al.}{2020}]{kissler2020projecting}
+\DIFadd{Kissler, S.~M., C.~Tedijanto, E.~Goldstein, Y.~H. Grad, and M.~Lipsitch (2020).
+}\newblock {\DIFadd{Projecting the transmission dynamics of SARS-CoV-2 through the
+  postpandemic period}}\DIFadd{.
+}\newblock {\em \DIFadd{Science\/}}\DIFadd{~}{\em \DIFadd{368\/}}\DIFadd{(6493), 860--868.
+}
+
+\bibitem[\protect\citeauthoryear{Koelle, Martin, Antia, Lopman, and
+  Dean}{Koelle et~al.}{2022}]{koelle2022changing}
+\DIFadd{Koelle, K., M.~A. Martin, R.~Antia, B.~Lopman, and N.~E. Dean (2022).
+}\newblock {\DIFadd{The changing epidemiology of SARS-CoV-2}}\DIFadd{.
+}\newblock {\em \DIFadd{Science\/}}\DIFadd{~}{\em \DIFadd{375\/}}\DIFadd{(6585), 1116--1121.
+}
+
+\bibitem[\protect\citeauthoryear{Kraemer, Pybus, Fraser, Cauchemez, Rambaut,
+  and Cowling}{Kraemer et~al.}{2021}]{kraemer2021monitoring}
+\DIFadd{Kraemer, M.~U., O.~G. Pybus, C.~Fraser, S.~Cauchemez, A.~Rambaut, and B.~J.
+  Cowling (2021).
+}\newblock {\DIFadd{Monitoring key epidemiological parameters of SARS-CoV-2
+  transmission}}\DIFadd{.
+}\newblock {\em \DIFadd{Nature medicine\/}}\DIFadd{~}{\em \DIFadd{27\/}}\DIFadd{(11), 1854--1855.
+}
+
+\bibitem[\protect\citeauthoryear{Lavezzo, Franchin, Ciavarella,
+  Cuomo-Dannenburg, Barzon, Del~Vecchio, Rossi, Manganelli, Loregian, Navarin,
+  et~al.}{Lavezzo et~al.}{2020}]{lavezzo2020suppression}
+\DIFadd{Lavezzo, E., E.~Franchin, C.~Ciavarella, G.~Cuomo-Dannenburg, L.~Barzon,
+  C.~Del~Vecchio, L.~Rossi, R.~Manganelli, A.~Loregian, N.~Navarin, et~al.
+  (2020).
+}\newblock {\DIFadd{Suppression of a SARS-CoV-2 outbreak in the Italian municipality of
+  Vo’}}\DIFadd{.
+}\newblock {\em \DIFadd{Nature\/}}\DIFadd{~}{\em \DIFadd{584\/}}\DIFadd{(7821), 425--429.
+}
+
+\bibitem[\protect\citeauthoryear{Lavine, Bjornstad, and Antia}{Lavine
+  et~al.}{2021}]{lavine2021immunological}
+\DIFadd{Lavine, J.~S., O.~N. Bjornstad, and R.~Antia (2021).
+}\newblock {\DIFadd{Immunological characteristics govern the transition of COVID-19 to
+  endemicity}}\DIFadd{.
+}\newblock {\em \DIFadd{Science\/}}\DIFadd{~}{\em \DIFadd{371\/}}\DIFadd{(6530), 741--745.
+}
+
+\bibitem[\protect\citeauthoryear{Lloyd-Smith, Schreiber, Kopp, and
+  Getz}{Lloyd-Smith et~al.}{2005}]{lloyd2005superspreading}
+\DIFadd{Lloyd-Smith, J.~O., S.~J. Schreiber, P.~E. Kopp, and W.~M. Getz (2005).
+}\newblock \DIFadd{Superspreading and the effect of individual variation on disease
+  emergence.
+}\newblock {\em \DIFadd{Nature\/}}\DIFadd{~}{\em \DIFadd{438\/}}\DIFadd{(7066), 355--359.
+}
+
+\bibitem[\protect\citeauthoryear{Lopman, Liu, Le~Guillou, Lash, Isakov, and
+  Jenness}{Lopman et~al.}{2020}]{lopman2020model}
+\DIFadd{Lopman, B., C.~Y. Liu, A.~Le~Guillou, T.~L. Lash, A.~P. Isakov, and S.~M.
+  Jenness (2020).
+}\newblock {\DIFadd{A model of COVID-19 transmission and control on university
+  campuses}}\DIFadd{.
+}\newblock {\em \DIFadd{MedRxiv\/}}\DIFadd{.
+}
+
+\bibitem[\protect\citeauthoryear{Metcalf, Morris, and Park}{Metcalf
+  et~al.}{2020}]{metcalf2020mathematical}
+\DIFadd{Metcalf, C. J.~E., D.~H. Morris, and S.~W. Park (2020).
+}\newblock \DIFadd{Mathematical models to guide pandemic response.
+}\newblock {\em \DIFadd{Science\/}}\DIFadd{~}{\em \DIFadd{369\/}}\DIFadd{(6502), 368--369.
+}
+
+\bibitem[\protect\citeauthoryear{Moreira~Jr, Kitchin, Xu, Dychter, Lockhart,
+  Gurtman, Perez, Zerbini, Dever, Jennings, et~al.}{Moreira~Jr
+  et~al.}{2022}]{moreira2022safety}
+\DIFadd{Moreira~Jr, E.~D., N.~Kitchin, X.~Xu, S.~S. Dychter, S.~Lockhart, A.~Gurtman,
+  J.~L. Perez, C.~Zerbini, M.~E. Dever, T.~W. Jennings, et~al. (2022).
+}\newblock \DIFadd{Safety and efficacy of a third dose of }{\DIFadd{BNT162b2}} {\DIFadd{COVID-19}} \DIFadd{vaccine.
+}\newblock {\em \DIFadd{New England Journal of Medicine\/}}\DIFadd{.
+}
+
+\bibitem[\protect\citeauthoryear{Prunas, Warren, Crawford, Gazit, Patalon,
+  Weinberger, and Pitzer}{Prunas et~al.}{2022}]{prunas2022vaccination}
+\DIFadd{Prunas, O., J.~L. Warren, F.~W. Crawford, S.~Gazit, T.~Patalon, D.~M.
+  Weinberger, and V.~E. Pitzer (2022).
+}\newblock {\DIFadd{Vaccination with BNT162b2 reduces transmission of SARS-CoV-2 to
+  household contacts in Israel}}\DIFadd{.
+}\newblock {\em \DIFadd{Science\/}}\DIFadd{, eabl4292.
+}
+
+\bibitem[\protect\citeauthoryear{Saad-Roy, Morris, Metcalf, Mina, Baker,
+  Farrar, Holmes, Pybus, Graham, Levin, et~al.}{Saad-Roy
+  et~al.}{2021}]{saad2021epidemiological}
+\DIFadd{Saad-Roy, C.~M., S.~E. Morris, C.~J.~E. Metcalf, M.~J. Mina, R.~E. Baker,
+  J.~Farrar, E.~C. Holmes, O.~G. Pybus, A.~L. Graham, S.~A. Levin, et~al.
+  (2021).
+}\newblock {\DIFadd{Epidemiological and evolutionary considerations of SARS-CoV-2
+  vaccine dosing regimes}}\DIFadd{.
+}\newblock {\em \DIFadd{Science\/}}\DIFadd{~}{\em \DIFadd{372\/}}\DIFadd{(6540), 363--370.
+}
+
+\bibitem[\protect\citeauthoryear{Saad-Roy, Wagner, Baker, Morris, Farrar,
+  Graham, Levin, Mina, Metcalf, and Grenfell}{Saad-Roy
+  et~al.}{2020}]{saad2020immune}
+\DIFadd{Saad-Roy, C.~M., C.~E. Wagner, R.~E. Baker, S.~E. Morris, J.~Farrar, A.~L.
+  Graham, S.~A. Levin, M.~J. Mina, C.~J.~E. Metcalf, and B.~T. Grenfell (2020).
+}\newblock {\DIFadd{Immune life history, vaccination, and the dynamics of SARS-CoV-2
+  over the next 5 years}}\DIFadd{.
+}\newblock {\em \DIFadd{Science\/}}\DIFadd{~}{\em \DIFadd{370\/}}\DIFadd{(6518), 811--818.
+}
+
+\bibitem[\protect\citeauthoryear{Tan, Chiew, Pang, Lee, Ong, Lye, and Tan}{Tan
+  et~al.}{2023}]{tan2023vaccine}
+\DIFadd{Tan, C.~Y., C.~J. Chiew, D.~Pang, V.~J. Lee, B.~Ong, D.~C. Lye, and K.~B. Tan
+  (2023).
+}\newblock {\DIFadd{Vaccine effectiveness against Delta, Omicron BA. 1, and BA. 2 in a
+  highly vaccinated Asian setting: a test-negative design study}}\DIFadd{.
+}\newblock {\em \DIFadd{Clinical Microbiology and Infection\/}}\DIFadd{~}{\em \DIFadd{29\/}}\DIFadd{(1), 101--106.
+}
+
+\bibitem[\protect\citeauthoryear{Tartof, Slezak, Fischer, Hong, Ackerson,
+  Ranasinghe, Frankland, Ogun, Zamparo, Gray, et~al.}{Tartof
+  et~al.}{2021}]{tartof2021effectiveness}
+\DIFadd{Tartof, S.~Y., J.~M. Slezak, H.~Fischer, V.~Hong, B.~K. Ackerson, O.~N.
+  Ranasinghe, T.~B. Frankland, O.~A. Ogun, J.~M. Zamparo, S.~Gray, et~al.
+  (2021).
+}\newblock {\DIFadd{Effectiveness of mRNA BNT162b2 COVID-19 vaccine up to 6 months in a
+  large integrated health system in the USA: a retrospective cohort study}}\DIFadd{.
+}\newblock {\em \DIFadd{The Lancet\/}}\DIFadd{~}{\em \DIFadd{398\/}}\DIFadd{(10309), 1407--1416.
+}
+
+\bibitem[\protect\citeauthoryear{Viboud, Bj{\o}rnstad, Smith, Simonsen, Miller,
+  and Grenfell}{Viboud et~al.}{2006}]{viboud2006synchrony}
+\DIFadd{Viboud, C., O.~N. Bj}{\DIFadd{\o}}\DIFadd{rnstad, D.~L. Smith, L.~Simonsen, M.~A. Miller, and
+  B.~T. Grenfell (2006).
+}\newblock \DIFadd{Synchrony, waves, and spatial hierarchies in the spread of influenza.
+}\newblock {\em \DIFadd{science\/}}\DIFadd{~}{\em \DIFadd{312\/}}\DIFadd{(5772), 447--451.
+}
+
+\bibitem[\protect\citeauthoryear{Wallinga and Lipsitch}{Wallinga and
+  Lipsitch}{2007}]{wallinga2007generation}
+\DIFadd{Wallinga, J. and M.~Lipsitch (2007).
+}\newblock \DIFadd{How generation intervals shape the relationship between growth rates
+  and reproductive numbers.
+}\newblock {\em \DIFadd{Proceedings of the Royal Society B: Biological Sciences\/}}\DIFadd{~}{\em
+  \DIFadd{274\/}}\DIFadd{(1609), 599--604.
+}
+
+\bibitem[\protect\citeauthoryear{Wilson, Donovan, Campbell, Chai, Pittman,
+  Se{\~n}a, Pettifor, Weber, Mallick, Cope, et~al.}{Wilson
+  et~al.}{2020}]{wilson2020multiple}
+\DIFadd{Wilson, E., C.~V. Donovan, M.~Campbell, T.~Chai, K.~Pittman, A.~C. Se}{\DIFadd{\~n}}\DIFadd{a,
+  A.~Pettifor, D.~J. Weber, A.~Mallick, A.~Cope, et~al. (2020).
+}\newblock {\DIFadd{Multiple COVID-19 clusters on a university campus—North Carolina,
+  August 2020}}\DIFadd{.
+}\newblock {\em \DIFadd{Morbidity and Mortality Weekly Report\/}}\DIFadd{~}{\em \DIFadd{69\/}}\DIFadd{(39), 1416.
+}
+
+\end{thebibliography}
+\DIFaddend 
+
 
 \end{document}
