@@ -97,14 +97,15 @@ Corresponding author: swp2@princeton.edu
 Mathematical models have played a crucial role in exploring and guiding pandemic responses. 
 University campuses present a particularly well-documented case for institutional outbreaks, thereby providing a unique opportunity to understand detailed patterns of pathogen spread.
 Here, we present descriptive and modeling analyses of SARS-CoV-2 transmission on the Princeton University campus---this model was used throughout the pandemic to inform policy decisions and operational guidelines for the university campus.
-We demonstrate strong spatiotemporal correlations in epidemic patterns between the university campus and surrounding communities.
-These findings are corroborated by our model predictions, which indicate that the amount of on-campus transmission was likely limited during much of the wider pandemic until the end of 2021.
+Epidemic patterns between the university campus and surrounding communities exhibit strong spatiotemporal correlations.
+Mathematical modeling analysis further suggests that the amount of on-campus transmission was likely limited during much of the wider pandemic until the end of 2021.
 Finally, we find that a super-spreading event likely played a major role in driving the Omicron variant outbreak on the Princeton University campus during the spring semester of the 2021--2022 academic year.
 Despite large numbers of cases on campus in this period, case levels in surrounding communities remained low, suggesting that there was little spillover transmission from campus to the local community.
 
 \section*{Significance}
 
-University campuses present challenges to preventing SARS-CoV-2 transmission, due to a high proportion of asymptomatic infections and high contact rates. SARS-CoV-2 outbreaks on the Princeton University campus offer an unusually well-documented perspective, rooted in mass asymptomatic testing, further informed by mathematical modeling aimed at guiding policy decisions. Here, we show that this model can parsimoniously capture observed outbreak patterns on campus during different eras of control. Our analysis reveals that strong coupling between epidemic dynamics on campus and in local communities drives the early epidemic. Subsequently, especially in the Omicron era, superspreading events came to dominate transmission on campus, thereby weakening the dynamical coupling of campus and community outbreaks.
+University campuses present challenges to preventing SARS-CoV-2 transmission, due to a high proportion of asymptomatic infections and high contact rates. SARS-CoV-2 outbreaks on the Princeton University campus offer an unusually well-documented perspective, rooted in mass asymptomatic testing, further informed by mathematical modeling aimed at guiding policy decisions. Here, we show that this model can parsimoniously capture observed outbreak patterns on campus during different eras of control. Our modeling analysis further reveals that strong coupling between epidemic dynamics on campus and in local communities drives the early epidemic. 
+Subsequently, especially in the Omicron era, superspreading events came to dominate transmission on campus, thereby weakening the dynamical coupling of campus and community outbreaks.
 
 \pagebreak
 
@@ -210,14 +211,20 @@ Cases were largely concentrated among undergraduate students during this semeste
 
 \subsection*{Comparisons of campus and community transmission}
 
+In order to compare the transmission dynamics on PU campus and in nearby communities, we calculate the Pearson correlation between the weekly numbers of cases from PU and those from nearby communities.
+Confidence intervals are calculated using Fisher's Z transformation, and the corresponding significance is calculated using asymptomatic t approximation \citep{hollander2013nonparametric}.
+The standard method of calculating Perason correlations and the associated significance assumes that the samples are independent and identically distributed---these assumptions generally do not hold for epidemic time series data, which are autocorrelated and non-stationary.
+Nonetheless, the Pearson correlation has been the standard measure in epidemic time series analyses and can provide useful information about the strength of spatial coupling \citep{rohani1999opposite,grenfell2001travelling,viboud2006synchrony,baker2019epidemic}.
+We note correlation analyses do not provide direct evidence for causality and therefore should be interpreted with care---we later investigate the role of community transmission using a mathematical model.
+
 Across the first three semesters, we find strong and significant correlations between the weekly numbers of cases from PU and those from Mercer county:
 fall 2020--2021 ($\rho = 0.79$ (95\% CI: 0.52--0.91; $p < 0.001$), \fref{princeton}E); spring 2020--2021 ($\rho = 0.84$ (95\% CI: 0.60--0.94; $p < 0.001$), \fref{princeton}F); and fall 2021--2022 ($\rho = 0.93$ (95\% CI: 0.84--0.97; $p < 0.001$), \fref{princeton}G). 
 These correlations are robust even when we stratify cases by the population, except for undergraduate students during Fall 2020, when most were not physically present on campus (Supplementary Figure S3).
 However, the case patterns in PU were decoupled from those in Mercer county for the spring semester of the 2021--2022 academic year with unclear correlations (\fref{princeton}H): $\rho = 0.47$ (95\% CI: $-0.18$--0.83; $p = 0.15$).
-Stratifying cases by subpopulation shows that case patterns in graduate students and faculty and staff members were still strongly correlated with case patterns in Mercer county, meaning that the campus transmission was limited to undergraduate students (Supplementary Figure S3). 
+Stratifying cases by subpopulation shows that case patterns in graduate students and faculty and staff members were still strongly correlated with case patterns in Mercer county (Supplementary Figure S3). 
 We also find strong correlations between the weekly logged numbers of cases from PU and those from other counties in New Jersey (Supplementary Figure S4)---these correlations significantly decreased with distance from Mercer county in both spring 2020--2021 ($\rho=-0.48$ (95\% CI: $-0.75$--$-0.06$; $p = 0.03$) for all cases and $\rho=-0.51$ (95\% CI: $-0.77$--$-0.10$; $p = 0.02$) for faculty and staff cases) and fall 2021--2022 ($\rho=-0.68$ (95\% CI: $-0.86$--$-0.35$, $p < 0.001$) for all cases and $\rho=-0.74$ (95\% CI: $-0.89$--$-0.46$, $p < 0.001$) for faculty and staff cases).
 Across the first three semesters, both the total cases and faculty and staff cases showed similar levels of correlations with local cases.
-For the spring semester of the 2021--2022 academic year, we still find high correlations between faculty and staff cases and local cases throughout other counties ($\rho > 0.8$ across all counties in New Jersey); however, the total cases exhibit considerably weaker correlations due to student-to-student transmission on campus (Supplementary Figure S4).    
+For the spring semester of the 2021--2022 academic year, we still find high correlations between faculty and staff cases and local cases throughout other counties ($\rho > 0.8$ across all counties in New Jersey); however, the total cases exhibit considerably weaker correlations (Supplementary Figure S4).    
 
 These correlations likely reflect commuting and contact patterns, and therefore we expect SARS-CoV-2 dynamics on campus to be correlated with those from nearby large cities as well. 
 We find similarly strong correlations with New York City for the first three semesters: fall 2020--2021 ($\rho = 0.64$ (95\% CI: 0.26--0.85; $p = 0.003$), Supplementary Figure S5A); spring 2020--2021 ($\rho = 0.80$ (95\% CI: 0.53--0.93; $p < 0.001$), Supplementary Figure S5B); fall 2021--2022 ($\rho = 0.89$ (95\% CI: 0.73--0.96; $p < 0.001$), Supplementary Figure S5C); and spring 2021--2022 ($\rho = 0.50$ (95\% CI: $-0.14$--0.85; $p=0.1$), Supplementary Figure S5D).
@@ -459,7 +466,7 @@ Vertical dashed lines represent the week including February 8, 2022, when distan
 
 Here, we analyze SARS-CoV-2 outbreaks on the PU campus between fall 2020 and early 2022.
 We demonstrate strong spatiotemporal correlations between the patterns of spread of SARS-CoV-2 on campus and those from surrounding communities.
-These correlations decreased with distance from Mercer County in fall 2021--2022, likely reflecting contact and commuting patterns as the university campus reopened.
+These correlations decreased with distance from Mercer County in fall 2021--2022, indicating weaker spatial coupling in the dynamics.
 Mathematical modeling further suggests limited transmission between the university population during fall and spring semesters of the 2020--2021 academic year and an increased frequency of infective community contacts during the fall semester of the 2021--2022 academic year, compared to previous semesters.
 An increase in the number of cases by the end of November 2021 is consistent with the increase in the levels of community cases and waning immunity.
 Finally, our analysis highlights the potential role of super-spreading events in driving the spread of the Omicron variant on the PU campus.
@@ -481,7 +488,10 @@ For example, the ratios of cases can suddenly change during holidays when studen
 Future studies could combine viral phylogenetic data to better understand spatial patterns of SARS-CoV-2 on campus.
 
 There are several limitations to our analysis.
-While we demonstrate strong spatiotemporal correlation in the spread of SARS-CoV-2, we are not able to infer the direction of causality---that is, our analysis does not rule out the possibility that transmission on campus drove infections in nearby communities (as opposed to community transmission driving on-campus infections).
+While we demonstrate strong spatiotemporal correlation in the spread of SARS-CoV-2, correlations do not provide causal link for community transmission.
+For example, even if there was no mixing between campus and community populations, two populations can exhibit correlated epidemic dynamics if both populations are changing behavior in similar ways, reflecting changes in intervention measures in the greater New Jersey area.
+However, it seems biologically implausible that there would be no mixing between the two populatins---other studies have also identified community transmission to be an important source of SARS-CoV-2 infections on campus \citep{fox2021response,hamer2021assessment}.
+Our mathematical modeling illustrates that community transmission can explain the observed dynamics on PU campus, but we are not able to infer the direction of causality---that is, our analysis does not rule out the possibility that transmission on campus drove infections in nearby communities (as opposed to community transmission driving on-campus infections).
 However, seeding from campus is unlikely: 
 intervention measures on campus (e.g., frequent asymptomatic testing, contact tracing, and virtual classes during fall and spring semesters of 2020) likely limited onward transmission on campus.
 In addition, even during periods of large Omicron outbreaks on campus in early 2022, the number of COVID-19 cases in Mercer County remained low, implying limited transmission from campus to community.
@@ -519,317 +529,6 @@ All data and code are stored in a publicly available GitHub repository (\url{htt
 
 All authors contributed equally to the research design, data collection, formal analysis, interpretation of the results, and writing of the paper.
 
-\begin{thebibliography}{}
-
-\bibitem[\protect\citeauthoryear{Baker, Mahmud, Wagner, Yang, Pitzer, Viboud,
-  Vecchi, Metcalf, and Grenfell}{Baker et~al.}{2019}]{baker2019epidemic}
-Baker, R.~E., A.~S. Mahmud, C.~E. Wagner, W.~Yang, V.~E. Pitzer, C.~Viboud,
-  G.~A. Vecchi, C.~J.~E. Metcalf, and B.~T. Grenfell (2019).
-\newblock Epidemic dynamics of respiratory syncytial virus in current and
-  future climates.
-\newblock {\em Nature communications\/}~{\em 10\/}(1), 1--8.
-
-\bibitem[\protect\citeauthoryear{Baker, Park, Wagner, and Metcalf}{Baker
-  et~al.}{2021}]{baker2021limits}
-Baker, R.~E., S.~W. Park, C.~E. Wagner, and C.~J.~E. Metcalf (2021).
-\newblock {The limits of SARS-CoV-2 predictability}.
-\newblock {\em Nature Ecology \& Evolution\/}~{\em 5\/}(8), 1052--1054.
-
-\bibitem[\protect\citeauthoryear{Brett and Rohani}{Brett and
-  Rohani}{2020}]{brett2020transmission}
-Brett, T.~S. and P.~Rohani (2020).
-\newblock {Transmission dynamics reveal the impracticality of COVID-19 herd
-  immunity strategies}.
-\newblock {\em Proceedings of the National Academy of Sciences\/}~{\em
-  117\/}(41), 25897--25903.
-
-\bibitem[\protect\citeauthoryear{Brook, Northrup, Ehrenberg, Doudna, Boots,
-  Consortium, et~al.}{Brook et~al.}{2021}]{brook2021optimizing}
-Brook, C.~E., G.~R. Northrup, A.~J. Ehrenberg, J.~A. Doudna, M.~Boots,
-  I.~S.-C.-.~T. Consortium, et~al. (2021).
-\newblock {Optimizing COVID-19 control with asymptomatic surveillance testing
-  in a university environment}.
-\newblock {\em Epidemics\/}~{\em 37}, 100527.
-
-\bibitem[\protect\citeauthoryear{Cobey}{Cobey}{2020}]{cobey2020modeling}
-Cobey, S. (2020).
-\newblock Modeling infectious disease dynamics.
-\newblock {\em Science\/}~{\em 368\/}(6492), 713--714.
-
-\bibitem[\protect\citeauthoryear{Currie, Moreno, Delahoy, Pray, Jovaag, Braun,
-  Cole, Shechter, Fajardo, Griggs, et~al.}{Currie
-  et~al.}{2021}]{currie2021interventions}
-Currie, D.~W., G.~K. Moreno, M.~J. Delahoy, I.~W. Pray, A.~Jovaag, K.~M. Braun,
-  D.~Cole, T.~Shechter, G.~C. Fajardo, C.~Griggs, et~al. (2021).
-\newblock {Interventions to Disrupt Coronavirus Disease Transmission at a
-  University, Wisconsin, USA, August--October 2020}.
-\newblock {\em Emerging infectious diseases\/}~{\em 27\/}(11), 2776.
-
-\bibitem[\protect\citeauthoryear{{Duke University}}{{Duke
-  University}}{2021}]{dukeoutbreak}
-{Duke University} (2021).
-\newblock {Important COVID updates for undergrads, Aug. 30}.
-
-\bibitem[\protect\citeauthoryear{Elderd, Dukic, and Dwyer}{Elderd
-  et~al.}{2006}]{elderd2006uncertainty}
-Elderd, B.~D., V.~M. Dukic, and G.~Dwyer (2006).
-\newblock Uncertainty in predictions of disease spread and public health
-  responses to bioterrorism and emerging diseases.
-\newblock {\em Proceedings of the National Academy of Sciences\/}~{\em
-  103\/}(42), 15693--15697.
-
-\bibitem[\protect\citeauthoryear{Endo, {Centre for the Mathematical Modelling
-  of Infectious Diseases COVID-19 Working Group}, Abbott, Kucharski, and
-  Funk}{Endo et~al.}{2020}]{10.12688/wellcomeopenres.15842.3}
-Endo, A., {Centre for the Mathematical Modelling of Infectious Diseases
-  COVID-19 Working Group}, S.~Abbott, A.~Kucharski, and S.~Funk (2020).
-\newblock {Estimating the overdispersion in COVID-19 transmission using
-  outbreak sizes outside China [version 3; peer review: 2 approved]}.
-\newblock {\em Wellcome Open Research\/}~{\em 5\/}(67).
-
-\bibitem[\protect\citeauthoryear{Ferguson, Ghani, Cori, Hogan, Hinsley, and
-  Volz}{Ferguson et~al.}{2021}]{ferguson2021report}
-Ferguson, N., A.~Ghani, A.~Cori, A.~Hogan, W.~Hinsley, and E.~Volz (2021).
-\newblock {Report 49: Growth, population distribution and immune escape of
-  Omicron in England}.
-
-\bibitem[\protect\citeauthoryear{Flaxman, Mishra, Gandy, Unwin, Mellan,
-  Coupland, Whittaker, Zhu, Berah, Eaton, et~al.}{Flaxman
-  et~al.}{2020}]{flaxman2020estimating}
-Flaxman, S., S.~Mishra, A.~Gandy, H.~J.~T. Unwin, T.~A. Mellan, H.~Coupland,
-  C.~Whittaker, H.~Zhu, T.~Berah, J.~W. Eaton, et~al. (2020).
-\newblock {Estimating the effects of non-pharmaceutical interventions on
-  COVID-19 in Europe}.
-\newblock {\em Nature\/}~{\em 584\/}(7820), 257--261.
-
-\bibitem[\protect\citeauthoryear{Fox, Bailey, Seamon, and Miranda}{Fox
-  et~al.}{2021}]{fox2021response}
-Fox, M.~D., D.~C. Bailey, M.~D. Seamon, and M.~L. Miranda (2021).
-\newblock {Response to a COVID-19 outbreak on a university campus—Indiana,
-  August 2020}.
-\newblock {\em Morbidity and Mortality Weekly Report\/}~{\em 70\/}(4), 118.
-
-\bibitem[\protect\citeauthoryear{Frazier, Cashore, Duan, Henderson, Janmohamed,
-  Liu, Shmoys, Wan, and Zhang}{Frazier et~al.}{2022}]{frazier2022modeling}
-Frazier, P.~I., J.~M. Cashore, N.~Duan, S.~G. Henderson, A.~Janmohamed, B.~Liu,
-  D.~B. Shmoys, J.~Wan, and Y.~Zhang (2022).
-\newblock {Modeling for COVID-19 college reopening decisions: Cornell, a case
-  study}.
-\newblock {\em Proceedings of the National Academy of Sciences\/}~{\em
-  119\/}(2).
-
-\bibitem[\protect\citeauthoryear{Galanti, Pei, Yamana, Angulo, Charos,
-  Swerdlow, and Shaman}{Galanti et~al.}{2021}]{galanti2021social}
-Galanti, M., S.~Pei, T.~K. Yamana, F.~J. Angulo, A.~Charos, D.~L. Swerdlow, and
-  J.~Shaman (2021).
-\newblock Social distancing remains key during vaccinations.
-\newblock {\em Science\/}~{\em 371\/}(6528), 473--474.
-
-\bibitem[\protect\citeauthoryear{Gibson, Weitz, Shannon, Holton, Bryksin, Liu,
-  Sieglinger, Coenen, Zhao, Beckett, et~al.}{Gibson
-  et~al.}{2021}]{gibson2021surveillance}
-Gibson, G., J.~S. Weitz, M.~P. Shannon, B.~Holton, A.~Bryksin, B.~Liu,
-  M.~Sieglinger, A.~R. Coenen, C.~Zhao, S.~J. Beckett, et~al. (2021).
-\newblock {Surveillance-to-Diagnostic Testing Program for Asymptomatic
-  SARS-CoV-2 Infections on a Large, Urban Campus in Fall 2020}.
-\newblock {\em Epidemiology\/}~{\em 33\/}(2), 209--216.
-
-\bibitem[\protect\citeauthoryear{Grenfell and Harwood}{Grenfell and
-  Harwood}{1997}]{grenfell1997meta}
-Grenfell, B. and J.~Harwood (1997).
-\newblock (meta) population dynamics of infectious diseases.
-\newblock {\em Trends in ecology \& evolution\/}~{\em 12\/}(10), 395--399.
-
-\bibitem[\protect\citeauthoryear{Grenfell, Bj{\o}rnstad, and Kappey}{Grenfell
-  et~al.}{2001}]{grenfell2001travelling}
-Grenfell, B.~T., O.~N. Bj{\o}rnstad, and J.~Kappey (2001).
-\newblock Travelling waves and spatial hierarchies in measles epidemics.
-\newblock {\em Nature\/}~{\em 414\/}(6865), 716--723.
-
-\bibitem[\protect\citeauthoryear{Hamer, White, Jenkins, Gill, Landsberg,
-  Klapperich, Bulekova, Platt, Decarie, Gilmore, et~al.}{Hamer
-  et~al.}{2021}]{hamer2021assessment}
-Hamer, D.~H., L.~F. White, H.~E. Jenkins, C.~J. Gill, H.~E. Landsberg,
-  C.~Klapperich, K.~Bulekova, J.~Platt, L.~Decarie, W.~Gilmore, et~al. (2021).
-\newblock {Assessment of a COVID-19 control plan on an urban university campus
-  during a second wave of the pandemic}.
-\newblock {\em JAMA Network Open\/}~{\em 4\/}(6), e2116425--e2116425.
-
-\bibitem[\protect\citeauthoryear{{Harvard University}}{{Harvard
-  University}}{2021}]{harvardoutbreak}
-{Harvard University} (2021).
-\newblock {Increase in COVID-19 cases, Take Steps to Protect Yourself \& Our
-  Community}.
-
-\bibitem[\protect\citeauthoryear{He, Ionides, and King}{He
-  et~al.}{2010}]{he2010plug}
-He, D., E.~L. Ionides, and A.~A. King (2010).
-\newblock Plug-and-play inference for disease dynamics: measles in large and
-  small populations as a case study.
-\newblock {\em Journal of the Royal Society Interface\/}~{\em 7\/}(43),
-  271--283.
-
-\bibitem[\protect\citeauthoryear{Hellewell, Abbott, Gimma, Bosse, Jarvis,
-  Russell, Munday, Kucharski, Edmunds, Sun, et~al.}{Hellewell
-  et~al.}{2020}]{hellewell2020feasibility}
-Hellewell, J., S.~Abbott, A.~Gimma, N.~I. Bosse, C.~I. Jarvis, T.~W. Russell,
-  J.~D. Munday, A.~J. Kucharski, W.~J. Edmunds, F.~Sun, et~al. (2020).
-\newblock {Feasibility of controlling COVID-19 outbreaks by isolation of cases
-  and contacts}.
-\newblock {\em The Lancet Global Health\/}~{\em 8\/}(4), e488--e496.
-
-\bibitem[\protect\citeauthoryear{Hellewell, Russell, Beale, Kelly, Houlihan,
-  Nastouli, and Kucharski}{Hellewell et~al.}{2021}]{hellewell2021estimating}
-Hellewell, J., T.~W. Russell, R.~Beale, G.~Kelly, C.~Houlihan, E.~Nastouli, and
-  A.~J. Kucharski (2021).
-\newblock {Estimating the effectiveness of routine asymptomatic PCR testing at
-  different frequencies for the detection of SARS-CoV-2 infections}.
-\newblock {\em BMC medicine\/}~{\em 19\/}(1), 1--10.
-
-\bibitem[\protect\citeauthoryear{Holmdahl and Buckee}{Holmdahl and
-  Buckee}{2020}]{holmdahl2020wrong}
-Holmdahl, I. and C.~Buckee (2020).
-\newblock {Wrong but useful—what COVID-19 epidemiologic models can and cannot
-  tell us}.
-\newblock {\em New England Journal of Medicine\/}~{\em 383\/}(4), 303--305.
-
-\bibitem[\protect\citeauthoryear{Kissler, Tedijanto, Goldstein, Grad, and
-  Lipsitch}{Kissler et~al.}{2020}]{kissler2020projecting}
-Kissler, S.~M., C.~Tedijanto, E.~Goldstein, Y.~H. Grad, and M.~Lipsitch (2020).
-\newblock {Projecting the transmission dynamics of SARS-CoV-2 through the
-  postpandemic period}.
-\newblock {\em Science\/}~{\em 368\/}(6493), 860--868.
-
-\bibitem[\protect\citeauthoryear{Koelle, Martin, Antia, Lopman, and
-  Dean}{Koelle et~al.}{2022}]{koelle2022changing}
-Koelle, K., M.~A. Martin, R.~Antia, B.~Lopman, and N.~E. Dean (2022).
-\newblock {The changing epidemiology of SARS-CoV-2}.
-\newblock {\em Science\/}~{\em 375\/}(6585), 1116--1121.
-
-\bibitem[\protect\citeauthoryear{Kraemer, Pybus, Fraser, Cauchemez, Rambaut,
-  and Cowling}{Kraemer et~al.}{2021}]{kraemer2021monitoring}
-Kraemer, M.~U., O.~G. Pybus, C.~Fraser, S.~Cauchemez, A.~Rambaut, and B.~J.
-  Cowling (2021).
-\newblock {Monitoring key epidemiological parameters of SARS-CoV-2
-  transmission}.
-\newblock {\em Nature medicine\/}~{\em 27\/}(11), 1854--1855.
-
-\bibitem[\protect\citeauthoryear{Lavezzo, Franchin, Ciavarella,
-  Cuomo-Dannenburg, Barzon, Del~Vecchio, Rossi, Manganelli, Loregian, Navarin,
-  et~al.}{Lavezzo et~al.}{2020}]{lavezzo2020suppression}
-Lavezzo, E., E.~Franchin, C.~Ciavarella, G.~Cuomo-Dannenburg, L.~Barzon,
-  C.~Del~Vecchio, L.~Rossi, R.~Manganelli, A.~Loregian, N.~Navarin, et~al.
-  (2020).
-\newblock {Suppression of a SARS-CoV-2 outbreak in the Italian municipality of
-  Vo’}.
-\newblock {\em Nature\/}~{\em 584\/}(7821), 425--429.
-
-\bibitem[\protect\citeauthoryear{Lavine, Bjornstad, and Antia}{Lavine
-  et~al.}{2021}]{lavine2021immunological}
-Lavine, J.~S., O.~N. Bjornstad, and R.~Antia (2021).
-\newblock {Immunological characteristics govern the transition of COVID-19 to
-  endemicity}.
-\newblock {\em Science\/}~{\em 371\/}(6530), 741--745.
-
-\bibitem[\protect\citeauthoryear{Lloyd-Smith, Schreiber, Kopp, and
-  Getz}{Lloyd-Smith et~al.}{2005}]{lloyd2005superspreading}
-Lloyd-Smith, J.~O., S.~J. Schreiber, P.~E. Kopp, and W.~M. Getz (2005).
-\newblock Superspreading and the effect of individual variation on disease
-  emergence.
-\newblock {\em Nature\/}~{\em 438\/}(7066), 355--359.
-
-\bibitem[\protect\citeauthoryear{Lopman, Liu, Le~Guillou, Lash, Isakov, and
-  Jenness}{Lopman et~al.}{2020}]{lopman2020model}
-Lopman, B., C.~Y. Liu, A.~Le~Guillou, T.~L. Lash, A.~P. Isakov, and S.~M.
-  Jenness (2020).
-\newblock {A model of COVID-19 transmission and control on university
-  campuses}.
-\newblock {\em MedRxiv\/}.
-
-\bibitem[\protect\citeauthoryear{Metcalf, Morris, and Park}{Metcalf
-  et~al.}{2020}]{metcalf2020mathematical}
-Metcalf, C. J.~E., D.~H. Morris, and S.~W. Park (2020).
-\newblock Mathematical models to guide pandemic response.
-\newblock {\em Science\/}~{\em 369\/}(6502), 368--369.
-
-\bibitem[\protect\citeauthoryear{Moreira~Jr, Kitchin, Xu, Dychter, Lockhart,
-  Gurtman, Perez, Zerbini, Dever, Jennings, et~al.}{Moreira~Jr
-  et~al.}{2022}]{moreira2022safety}
-Moreira~Jr, E.~D., N.~Kitchin, X.~Xu, S.~S. Dychter, S.~Lockhart, A.~Gurtman,
-  J.~L. Perez, C.~Zerbini, M.~E. Dever, T.~W. Jennings, et~al. (2022).
-\newblock Safety and efficacy of a third dose of {BNT162b2} {COVID-19} vaccine.
-\newblock {\em New England Journal of Medicine\/}.
-
-\bibitem[\protect\citeauthoryear{Prunas, Warren, Crawford, Gazit, Patalon,
-  Weinberger, and Pitzer}{Prunas et~al.}{2022}]{prunas2022vaccination}
-Prunas, O., J.~L. Warren, F.~W. Crawford, S.~Gazit, T.~Patalon, D.~M.
-  Weinberger, and V.~E. Pitzer (2022).
-\newblock {Vaccination with BNT162b2 reduces transmission of SARS-CoV-2 to
-  household contacts in Israel}.
-\newblock {\em Science\/}, eabl4292.
-
-\bibitem[\protect\citeauthoryear{Saad-Roy, Morris, Metcalf, Mina, Baker,
-  Farrar, Holmes, Pybus, Graham, Levin, et~al.}{Saad-Roy
-  et~al.}{2021}]{saad2021epidemiological}
-Saad-Roy, C.~M., S.~E. Morris, C.~J.~E. Metcalf, M.~J. Mina, R.~E. Baker,
-  J.~Farrar, E.~C. Holmes, O.~G. Pybus, A.~L. Graham, S.~A. Levin, et~al.
-  (2021).
-\newblock {Epidemiological and evolutionary considerations of SARS-CoV-2
-  vaccine dosing regimes}.
-\newblock {\em Science\/}~{\em 372\/}(6540), 363--370.
-
-\bibitem[\protect\citeauthoryear{Saad-Roy, Wagner, Baker, Morris, Farrar,
-  Graham, Levin, Mina, Metcalf, and Grenfell}{Saad-Roy
-  et~al.}{2020}]{saad2020immune}
-Saad-Roy, C.~M., C.~E. Wagner, R.~E. Baker, S.~E. Morris, J.~Farrar, A.~L.
-  Graham, S.~A. Levin, M.~J. Mina, C.~J.~E. Metcalf, and B.~T. Grenfell (2020).
-\newblock {Immune life history, vaccination, and the dynamics of SARS-CoV-2
-  over the next 5 years}.
-\newblock {\em Science\/}~{\em 370\/}(6518), 811--818.
-
-\bibitem[\protect\citeauthoryear{Tan, Chiew, Pang, Lee, Ong, Lye, and Tan}{Tan
-  et~al.}{2023}]{tan2023vaccine}
-Tan, C.~Y., C.~J. Chiew, D.~Pang, V.~J. Lee, B.~Ong, D.~C. Lye, and K.~B. Tan
-  (2023).
-\newblock {Vaccine effectiveness against Delta, Omicron BA. 1, and BA. 2 in a
-  highly vaccinated Asian setting: a test-negative design study}.
-\newblock {\em Clinical Microbiology and Infection\/}~{\em 29\/}(1), 101--106.
-
-\bibitem[\protect\citeauthoryear{Tartof, Slezak, Fischer, Hong, Ackerson,
-  Ranasinghe, Frankland, Ogun, Zamparo, Gray, et~al.}{Tartof
-  et~al.}{2021}]{tartof2021effectiveness}
-Tartof, S.~Y., J.~M. Slezak, H.~Fischer, V.~Hong, B.~K. Ackerson, O.~N.
-  Ranasinghe, T.~B. Frankland, O.~A. Ogun, J.~M. Zamparo, S.~Gray, et~al.
-  (2021).
-\newblock {Effectiveness of mRNA BNT162b2 COVID-19 vaccine up to 6 months in a
-  large integrated health system in the USA: a retrospective cohort study}.
-\newblock {\em The Lancet\/}~{\em 398\/}(10309), 1407--1416.
-
-\bibitem[\protect\citeauthoryear{Viboud, Bj{\o}rnstad, Smith, Simonsen, Miller,
-  and Grenfell}{Viboud et~al.}{2006}]{viboud2006synchrony}
-Viboud, C., O.~N. Bj{\o}rnstad, D.~L. Smith, L.~Simonsen, M.~A. Miller, and
-  B.~T. Grenfell (2006).
-\newblock Synchrony, waves, and spatial hierarchies in the spread of influenza.
-\newblock {\em science\/}~{\em 312\/}(5772), 447--451.
-
-\bibitem[\protect\citeauthoryear{Wallinga and Lipsitch}{Wallinga and
-  Lipsitch}{2007}]{wallinga2007generation}
-Wallinga, J. and M.~Lipsitch (2007).
-\newblock How generation intervals shape the relationship between growth rates
-  and reproductive numbers.
-\newblock {\em Proceedings of the Royal Society B: Biological Sciences\/}~{\em
-  274\/}(1609), 599--604.
-
-\bibitem[\protect\citeauthoryear{Wilson, Donovan, Campbell, Chai, Pittman,
-  Se{\~n}a, Pettifor, Weber, Mallick, Cope, et~al.}{Wilson
-  et~al.}{2020}]{wilson2020multiple}
-Wilson, E., C.~V. Donovan, M.~Campbell, T.~Chai, K.~Pittman, A.~C. Se{\~n}a,
-  A.~Pettifor, D.~J. Weber, A.~Mallick, A.~Cope, et~al. (2020).
-\newblock {Multiple COVID-19 clusters on a university campus—North Carolina,
-  August 2020}.
-\newblock {\em Morbidity and Mortality Weekly Report\/}~{\em 69\/}(39), 1416.
-
-\end{thebibliography}
-
+\bibliography{university-covid}
 
 \end{document}
